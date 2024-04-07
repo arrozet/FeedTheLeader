@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClickingScreen.unity
     guid: 471a031ff206ce44cbe06c201b7a6f47
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 3712b6a1ce4245c48b5f44dd2076a1a5
   m_configObjects: {}

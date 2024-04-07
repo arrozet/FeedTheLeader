@@ -1,3 +1,5 @@
+// Juanma: lo he editado para que guarde las variables entre escenas
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,23 +10,20 @@ public class ClickingScript : MonoBehaviour
 {
     // CLICKER
     public TMP_Text scoreText;
-    public float currentScore;
-    public float scoreUp;
 
 
     void Start()
     {
-        currentScore = 0;
-        scoreUp = 1;
+        ControladorPuntos.Instance.comienzo();
     }
 
     void Update()
     {
-        scoreText.text = currentScore.ToString();
+        scoreText.text = ControladorPuntos.Instance.cantidadPuntos.ToString();
     }
 
     public void click()
     {
-        currentScore += scoreUp;
+        ControladorPuntos.Instance.SumarPuntos(ControladorPuntos.Instance.multiplicadorPuntos);
     }
 }
