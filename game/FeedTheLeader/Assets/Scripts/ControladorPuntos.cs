@@ -21,6 +21,7 @@ public class ControladorPuntos : MonoBehaviour, IDataPersistence
     public void SaveData(ref GameData data)
     {
         data.currentScore = this.currentScore;
+        data.scoreUp = this.scoreUp;
     }
     public void Awake()
     { 
