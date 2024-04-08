@@ -1,15 +1,27 @@
 // Autos Juanma
+//Edit: Guardado de datos, Edu
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControladorPuntos : MonoBehaviour
+public class ControladorPuntos : MonoBehaviour, IDataPersistence
 {
     public static ControladorPuntos Instance;
-    [SerializeField] public float cantidadPuntos;
-    [SerializeField] public float multiplicadorPuntos;// no se que es serializefield
+    public float currentScore;
+    public float scoreUp;// no se que es serializefield
     // Start is called before the first frame update
+
+    public void LoadData(GameData data)
+    {
+        this.currentScore = data.currentScore;
+        this.scoreUp = data.scoreUp;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.currentScore = this.currentScore;
+    }
     public void Awake()
     { 
         // esto es de un tutorial, es para que no destruya el objeto entre escenas
@@ -24,25 +36,25 @@ public class ControladorPuntos : MonoBehaviour
     }
     public void comienzo()
     {
-        if(multiplicadorPuntos == 0)
+        if(scoreUp == 0)
         {
-            multiplicadorPuntos = 1;
+            scoreUp = 1;
         } 
     }
     public void SumarPuntos(float puntos)
     {
-        cantidadPuntos += puntos;
+        currentScore += puntos;
     }
 
     public void multiplicarMultiplicador(float num)
     {
-        multiplicadorPuntos*=num;
+        scoreUp *=num;
     }
     public bool RestarPuntos(float num)
     {
-        if(cantidadPuntos >= num)
+        if(currentScore >= num)
         {
-            cantidadPuntos -= num;
+            currentScore -= num;
             return true;
         } else
         {
