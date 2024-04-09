@@ -7,7 +7,7 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     public int pointsToAdd; // La cantidad de puntos que se agregarán al hacer clic en el objetivo
-    private bool clicked = false; // Variable para rastrear si se hizo clic en el objeto
+    private bool clicked = false; // Variable para rastrear si se hizo clic en el objeto    
 
     void Start()
     {
@@ -38,28 +38,6 @@ public class TargetController : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
-    {
-        // Esta función se ejecuta cuando se hace clic en el objetivo
-        pointsToAdd = Mathf.RoundToInt(ControladorPuntos.Instance.getPuntos()*0.1f); // Calculamos el 10% de los puntos totales y lo pasamos a Int
-        if (pointsToAdd < 10)
-        {
-            pointsToAdd = 10; // Mínimo sumar 10 puntos
-        }
-        // Incrementamos los puntos
-        ControladorPuntos.Instance.SumarPuntos(pointsToAdd); // Llamamos a la función AddPoints del GameManager y le pasamos la cantidad de puntos a agregar
-        
-        // Desactivamos el objetivo
-        gameObject.SetActive(false);
-        // Indicamos que se hizo clic en el objeto
-        clicked = true;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 
 
