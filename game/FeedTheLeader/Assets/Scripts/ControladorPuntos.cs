@@ -4,6 +4,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class ControladorPuntos : MonoBehaviour, IDataPersistence
 {
@@ -62,5 +63,16 @@ public class ControladorPuntos : MonoBehaviour, IDataPersistence
             return false;
         }
     }
-   
+
+    public void ResetPoints()
+    {
+        currentScore = 0; // Restablece los puntos a cero
+        scoreUp = 1; // Restablece multiplicador a uno
+    }
+
+    public float getPuntos()
+    {
+        return currentScore;
+    }
+
 }
