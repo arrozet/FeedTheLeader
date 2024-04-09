@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -14,46 +15,60 @@ public class SettingsMenu : MonoBehaviour
     
     public AudioMixer audioMixer;
     public TMP_Dropdown resolutionDropdown;
+    
 
-    Resolution[] resolutions;
+    List<Resolution> resolutions = new List<Resolution>();
+    private int width, height;
+    private RefreshRate refreshRate;
+    //private bool fullscreen = true;
 
     private void Start()
     {
-        // busco las resoluciones que el pc tiene a nuestra disposición
+        width = Screen.currentResolution.width;
+        height = Screen.currentResolution.height;
+        refreshRate = Screen.currentResolution.refreshRateRatio;
 
-        resolutions = Screen.resolutions;
+        // busco las resoluciones que el pc tiene a nuestra disposición, solo las de mi refreshRate
+        foreach(Resolution res in Screen.resolutions)
+        {
+            if (refreshRate.Equals(res.refreshRateRatio))
+            {
+                resolutions.Add(res);
+            }
+        }
+        // borro las resoluciones que haya en mi dropdown
         resolutionDropdown.ClearOptions();
 
-        List<string> myResolutions = new List<string>();
-
-        int currentResolutionIndex = 0;
         // guardo las resoluciones disponibles en el pc en una lista
-        for (int i=0; i<resolutions.Length; i++)
+        List<string> myResolutionsWithCurrentRefresh = new List<string>();
+        
+        // guardo el índice para que se muestre correctamente en el display de resoluciones
+        int currentResolutionIndex = 0;
+        
+        for (int i=0; i<resolutions.Count; i++)
         {
-            // para que no se repitan las resoluciones y solo se muestren las de mi tasa de refresco
-            if (Screen.currentResolution.refreshRateRatio.Equals(resolutions[i].refreshRateRatio))
-            {
-                string newResolution = resolutions[i].width + "x" + resolutions[i].height + "@" + resolutions[i].refreshRateRatio + " Hz";
-                myResolutions.Add(newResolution);
+            string newResolution = resolutions[i].width + "x" + resolutions[i].height;
+            myResolutionsWithCurrentRefresh.Add(newResolution);
 
-                // para que se ponga automáticamente la resolucion 
-                if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-                {
-                    currentResolutionIndex = i; // va con indices pq los dropdowns van con indices
-                }
-                
+            // para que se ponga automáticamente la resolucion en el dropDown
+            if (resolutions[i].width == width && resolutions[i].height == height)
+            {
+                currentResolutionIndex = i; // va con indices pq los dropdowns van con indices
             }
+                
+            
 
         }
 
         // las añado a las opciones del dropdown
-        resolutionDropdown.AddOptions(myResolutions);
+        resolutionDropdown.AddOptions(myResolutionsWithCurrentRefresh);
 
-        // pongo mi resolución automáticamente (el el dropDown)
+        // pongo mi resolución automáticamente (en el dropDown)
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
         
-    }
+}
+
     public void SetVolume (float volume)
     {
         // cambio el volumen del audioMixer al del slider
