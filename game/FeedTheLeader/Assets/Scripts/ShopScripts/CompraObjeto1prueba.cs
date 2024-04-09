@@ -13,4 +13,14 @@ public class CompraObjeto1prueba : MonoBehaviour
             ControladorPuntos.Instance.multiplicarMultiplicador(2);
         }
     }
+
+    // Rubén: (testing) para meterte puntos gratis
+    public void puntosGratis()
+    {
+        if (ControladorPuntos.Instance.RestarPuntos(0))
+        {
+            ControladorPuntos.Instance.SumarPuntos(5000);
+        }
+    }
+    
 }
