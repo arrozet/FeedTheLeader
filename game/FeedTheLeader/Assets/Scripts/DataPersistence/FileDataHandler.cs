@@ -10,10 +10,15 @@ public class FileDataHandler
     private string dataDirPath = "";
     private string dataFileName = "";
 
-    public FileDataHandler(string dataDirPath, string dataFileName)
+    //Variables para encriptado de datos
+    private bool useEncryption = false;
+    private readonly string codeWord = "joge";
+
+    public FileDataHandler(string dataDirPath, string dataFileName, bool useEncryption)
     {
         this.dataDirPath = dataDirPath;
         this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
     }
 
     public GameData Load()
@@ -33,7 +38,10 @@ public class FileDataHandler
                         dataToLoad = reader.ReadToEnd();
                     }
                 }
-
+                if (useEncryption)
+                {
+                    dataToLoad = EncryptDecrypt(dataToLoad);
+                }
                 //deserializar
                 loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
             }
@@ -55,6 +63,12 @@ public class FileDataHandler
             Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
             //Serializar datos para guardar en JSON
             string dataToStore = JsonUtility.ToJson(data, true);
+
+            if (useEncryption)
+            {
+                dataToStore = EncryptDecrypt(dataToStore);
+            }
+
             //Escribir datos
             using(FileStream stream = new FileStream(fullPath, FileMode.Create))
             {
@@ -70,5 +84,15 @@ public class FileDataHandler
         }
     }
     
+    //Encriptado usando XOR
+    private string EncryptDecrypt(string data)
+    {
+        string modifiedData = "";
+        for(int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char) (data[i] ^ codeWord[i % codeWord.Length]);
 
+        }
+        return modifiedData;
+    }
 }
