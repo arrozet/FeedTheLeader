@@ -107,11 +107,9 @@ public class SettingsMenu : MonoBehaviour
     }
 
     //Parte de guardado: Edu
-
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
         PlayerPrefs.SetFloat("SliderValue", musicSlider.value);
         Debug.Log("Valor del slider guardado a " + musicSlider.value);
     }
-
 }
