@@ -31,10 +31,8 @@ public class SettingsMenu : MonoBehaviour
         width = Screen.currentResolution.width;
         height = Screen.currentResolution.height;
         refreshRate = Screen.currentResolution.refreshRateRatio;
-
-
         musicSlider.value = PlayerPrefs.GetFloat("SliderValue", 1);
-        Debug.Log("Valor del slider cargado a" + musicSlider.value);
+        
 
 
         // busco las resoluciones que el pc tiene a nuestra disposición, solo las de mi refreshRate
@@ -110,6 +108,6 @@ public class SettingsMenu : MonoBehaviour
     private void OnDestroy()
     {
         PlayerPrefs.SetFloat("SliderValue", musicSlider.value);
-        Debug.Log("Valor del slider guardado a " + musicSlider.value);
+        
     }
 }

@@ -31,7 +31,9 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         musicSource.clip = bgMusic;
+        musicSource.volume = PlayerPrefs.GetFloat("SliderValue", 1);
         musicSource.Play(); 
+        
     }
 
     // Update is called once per frame
