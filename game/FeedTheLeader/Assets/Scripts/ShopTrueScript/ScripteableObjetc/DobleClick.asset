@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f0cfd3d8fd1d542984c7eb6a8368ae, type: 3}
-  m_Name: TripleClick
+  m_Script: {fileID: 11500000, guid: b056b96976f35f44d955822a1ec4f312, type: 3}
+  m_Name: DobleClick
   m_EditorClassIdentifier: 
-  title: TripleClick
-  description: Cada uno de tus clicks, vale triple
-  baseCost: 2000
+  title: DobleClick
+  price: 200
