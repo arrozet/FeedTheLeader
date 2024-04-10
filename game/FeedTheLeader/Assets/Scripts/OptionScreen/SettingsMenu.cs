@@ -12,8 +12,9 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    
-    public AudioMixer audioMixer;
+    [Header("Audio")]
+    public AudioMixer musicMixer;
+    [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown;
     
 
@@ -69,10 +70,11 @@ public class SettingsMenu : MonoBehaviour
         
 }
 
-    public void SetVolume (float volume)
+    public void SetVolume (float sliderVolume)
     {
         // cambio el volumen del audioMixer al del slider
-        audioMixer.SetFloat("MasterVolume", volume);
+        // como el sonido es logaritmo, debo aplicar la func logaritmo
+        musicMixer.SetFloat("MusicVolume", Mathf.Log10(sliderVolume) * 20);
     }
     
     // Comentado porque ahora mismo no es necesario tener un desplegable para elegir la calidad
