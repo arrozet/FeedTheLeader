@@ -79,7 +79,7 @@ public class SettingsMenu : MonoBehaviour
     public void SetVolume(float sliderVolume)
     {
         // cambio el volumen del audioMixer al del slider
-        // como el sonido es logaritmo, debo aplicar la func logaritmo
+        // como el sonido es logaritmico, debo aplicar la func logaritmo
         musicMixer.SetFloat("MusicVolume", Mathf.Log10(sliderVolume) * 20);
     }
 

@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
+// Author: Rubén
 public class AudioManager : MonoBehaviour
-{
+{ 
+    [Header("Audio Mixer")]
+    public AudioMixer musicMixer;
+
     [Header("Audio source")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource effectsSource;
@@ -31,7 +36,8 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         musicSource.clip = bgMusic;
-        musicSource.volume = PlayerPrefs.GetFloat("SliderValue", 1);
+        float sliderValue = PlayerPrefs.GetFloat("SliderValue", 1);
+        musicMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         musicSource.Play(); 
         
     }
