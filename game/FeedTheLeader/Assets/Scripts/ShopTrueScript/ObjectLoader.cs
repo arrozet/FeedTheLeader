@@ -1,10 +1,17 @@
 //Author:ROZ
 
+// AVISO A NAVEGANTES: para que se carguen los archivos del .csv, antes se debe de ejecutar en el editor. Desde la build directamente no funciona
+// De ahí los if UNITY_EDITOR
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using UnityEditor;    // para poder hacer input output con ficheros
+using System.IO;    // para poder hacer input output con ficheros
+
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
 
 public class ObjectLoader : MonoBehaviour
 {
@@ -19,37 +26,38 @@ public class ObjectLoader : MonoBehaviour
 
     void LoadShop()
     {
-        if (File.Exists(filePath))
-        {
-            using (StreamReader reader = new StreamReader(filePath))
+        #if UNITY_EDITOR
+            //some code here that uses something from the UnityEditor namespace
+
+            if (File.Exists(filePath))
             {
-                while (!reader.EndOfStream)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string line = reader.ReadLine();
-                    string[] parts = line.Split(';');   // divido por cada ;
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        string[] parts = line.Split(';');   // divido por cada ;
                     
-                    // relleno el objeto con los datos pertinentes
-                    item = ScriptableObject.CreateInstance<ShopItemScripteableObject>();
-                    item.name = parts[0];
-                    item.title = parts[0];
-                    item.price = int.Parse(parts[1]);
+                        // relleno el objeto con los datos pertinentes
+                        item = ScriptableObject.CreateInstance<ShopItemScripteableObject>();
+                        item.name = parts[0];
+                        item.title = parts[0];
+                        item.price = int.Parse(parts[1]);
 
-                    // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
-                    string assetPath = "Assets/Scripts/ShopTrueScript/ScripteableObjetc/" + item.name + ".asset";
-                    AssetDatabase.CreateAsset(item, assetPath);
-                    AssetDatabase.SaveAssets();
+                        // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
+                        string assetPath = "Assets/Scripts/ShopTrueScript/ScripteableObjetc/" + item.name + ".asset";
+                    
+                        AssetDatabase.CreateAsset(item, assetPath);
+                        AssetDatabase.SaveAssets();
 
+                    }
                 }
             }
-                
-
-                
-        }
-        else
-        {
-            Debug.LogError("El archivo no existe en la ruta especificada: " + filePath);
-        }
-        
+            else
+            {
+                Debug.LogError("El archivo no existe en la ruta especificada: " + filePath);
+            }
+    #endif
     }
-    
+
 }

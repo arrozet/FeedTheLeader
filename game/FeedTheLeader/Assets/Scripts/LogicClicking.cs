@@ -23,4 +23,15 @@ public class LogicClicking : MonoBehaviour
     {
         SceneManager.LoadScene("Shop");
     }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
+
+    public void ResetPoints()
+    {
+        // Llama a la función para resetear los puntos en el GameManager
+        ControladorPuntos.Instance.ResetPoints();
+    }
 }
