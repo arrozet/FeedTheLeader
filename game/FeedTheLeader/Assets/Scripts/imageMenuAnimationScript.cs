@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor.Animations;
 
 public class imageMenuAnimationScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class imageMenuAnimationScript : MonoBehaviour
     public Sprite smile;
     private bool sonriendo = false;
     private float stamp = 0f;
+    public Animator estrella;
 
     // Start is called before the first frame update
     void Start()
@@ -34,13 +36,26 @@ public class imageMenuAnimationScript : MonoBehaviour
             {
                 sonriendo = false;
                 imagen.sprite = normal;
+                StartCoroutine(PlayDesaparecer());
             }
             else
             {
                 sonriendo = true;
                 imagen.sprite = smile;
+                StartCoroutine(PlayAparecer());
             }
             stamp = timer;
         }
+    }
+
+    IEnumerator PlayAparecer()
+    {
+        estrella.Play("aparece");
+        yield return new WaitForSeconds(estrella.GetCurrentAnimatorStateInfo(0).length);
+    }
+
+    IEnumerator PlayDesaparecer()
+    {
+        yield return new WaitForSeconds(estrella.GetCurrentAnimatorStateInfo(0).length);
     }
 }
