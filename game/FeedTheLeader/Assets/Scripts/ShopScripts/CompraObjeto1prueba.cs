@@ -8,18 +8,18 @@ public class CompraObjeto1prueba : MonoBehaviour
 {
     public void compra()
     {
-        if (ControladorPuntos.Instance.RestarPuntos(100))
+        if (PointsManager.Instance.RestarPuntos(100))
         {
-            ControladorPuntos.Instance.multiplicarMultiplicador(2);
+            PointsManager.Instance.multiplicarMultiplicador(2);
         }
     }
 
     // Rubén: (testing) para meterte puntos gratis
     public void puntosGratis()
     {
-        if (ControladorPuntos.Instance.RestarPuntos(0))
+        if (PointsManager.Instance.RestarPuntos(0))
         {
-            ControladorPuntos.Instance.SumarPuntos(5000);
+            PointsManager.Instance.SumarPuntos(5000);
         }
     }
     

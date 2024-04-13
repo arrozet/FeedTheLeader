@@ -2979,7 +2979,7 @@ GameObject:
   - component: {fileID: 1343423558}
   - component: {fileID: 1343423559}
   m_Layer: 0
-  m_Name: Suma
+  m_Name: Add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

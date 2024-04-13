@@ -22,7 +22,7 @@ public class ClickingScript : MonoBehaviour
     void Start()
     {
 
-        ControladorPuntos.Instance.comienzo();
+        PointsManager.Instance.comienzo();
 
         
 
@@ -30,11 +30,11 @@ public class ClickingScript : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = ControladorPuntos.Instance.currentScore.ToString();
+        scoreText.text = PointsManager.Instance.currentScore.ToString();
     }
 
     public void click()
     {
-        ControladorPuntos.Instance.SumarPuntos(ControladorPuntos.Instance.scoreUp);
+        PointsManager.Instance.SumarPuntos(PointsManager.Instance.scoreUp);
     }
 }

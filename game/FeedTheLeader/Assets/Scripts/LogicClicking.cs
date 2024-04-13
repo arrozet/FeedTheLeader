@@ -32,6 +32,6 @@ public class LogicClicking : MonoBehaviour
     public void ResetPoints()
     {
         // Llama a la función para resetear los puntos en el GameManager
-        ControladorPuntos.Instance.ResetPoints();
+        PointsManager.Instance.ResetPoints();
     }
 }

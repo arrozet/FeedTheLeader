@@ -35,7 +35,7 @@ public class ShopManagerScript : MonoBehaviour
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
-            if (ControladorPuntos.Instance.getPuntos() >= shopItemsSO[i].price)
+            if (PointsManager.Instance.getPuntos() >= shopItemsSO[i].price)
             {
                 myPurchaseBtns[i].interactable = true;
             }
@@ -47,9 +47,9 @@ public class ShopManagerScript : MonoBehaviour
     }
     public void PurchaseItem(int btnNo) // simplemente resta, y comporueba que boton se ha pulsado para poder restarle el precio y dar el efecto a dicho boton
     {
-        if (ControladorPuntos.Instance.getPuntos() >= shopItemsSO[btnNo].price)
+        if (PointsManager.Instance.getPuntos() >= shopItemsSO[btnNo].price)
         {
-            ControladorPuntos.Instance.RestarPuntos(shopItemsSO[btnNo].price);
+            PointsManager.Instance.RestarPuntos(shopItemsSO[btnNo].price);
             efecto(btnNo);
         }   
     }
@@ -69,10 +69,10 @@ public class ShopManagerScript : MonoBehaviour
     {
         if(btnNo == 0)
         {
-            ControladorPuntos.Instance.multiplicarMultiplicador(2);
+            PointsManager.Instance.multiplicarMultiplicador(2);
         } else if(btnNo == 1)
         {
-            ControladorPuntos.Instance.multiplicarMultiplicador(3);
+            PointsManager.Instance.multiplicarMultiplicador(3);
         }
     }
 }

@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
-public class ControladorPuntos : MonoBehaviour, IDataPersistence
+public class PointsManager : MonoBehaviour, IDataPersistence
 {
-    public static ControladorPuntos Instance;
+    public static PointsManager Instance;
     public float currentScore;
     public float scoreUp;// no se que es serializefield
     // Start is called before the first frame update
@@ -27,9 +27,9 @@ public class ControladorPuntos : MonoBehaviour, IDataPersistence
     public void Awake()
     { 
         // esto es de un tutorial, es para que no destruya el objeto entre escenas
-        if(ControladorPuntos.Instance == null)
+        if(PointsManager.Instance == null)
         {
-            ControladorPuntos.Instance = this;
+            PointsManager.Instance = this;
             DontDestroyOnLoad(this.gameObject);
         } else
         {

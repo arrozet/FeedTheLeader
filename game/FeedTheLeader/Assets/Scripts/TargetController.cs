@@ -20,7 +20,7 @@ public class TargetController : MonoBehaviour
     void AppearRandomly()
     {
         // Generamos una posición aleatoria dentro de la pantalla
-        Vector3 randomPosition = new Vector3(Random.Range(20f, 1900f), Random.Range(20f, 1060f), 0f);
+        Vector3 randomPosition = new Vector3(Random.Range(30f, 1260f), Random.Range(30f, 1050f), 0f);
         transform.position = randomPosition; // Establecemos la posición del objetivo
         clicked = false;
 
