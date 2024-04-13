@@ -36,26 +36,18 @@ public class imageMenuAnimationScript : MonoBehaviour
             {
                 sonriendo = false;
                 imagen.sprite = normal;
-                StartCoroutine(PlayDesaparecer());
             }
             else
             {
                 sonriendo = true;
                 imagen.sprite = smile;
-                StartCoroutine(PlayAparecer());
+                estrella.Play("aparece");
             }
             stamp = timer;
         }
     }
 
-    IEnumerator PlayAparecer()
-    {
-        estrella.Play("aparece");
-        yield return new WaitForSeconds(estrella.GetCurrentAnimatorStateInfo(0).length);
-    }
 
-    IEnumerator PlayDesaparecer()
-    {
-        yield return new WaitForSeconds(estrella.GetCurrentAnimatorStateInfo(0).length);
-    }
+        
+        
 }
