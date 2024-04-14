@@ -16,7 +16,7 @@ using System.IO;    // para poder hacer input output con ficheros
 public class ObjectLoader : MonoBehaviour
 {
     // cuidadito con mostrar esto en el editor, se me bugueó y el valor mostrado era distinto al escrito aquí y no compilaba
-    private string filePath = "Assets/Resources/test.csv";   // ruta del archivo
+    private string filePath = "Assets/Resources/generators.csv";   // ruta del archivo
     ShopItemScripteableObject item; // tipo de item a cargar
 
     void Start()
@@ -33,6 +33,7 @@ public class ObjectLoader : MonoBehaviour
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
+                    reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
@@ -45,13 +46,22 @@ public class ObjectLoader : MonoBehaviour
                         item.price = int.Parse(parts[1]);
 
                         // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
-                        string assetPath = "Assets/Scripts/ShopTrueScript/ScripteableObjetc/" + item.name + ".asset";
-                    
+                        string assetPath = "Assets/Scripts/ShopTrueScript/ScripteableObjetc/";  // donde se va a guardar los items. cuidadin con donde se pone
+                        string addItem = item.name + ".asset";  // para añadir el item
+
+                        // por si no existe el directorio
+                        if (!Directory.Exists(assetPath))
+                        {
+                            Directory.CreateDirectory(assetPath);
+                        }
+
+                        assetPath += addItem;   // actualizo el directorio para que se cree ok
                         AssetDatabase.CreateAsset(item, assetPath);
                         AssetDatabase.SaveAssets();
 
                     }
                 }
+                Debug.Log("Loaded shop succesfully");
             }
             else
             {
