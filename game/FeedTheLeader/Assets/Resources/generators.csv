@@ -1,6 +1,12 @@
-TITLE;PRICE
-Juanma;1000
-Dardo;666
-Joge;8
-Atur;7
-Jeloi;1
+ID;TITLE;DESC;PRICE;UNLOCKED;P/S;N DE ITEMS;SPRITE
+1;Súbdito;;;;;;
+2;Chef;;;;;;
+3;Madre;;;;;;
+4;Restaurante;;;;;;
+5;Huerto;;;;;;
+6;Cementerio;;;;;;
+7;Templo de resurrección;;;;;;
+8;;;;;;;
+9;;;;;;;
+10;;;;;;;
+11;;;;;;;
