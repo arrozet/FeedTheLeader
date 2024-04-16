@@ -715,6 +715,7 @@ MonoBehaviour:
   startScreen: {fileID: 0}
   gameScreen: {fileID: 0}
   optionsScreen: {fileID: 0}
+  statsScreen: {fileID: 0}
 --- !u!1 &345481551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,7 +2201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191306224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 221282962}
+        m_TargetAssemblyTypeName: LogicStartScreenScript, Assembly-CSharp
+        m_MethodName: Estadisticas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1191306224
 MonoBehaviour:
   m_ObjectHideFlags: 0

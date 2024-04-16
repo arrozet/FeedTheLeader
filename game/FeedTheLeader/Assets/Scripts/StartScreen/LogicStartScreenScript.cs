@@ -1,4 +1,5 @@
 //Author: Javi
+//Jorge ha añadido una función
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class LogicStartScreenScript : MonoBehaviour
     public GameObject startScreen;
     public GameObject gameScreen;
     public GameObject optionsScreen;
+    public GameObject statsScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,11 @@ public class LogicStartScreenScript : MonoBehaviour
     public void Opciones() //lleva desde la escena de título a la escena de opciones
     {
         SceneManager.LoadScene("OptionsScreen");
+    }
+
+    public void Estadisticas() //lleva desde la escena de título a la escena de opciones
+    {
+        SceneManager.LoadScene("StatsScreen");
     }
 
     public void Salir() //cierra el juego
