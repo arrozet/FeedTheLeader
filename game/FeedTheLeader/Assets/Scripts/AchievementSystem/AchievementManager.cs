@@ -19,6 +19,11 @@ public class AchievementManager : MonoBehaviour
         SaveAchievements();
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void LoadAchievements()
     {
         achievements = achievementLoader.LoadAchievements();
