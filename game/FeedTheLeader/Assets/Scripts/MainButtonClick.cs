@@ -21,10 +21,8 @@ public class ClickingScript : MonoBehaviour
 
     void Start()
     {
-
+        StatsManager.Instance.Empieza();
         PointsManager.Instance.comienzo();
-
-        
 
     }
 
@@ -36,5 +34,6 @@ public class ClickingScript : MonoBehaviour
     public void click()
     {
         PointsManager.Instance.SumarPuntos(PointsManager.Instance.scoreUp);
+        StatsManager.Instance.UpdateStats(PointsManager.Instance.scoreUp, 0, 0);
     }
 }
