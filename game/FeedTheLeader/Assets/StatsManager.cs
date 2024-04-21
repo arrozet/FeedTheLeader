@@ -5,15 +5,54 @@ using TMPro;
 
 public class StatsManager : MonoBehaviour
 {
-    public TMP_Text AccumulatedPoints;
-    public TMP_Text PointsPerSecond;
-    public TMP_Text PointsPerClick;
+
+    private float AccumulatedPoints;
+    private float PointsPerSecond;
+    private int PointsPerClick;
+    
+
+    public static StatsManager Instance;
+
+    // Otros atributos y métodos...
+
+    public void Empieza()
+    {
+        UpdateStats(0, 0, 0);
+    }
+
+    private void Awake()
+    {
+        if (StatsManager.Instance == null)
+        {
+            StatsManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject); // Para que el objeto persista entre escenas
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Método para actualizar las estadísticas
-    public void UpdateStats(int acumulados, float porSegundo, int porClick)
+    public void UpdateStats(float acumulados, float porSegundo, int porClick)
     {
-        AccumulatedPoints.text = "Puntos acumulados: " + acumulados.ToString();
-        PointsPerSecond.text = "Puntos por segundo: " + porSegundo.ToString("F2"); //Formatea a dos decimales
-        PointsPerClick.text = "Puntos por clic: " + porClick.ToString();
+        AccumulatedPoints += acumulados;
+        PointsPerSecond += porSegundo;
+        PointsPerClick += porClick;
+    }
+
+    public float getAccumulatedPoints()
+    {
+        return AccumulatedPoints;
+    }
+
+    public float getPointsPerSecond()
+    {
+        return PointsPerSecond;
+    }
+
+    public int getPointsPerClick()
+    {
+        return PointsPerClick;
     }
 }
