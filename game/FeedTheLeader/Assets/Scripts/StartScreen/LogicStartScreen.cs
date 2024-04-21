@@ -5,12 +5,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LogicStartScreenScript : MonoBehaviour
+public class LogicStartScreen : MonoBehaviour
 {
-    public GameObject startScreen;
-    public GameObject gameScreen;
-    public GameObject optionsScreen;
-    public GameObject statsScreen;
+    private AudioManager audioManager;
+
+    private void OnEnable()
+    {
+        // Buscar el AudioManager en la escena
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,5 +45,20 @@ public class LogicStartScreenScript : MonoBehaviour
     public void Salir() //cierra el juego
     {
         Application.Quit();
+    }
+
+    // Método para llamar al efecto de sonido cuando se presiona el botón (se necesita porque sino pierde la referencia)
+    public void PlayRandomClickingEffect()
+    {
+        // Verificar si se encontró el AudioManager
+        if (audioManager != null)
+        {
+            // Llamar al método para reproducir el efecto de sonido
+            audioManager.playRandomClickingEffect();
+        }
+        else
+        {
+            Debug.LogError("No se encontró el AudioManager.");
+        }
     }
 }
