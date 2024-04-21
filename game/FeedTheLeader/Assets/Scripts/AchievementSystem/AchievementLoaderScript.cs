@@ -24,9 +24,10 @@ public class AchievementLoaderScript : MonoBehaviour
 
     public List<Achievement> LoadAchievements()
     {
+        List<Achievement> listAchievements = new List<Achievement>();
 #if UNITY_EDITOR
         //some code here that uses something from the UnityEditor namespace
-        List<Achievement> list = new List<Achievement>();
+
         if (File.Exists(filePath))
         {
             using (StreamReader reader = new StreamReader(filePath))
@@ -59,7 +60,7 @@ public class AchievementLoaderScript : MonoBehaviour
                     assetPath += addItem;   // actualizo el directorio para que se cree ok
                     AssetDatabase.CreateAsset(item, assetPath);
                     AssetDatabase.SaveAssets();
-                    list.Add(item);
+                    listAchievements.Add(item);
                 }
             }
             Debug.Log("Loaded achievements succesfully");
@@ -69,7 +70,7 @@ public class AchievementLoaderScript : MonoBehaviour
             Debug.LogError("El archivo no existe en la ruta especificada: " + filePath);
         }
 #endif
-        return list;
+        return listAchievements;
     }
     
 }

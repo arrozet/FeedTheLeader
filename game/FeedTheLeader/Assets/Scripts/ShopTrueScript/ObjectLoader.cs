@@ -26,6 +26,7 @@ public class ObjectLoader : MonoBehaviour
 
     void LoadShop()
     {
+        /*
         #if UNITY_EDITOR
             //some code here that uses something from the UnityEditor namespace
 
@@ -68,6 +69,8 @@ public class ObjectLoader : MonoBehaviour
                 Debug.LogError("El archivo no existe en la ruta especificada: " + filePath);
             }
     #endif
+        */
     }
+
 
 }
