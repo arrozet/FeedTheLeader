@@ -8,9 +8,10 @@ public class GameData
 {
     public double currentScore;
     public double scoreUp;
+    public Dictionary<string, int> shopData;
 
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
-    //Será necesario añadir en un futuro algo que guarde las mejoras de la tienda
+    //Serï¿½ necesario aï¿½adir en un futuro algo que guarde las mejoras de la tienda
     public GameData()
     {
         this.currentScore = 0;
