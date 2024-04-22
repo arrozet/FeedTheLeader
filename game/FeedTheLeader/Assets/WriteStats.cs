@@ -11,6 +11,7 @@ public class WriteStats : MonoBehaviour
     public TMP_Text PointsPerClick;
 
     private double puntos;
+    private double pps;
 
     /*Pasos:
      -Creas un  public TMP_Text con el nombre que le quieras dar
@@ -30,8 +31,9 @@ public class WriteStats : MonoBehaviour
     public void Update()
     {
         puntos = PointsManager.Instance.getAccumulatedScore();
+        pps = PointsManager.Instance.getPointsPerSecond();
         AccumulatedPoints.text = "Puntos acumulados: " + puntos;
-        //PointsPerSecond.text = "Puntos por segundo: " + StatsManager.Instance.getPointsPerSecond();
+        PointsPerSecond.text = "Puntos por segundo: " + pps;
         //PointsPerClick.text = "Puntos por clic: " + StatsManager.Instance.getPointsPerClick();
     }
 

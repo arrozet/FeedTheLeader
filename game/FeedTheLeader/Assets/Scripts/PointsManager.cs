@@ -11,7 +11,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public static PointsManager Instance;
     public double currentScore;
     public double scoreUp;// no se que es serializefield
-    public double accumulatedScore;
+    public double accumulatedScoreStat;
+    public double pointPerSecondStat;
     public double PointsPerSecond;
     private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
@@ -64,11 +65,12 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public void SumarPuntos(double puntos)
     {
         currentScore += puntos;
-        accumulatedScore += puntos;
+        accumulatedScoreStat += puntos;
     }
     public void AddPPs(double puntos)
     {
         PointsPerSecond += puntos;
+        pointPerSecondStat += puntos;
     }
 
     public void multiplicarMultiplicador(double num)
@@ -91,7 +93,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         currentScore = 0; // Restablece los puntos a cero
         scoreUp = 1; // Restablece multiplicador a uno
-        accumulatedScore = 0;
+        accumulatedScoreStat = 0;
     }
 
     public double getPuntos()
@@ -101,8 +103,14 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public double getAccumulatedScore()
     {
-        return accumulatedScore;
+        return accumulatedScoreStat;
     }
+
+    public double getPointsPerSecond()
+    {
+        return pointPerSecondStat;
+    }
+
     public void AddAlot()
     {
         currentScore += 5000;
