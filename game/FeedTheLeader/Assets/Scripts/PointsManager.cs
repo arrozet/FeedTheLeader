@@ -9,9 +9,11 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PointsManager : MonoBehaviour, IDataPersistence
 {
     public static PointsManager Instance;
-    public float currentScore;
-    public float scoreUp;// no se que es serializefield
-    public float accumulatedScore;
+    public double currentScore;
+    public double scoreUp;// no se que es serializefield
+    public double accumulatedScore;
+    public double PointsPerSecond;
+    private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
 
     public void LoadData(GameData data)
@@ -25,6 +27,20 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.currentScore = this.currentScore;
         data.scoreUp = this.scoreUp;
     }
+    void Update()
+    {
+        double pointsThisFrame = PointsPerSecond * Time.deltaTime;
+        pointsAdded += pointsThisFrame;
+        while (pointsAdded >= 1f)
+        {
+            // Subtract 1 point from the total added
+            pointsAdded -= 1f;
+
+            // Increment the total score
+            currentScore++;
+        }
+
+    }
     public void Awake()
     { 
         // esto es de un tutorial, es para que no destruya el objeto entre escenas
@@ -37,6 +53,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
         }
     }
+    
     public void comienzo()
     {
         if(scoreUp == 0)
@@ -44,17 +61,21 @@ public class PointsManager : MonoBehaviour, IDataPersistence
             scoreUp = 1;
         } 
     }
-    public void SumarPuntos(float puntos)
+    public void SumarPuntos(double puntos)
     {
         currentScore += puntos;
         accumulatedScore += puntos;
     }
+    public void AddPPs(double puntos)
+    {
+        PointsPerSecond += puntos;
+    }
 
-    public void multiplicarMultiplicador(float num)
+    public void multiplicarMultiplicador(double num)
     {
         scoreUp *=num;
     }
-    public bool RestarPuntos(float num)
+    public bool RestarPuntos(double num)
     {
         if(currentScore >= num)
         {
@@ -73,12 +94,12 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         accumulatedScore = 0;
     }
 
-    public float getPuntos()
+    public double getPuntos()
     {
         return currentScore;
     }
 
-    public float getAccumulatedScore()
+    public double getAccumulatedScore()
     {
         return accumulatedScore;
     }

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ShopManagerScript : MonoBehaviour
 {
@@ -14,9 +15,12 @@ public class ShopManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {// muestra solamente los paneles que hay en función de los scripteble objects que hemos creado
-        for(int i = 0; i < shopItemsSO.Length; i++)
+        for (int i = 0; i < shopItemsSO.Length; i++)
         {
-            shopPanelsSO[i].SetActive(true);
+            if (shopItemsSO[i].unlocked == true) // si no esta desbloqueado el objeto, no lo muestra
+            {
+                shopPanelsSO[i].SetActive(true);
+            }
         }
 
         loadPanels();
@@ -31,7 +35,7 @@ public class ShopManagerScript : MonoBehaviour
         // a ver en verdad, la cosa esque si lo ponemos cada vez que sume o reste puntos, como va a llegar un punto en el que se cosigan muchisimos, diria que da igual dejarlo así
     }
     public void CheckPurchaseable() // esto hace que no se pueda pulsar el boton 
-        // si no tienes suficiente dinero para comprar el objeto
+                                    // si no tienes suficiente dinero para comprar el objeto
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
@@ -50,29 +54,41 @@ public class ShopManagerScript : MonoBehaviour
         if (PointsManager.Instance.getPuntos() >= shopItemsSO[btnNo].price)
         {
             PointsManager.Instance.RestarPuntos(shopItemsSO[btnNo].price);
-            efecto(btnNo);
-        }   
+            shopItemsSO[btnNo].amount++;
+            shopItemsSO[btnNo].price = Math.Round(shopItemsSO[btnNo].basePrice * Math.Pow(1.15, shopItemsSO[btnNo].amount)); // voy a usar la formula que utiliza cookie clicker para calcular el precio 
+            PointsManager.Instance.AddPPs(shopItemsSO[btnNo].pointsPerSecond); // simplemente añade los puntos por segundo
+            loadPanels(); // tengo que actualizar los paneles
+            if (shopItemsSO[btnNo + 1].unlocked == false) // si el siguiente objeto no esta desbloqueado lo desbloquea
+            {
+                shopItemsSO[btnNo + 1].unlocked = true; // lo desbloquea para cuando vuelvas a abrir el juego
+                shopPanelsSO[btnNo + 1].SetActive(true); // muestra el objeto en pantalla
+            }
+        }
     }
 
 
     public void loadPanels() // esto carga los paneles:
-        // realmente lo que tengo es una lista de paneles ocultos (que se activan con el primer for del STart())
-        // esta función asigna a cada panel, el nombre y el objeto de los Scripteable Objects que tenemos
+                             // realmente lo que tengo es una lista de paneles ocultos (que se activan con el primer for del STart())
+                             // esta función asigna a cada panel, el nombre y el objeto de los Scripteable Objects que tenemos
     {
-        for (int i = 0; i <shopItemsSO.Length; i++)
+        for (int i = 0; i < shopItemsSO.Length; i++)
         {
             shopPanels[i].titleText.text = shopItemsSO[i].title;
             shopPanels[i].priceText.text = shopItemsSO[i].price.ToString();
+            shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
         }
     }
-    public void efecto(int btnNo) // cada boton tiene un efecto
+    public void resetItems()
     {
-        if(btnNo == 0)
-        {
-            PointsManager.Instance.multiplicarMultiplicador(2);
-        } else if(btnNo == 1)
-        {
-            PointsManager.Instance.multiplicarMultiplicador(3);
+        for(int i = 0; i<shopItemsSO.Length; i++) {
+            shopItemsSO[i].amount = 0;
+            shopItemsSO[i].price = shopItemsSO[i].basePrice;
+            if (i != 0)
+            {
+                shopItemsSO[i].unlocked = false;
+                shopPanelsSO[i].SetActive(false);
+            } 
         }
+        loadPanels();
     }
 }

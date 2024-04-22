@@ -6,8 +6,8 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public float currentScore;
-    public float scoreUp;
+    public double currentScore;
+    public double scoreUp;
 
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
     //Será necesario añadir en un futuro algo que guarde las mejoras de la tienda

@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b056b96976f35f44d955822a1ec4f312, type: 3}
-  m_Name: Dardo
+  m_Name: "2 Cafeter\xEDa"
   m_EditorClassIdentifier: 
-  title: Dardo
-  price: 666
+  id: 2
+  title: "Cafeter\xEDa"
+  description: 
+  price: 1100
+  basePrice: 1100
+  amount: 0
+  pointsPerSecond: 8
+  unlocked: 0

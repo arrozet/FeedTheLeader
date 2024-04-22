@@ -10,7 +10,7 @@ public class WriteStats : MonoBehaviour
     public TMP_Text PointsPerSecond;
     public TMP_Text PointsPerClick;
 
-    private float puntos;
+    private double puntos;
 
     /*Pasos:
      -Creas un  public TMP_Text con el nombre que le quieras dar
