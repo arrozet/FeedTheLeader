@@ -17,7 +17,7 @@ using UnityEditor;
 public class AchievementLoaderScript : MonoBehaviour
 {
     // cuidadito con mostrar esto en el editor, se me bugueó y el valor mostrado era distinto al escrito aquí y no compilaba
-    private string filePath = "Assets/Resources/achievements.csv";   // ruta del archivo
+    private string filePath = "Assets/Resources/achievements_default.csv";   // ruta del archivo
     Achievement item; // tipo de item a cargar
 
 
@@ -40,9 +40,9 @@ public class AchievementLoaderScript : MonoBehaviour
 
                     // relleno el objeto con los datos pertinentes
                     item = ScriptableObject.CreateInstance<Achievement>();
-                    item.name = parts[0];
-                    item.title = parts[0];
-                    item.id = int.Parse(parts[1]);
+                    item.id = int.Parse(parts[0]);
+                    item.name = parts[1];
+                    item.title = parts[1];
                     item.description = parts[2];
                     item.condition = int.Parse(parts[3]);
                     item.unlocked = bool.Parse(parts[4]);

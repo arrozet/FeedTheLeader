@@ -20,11 +20,11 @@ public class ObjectLoader : MonoBehaviour
     // cuidadito con mostrar esto en el editor, se me bugueó y el valor mostrado era distinto al escrito aquí y no compilaba
     
     //SHOP
-    private string filePathGenerator = "Assets/Resources/generators.csv";   // ruta del archivo
+    private string filePathGenerator = "Assets/Resources/generators_default.csv";   // ruta del archivo
     ShopItemScripteableObject generatorItem; // tipo de item a cargar
 
     //ACHIEVEMENTS
-    private string filePathAchievement = "Assets/Resources/achievements.csv";   // ruta del archivo
+    private string filePathAchievement = "Assets/Resources/achievements_default.csv";   // ruta del archivo
     Achievement achievementItem; // tipo de item a cargar
 
     void Start()
@@ -105,9 +105,9 @@ public class ObjectLoader : MonoBehaviour
 
                     // relleno el objeto con los datos pertinentes
                     achievementItem = ScriptableObject.CreateInstance<Achievement>();
-                    achievementItem.name = parts[0];
-                    achievementItem.title = parts[0];
-                    achievementItem.id = int.Parse(parts[1]);
+                    achievementItem.id = int.Parse(parts[0]);
+                    achievementItem.name = parts[1];
+                    achievementItem.title = parts[1];
                     achievementItem.description = parts[2];
                     achievementItem.condition = int.Parse(parts[3]);
                     achievementItem.unlocked = bool.Parse(parts[4]);
