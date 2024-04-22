@@ -16,12 +16,7 @@ public class LogicClicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    public void Tienda()
-    {
-        SceneManager.LoadScene("Shop");
     }
 
     public void Back()

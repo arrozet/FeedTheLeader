@@ -34,7 +34,7 @@ public class ObjectLoader : MonoBehaviour
         LoadAchievements();
         */
     }
-
+    
     void LoadShop()
     {
         
@@ -82,6 +82,7 @@ public class ObjectLoader : MonoBehaviour
     #endif
         
     }
+    
 
     //Author:Eduardo, modificación de ObjectLoader.cs de Rubén. Los comentarios del script original se mantendrán en la mayoría de lo posible
     //Mod:ROZ
@@ -138,5 +139,5 @@ public class ObjectLoader : MonoBehaviour
         return listAchievements;
     }
     
-
+    
 }

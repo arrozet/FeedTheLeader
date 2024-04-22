@@ -8,18 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScreen.unity
     guid: aac747a293b004c48923e04fbe16a353
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/OptionsScreen.unity
     guid: a884c7f46828da44eb4a9c4304e10ef4
   - enabled: 1
     path: Assets/Scenes/ClickingScreen.unity
     guid: 471a031ff206ce44cbe06c201b7a6f47
-  - enabled: 1
-    path: Assets/Scenes/Shop.unity
-    guid: 3712b6a1ce4245c48b5f44dd2076a1a5
   - enabled: 1
     path: Assets/Scenes/StatsScreen.unity
     guid: c777b4c4cbce92c4f800576d8c49a5b0

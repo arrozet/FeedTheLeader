@@ -103,5 +103,9 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         return accumulatedScore;
     }
+    public void AddAlot()
+    {
+        currentScore += 5000;
+    }
 
 }
