@@ -3140,6 +3140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScore: 0
   scoreUp: 0
+  accumulatedScore: 0
 --- !u!4 &1351391739
 Transform:
   m_ObjectHideFlags: 0

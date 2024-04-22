@@ -14,11 +14,12 @@ using UnityEngine.UIElements;
 public class SettingsMenu : MonoBehaviour
 {
     [Header("Audio")]
-    public AudioMixer musicMixer;
+    public AudioMixer mainMixer;
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown;
     [Header("Slider Música")]
     public UnityEngine.UI.Slider musicSlider;
+    public UnityEngine.UI.Slider effectsSlider;
 
 
     List<Resolution> resolutions = new List<Resolution>();
@@ -28,12 +29,16 @@ public class SettingsMenu : MonoBehaviour
 
     private void Start()
     {
+        getResolutions();
+        musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue", 1f);
+        effectsSlider.value = PlayerPrefs.GetFloat("EffectsSliderValue", 1f);
+    }
+
+    public void getResolutions()
+    {
         width = Screen.currentResolution.width;
         height = Screen.currentResolution.height;
         refreshRate = Screen.currentResolution.refreshRateRatio;
-        musicSlider.value = PlayerPrefs.GetFloat("SliderValue", 1);
-        
-
 
         // busco las resoluciones que el pc tiene a nuestra disposición, solo las de mi refreshRate
         foreach (Resolution res in Screen.resolutions)
@@ -62,9 +67,6 @@ public class SettingsMenu : MonoBehaviour
             {
                 currentResolutionIndex = i; // va con indices pq los dropdowns van con indices
             }
-
-
-
         }
 
         // las añado a las opciones del dropdown
@@ -73,22 +75,21 @@ public class SettingsMenu : MonoBehaviour
         // pongo mi resolución automáticamente (en el dropDown)
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
-
     }
 
-    public void SetVolume(float sliderVolume)
+    public void SetMusicVolume(float sliderVolume)
     {
-        // cambio el volumen del audioMixer al del slider
+        // cambio el volumen del volumen de la música al del slider
         // como el sonido es logaritmico, debo aplicar la func logaritmo
-        musicMixer.SetFloat("MusicVolume", Mathf.Log10(sliderVolume) * 20);
+        mainMixer.SetFloat("MusicVolume", Mathf.Log10(sliderVolume) * 20);
     }
 
-    // Comentado porque ahora mismo no es necesario tener un desplegable para elegir la calidad
-    /*public void setQuality(int qualityIndex)
+    public void SetEffectsVolume(float sliderVolume)
     {
-        QualitySettings.SetQualityLevel(qualityIndex);
+        // cambio el volumen del volumen de la música al del slider
+        // como el sonido es logaritmico, debo aplicar la func logaritmo
+        mainMixer.SetFloat("EffectsVolume", Mathf.Log10(sliderVolume) * 20);
     }
-    */
 
     public void SetFullscreen(bool fullScreen)
     {
@@ -107,7 +108,14 @@ public class SettingsMenu : MonoBehaviour
     //Parte de guardado: Edu
     private void OnDestroy()
     {
-        PlayerPrefs.SetFloat("SliderValue", musicSlider.value);
-        
+        PlayerPrefs.SetFloat("MusicSliderValue", musicSlider.value);
+        PlayerPrefs.SetFloat("EffectsSliderValue", effectsSlider.value);
     }
+
+    // Comentado porque ahora mismo no es necesario tener un desplegable para elegir la calidad
+    /*public void setQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+    */
 }

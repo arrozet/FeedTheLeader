@@ -11,6 +11,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public static PointsManager Instance;
     public float currentScore;
     public float scoreUp;// no se que es serializefield
+    public float accumulatedScore;
     // Start is called before the first frame update
 
     public void LoadData(GameData data)
@@ -46,6 +47,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public void SumarPuntos(float puntos)
     {
         currentScore += puntos;
+        accumulatedScore += puntos;
     }
 
     public void multiplicarMultiplicador(float num)
@@ -68,11 +70,17 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         currentScore = 0; // Restablece los puntos a cero
         scoreUp = 1; // Restablece multiplicador a uno
+        accumulatedScore = 0;
     }
 
     public float getPuntos()
     {
         return currentScore;
+    }
+
+    public float getAccumulatedScore()
+    {
+        return accumulatedScore;
     }
 
 }
