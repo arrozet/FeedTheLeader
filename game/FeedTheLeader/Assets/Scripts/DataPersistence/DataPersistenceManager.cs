@@ -56,7 +56,7 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("No se encontraron datos. Inicializando datos por defecto.");
             NewGame();
         }
-        //POR HACER: ENVIAR DATOS A TODOS LOS SCRIPTS QUE LOS USEN
+        
         foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.LoadData(gameData);
@@ -66,7 +66,7 @@ public class DataPersistenceManager : MonoBehaviour
     
     public void SaveGame()
     {
-        //POR HACER: ENVIAR DATOS A LOS SCRIPTS PARA QUE ACTUALICEN
+        
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(ref gameData);

@@ -3,6 +3,7 @@
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class AchievementManager : MonoBehaviour
 {
@@ -11,38 +12,20 @@ public class AchievementManager : MonoBehaviour
 
     void Start()
     {
-        LoadAchievements();
+        achievements = findAllAchievements();
     }
 
-    void OnApplicationQuit()
-    {
-        SaveAchievements();
-    }
+    
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
 
-    void LoadAchievements()
-    {
-        achievements = achievementLoader.LoadAchievements();
-    }
+    
 
-
-    /*No tengo ni idea de si esto es necesario o no, falta por completarse puesto que esto solo escribe en un string lo que tiene que salir
-      en el .csv, pero no se carga en el archivo como tal (fácil de hacer pero quiero seguir haciendo pruebas con esto) */
-    void SaveAchievements()
-    {
-        string csv = "nombre,id,descripcion,condicion,desbloqueado\n";
-
-        foreach (Achievement achievement in achievements)
-        {
-            csv += $"{achievement.name},{achievement.id},{achievement.description},{achievement.condition},{achievement.unlocked}\n";
-        }
-
-        // Aquí se debe guardar el contenido de 'csv' en el archivo CSV
-    }
+    
+    
 
     public void CheckAchievements(int condition)
     {
@@ -60,5 +43,12 @@ public class AchievementManager : MonoBehaviour
         achievement.unlocked = true;
         Debug.Log("Achievement unlocked: " + achievement.name);
         // Falta por agregar mensaje de desbloqueo
+    }
+
+    private List<Achievement> findAllAchievements()
+    {
+        IEnumerable<Achievement> achievementsEnum = FindObjectsOfType<Achievement>();
+
+        return new List<Achievement>(achievementsEnum);
     }
 }
