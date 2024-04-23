@@ -13,11 +13,15 @@ public class DataPersistenceManager : MonoBehaviour
     [Header("Use Encryption")]
     [SerializeField] private bool useEncryption;
 
+    [Header("Time between periodic saves")]
+    [SerializeField] private float timeBetweenSaves;
+
 
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
+    private float timePast;
     //se pueden obtener los datos publicamente, solo se podrán modificar dentro de la clase
     public static DataPersistenceManager instance {  get; private set; }
 
@@ -31,6 +35,18 @@ public class DataPersistenceManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        timePast += Time.deltaTime;
+
+        if (timePast >= timeBetweenSaves)
+        {
+            SaveGame();
+
+            timePast = 0;
         }
     }
 
