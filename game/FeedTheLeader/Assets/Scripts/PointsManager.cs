@@ -47,6 +47,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
             // Increment the total score
             currentScore++;
+            accumulatedScoreStat++;
         }
 
     }
@@ -122,6 +123,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public void AddAlot()
     {
         currentScore += 5000;
+        accumulatedScoreStat += 5000;
     }
 
 }

@@ -10,10 +10,11 @@ public class WriteStats : MonoBehaviour
     public TMP_Text AccumulatedPoints;
     public TMP_Text PointsPerSecond;
     public TMP_Text PointsPerClick;
+    public TMP_Text BurgersClicked;
 
     private double puntosActuales;
     private double puntosAcumulados;
-    private double pps;
+    private double puntosPorSegundo;
 
     /*Pasos:
      -Creas un  public TMP_Text con el nombre que le quieras dar
@@ -34,17 +35,20 @@ public class WriteStats : MonoBehaviour
     {
         if(PointsManager.Instance == null)
         {
+            CurrentPoints.text = "Puntos Actuales: No disponibles";
             AccumulatedPoints.text = "Puntos acumulados: No disponibles";
             PointsPerSecond.text = "Puntos por segundo: No disponibles";
+            PointsPerClick.text = "Puntos por clic: No disponibles";
+            BurgersClicked.text = "Hamburguesas por clic: No disponibles";
         }
         else
         {
             puntosActuales = PointsManager.Instance.getPuntos();
             puntosAcumulados = PointsManager.Instance.getAccumulatedScore();
-            pps = PointsManager.Instance.getPointsPerSecond();
+            puntosPorSegundo = PointsManager.Instance.getPointsPerSecond();
             CurrentPoints.text = "Puntos actuales: " + puntosActuales;
             AccumulatedPoints.text = "Puntos acumulados: " + puntosAcumulados;
-            PointsPerSecond.text = "Puntos por segundo: " + pps;
+            PointsPerSecond.text = "Puntos por segundo: " + puntosPorSegundo;
             //PointsPerClick.text = "Puntos por clic: " + StatsManager.Instance.getPointsPerClick();
         }
 
