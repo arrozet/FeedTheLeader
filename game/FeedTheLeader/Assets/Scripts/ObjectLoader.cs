@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;    // para poder hacer input output con ficheros
+using System.Text;  //
 using Unity.VisualScripting;
 
 
@@ -20,7 +21,7 @@ public class ObjectLoader : MonoBehaviour
     // cuidadito con mostrar esto en el editor, se me bugueó y el valor mostrado era distinto al escrito aquí y no compilaba
     
     //SHOP
-    private string filePathGenerator = "Assets/Resources/generators_default.csv";   // ruta del archivo
+    private string filePathGenerator = "Assets/Resources/generators_default-toload.txt";   // ruta del archivo
     ShopItemScripteableObject generatorItem; // tipo de item a cargar
 
     //ACHIEVEMENTS
@@ -29,12 +30,21 @@ public class ObjectLoader : MonoBehaviour
 
     void Start()
     {
-        /*
-        LoadShop();
-        LoadAchievements();
-        */
+        // DESCOMENTA LO QUE QUIERAS CARGAR PARA CARGAR LOS VALORES DEFAULT DE DICHA COSA
+        // COMÉNTALO DESPUÉS. SOLO QUEREMOS QUE SE CARGUE 1 VEZ
+
+        //LoadShop();
+        //LoadAchievements();
+        
     }
-    
+
+    /* El warning que da de 
+    The character with Unicode value \u0085 was not found in the [Inter-Regular SDF] font asset or any potential fallbacks. It was replaced by Unicode character \u25A1.
+    UnityEngine.GUIUtility:ProcessEvent(int, intptr, bool&)
+
+    Es que Unity no sabe interpretar con ese encoding el caracter de "Next Line", el del intro, y lo reemplaza por un caracter vacío
+    */
+
     void LoadShop()
     {
         
@@ -43,7 +53,7 @@ public class ObjectLoader : MonoBehaviour
 
             if (File.Exists(filePathGenerator))
             {
-                using (StreamReader reader = new StreamReader(filePathGenerator))
+                using (StreamReader reader = new StreamReader(filePathGenerator, Encoding.GetEncoding("ISO-8859-1")))
                 {
                     reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
                     while (!reader.EndOfStream)
@@ -53,12 +63,18 @@ public class ObjectLoader : MonoBehaviour
                     
                         // relleno el objeto con los datos pertinentes
                         generatorItem = ScriptableObject.CreateInstance<ShopItemScripteableObject>();
-                        generatorItem.name = parts[0];
-                        generatorItem.title = parts[0];
-                        generatorItem.price = int.Parse(parts[1]);
+                        generatorItem.id = int.Parse(parts[0]);
+                        generatorItem.name = generatorItem.id + "-" + parts[1];
+                        generatorItem.title = parts[1];
+                        generatorItem.description = parts[2];
+                        generatorItem.price = double.Parse(parts[3]);
+                        generatorItem.basePrice = double.Parse(parts[3]);
+                        generatorItem.amount    = int.Parse(parts[5]);
+                        generatorItem.pointsPerSecond = double.Parse(parts[6]);
+                        generatorItem.unlocked = bool.Parse(parts[7]);
 
                         // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
-                        string assetPath = "Assets/Scripts/ShopTrueScript/ScripteableObjetc/";  // donde se va a guardar los items. cuidadin con donde se pone
+                        string assetPath = "Assets/Scripts/Shop/ScripteableObjetc/test/";  // donde se va a guardar los items. cuidadin con donde se pone
                         string addItem = generatorItem.name + ".asset";  // para añadir el item
 
                         // por si no existe el directorio

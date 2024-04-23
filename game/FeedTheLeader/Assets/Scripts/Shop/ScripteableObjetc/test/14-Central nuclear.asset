@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b056b96976f35f44d955822a1ec4f312, type: 3}
+  m_Name: 14-Central nuclear
+  m_EditorClassIdentifier: 
+  id: 14
+  title: Central nuclear
+  description: "Se ha descubierto que los \xE1tomos de plutonio y uranio tienen muuuchas
+    calor\xEDas (1g uranio = 365 millones de calor\xEDas). El l\xEDder ha ordenado
+    la clausura de las actividades de generaci\xF3n energ\xE9tica para su alimentaci\xF3n."
+  price: 2800000000000000
+  basePrice: 2800000000000000
+  amount: 0
+  pointsPerSecond: 21000000000
+  unlocked: 0
+  sprite: {fileID: 0}

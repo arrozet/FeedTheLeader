@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b056b96976f35f44d955822a1ec4f312, type: 3}
+  m_Name: "11-Templo de resurrecci\xF3n"
+  m_EditorClassIdentifier: 
+  id: 11
+  title: "Templo de resurrecci\xF3n"
+  description: "La comunidad cient\xEDfica ha dado con la tecla para revivir seres
+    humanos. Pero no se pueden rejuvenecer... Son un lastre de la sociedad, as\xED
+    que ahora son un plato m\xE1s en la mesa del l\xEDder."
+  price: 2100000000000
+  basePrice: 2100000000000
+  amount: 0
+  pointsPerSecond: 65000000
+  unlocked: 0
+  sprite: {fileID: 0}
