@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class WriteStats : MonoBehaviour
 {
+    public TMP_Text CurrentPoints;
     public TMP_Text AccumulatedPoints;
     public TMP_Text PointsPerSecond;
     public TMP_Text PointsPerClick;
 
-    private double puntos;
+    private double puntosActuales;
+    private double puntosAcumulados;
     private double pps;
 
     /*Pasos:
@@ -30,11 +32,22 @@ public class WriteStats : MonoBehaviour
 
     public void Update()
     {
-        puntos = PointsManager.Instance.getAccumulatedScore();
-        pps = PointsManager.Instance.getPointsPerSecond();
-        AccumulatedPoints.text = "Puntos acumulados: " + puntos;
-        PointsPerSecond.text = "Puntos por segundo: " + pps;
-        //PointsPerClick.text = "Puntos por clic: " + StatsManager.Instance.getPointsPerClick();
+        if(PointsManager.Instance == null)
+        {
+            AccumulatedPoints.text = "Puntos acumulados: No disponibles";
+            PointsPerSecond.text = "Puntos por segundo: No disponibles";
+        }
+        else
+        {
+            puntosActuales = PointsManager.Instance.getPuntos();
+            puntosAcumulados = PointsManager.Instance.getAccumulatedScore();
+            pps = PointsManager.Instance.getPointsPerSecond();
+            CurrentPoints.text = "Puntos actuales: " + puntosActuales;
+            AccumulatedPoints.text = "Puntos acumulados: " + puntosAcumulados;
+            PointsPerSecond.text = "Puntos por segundo: " + pps;
+            //PointsPerClick.text = "Puntos por clic: " + StatsManager.Instance.getPointsPerClick();
+        }
+
     }
 
 }
