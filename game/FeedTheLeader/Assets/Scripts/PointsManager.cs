@@ -33,7 +33,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.scoreUp = this.scoreUp;
         data.accumulatedScoreStat = this.accumulatedScoreStat;
         data.pointPerSecondStat = this.pointPerSecondStat;
-        data.pointsPerSecond = this.PointsPerSecond
+        data.pointsPerSecond = this.PointsPerSecond;
 
     }
     void Update()
