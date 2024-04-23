@@ -350,6 +350,7 @@ MonoBehaviour:
   titleText: {fileID: 8594975453105013596}
   priceText: {fileID: 1110695590640000356}
   amountText: {fileID: 6178032106633879592}
+  spriteImage: {fileID: 4162572458889462771}
 --- !u!1 &4572594663393799845
 GameObject:
   m_ObjectHideFlags: 0

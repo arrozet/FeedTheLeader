@@ -58,10 +58,13 @@ public class ShopManagerScript : MonoBehaviour
             shopItemsSO[btnNo].price = Math.Round(shopItemsSO[btnNo].basePrice * Math.Pow(1.15, shopItemsSO[btnNo].amount)); // voy a usar la formula que utiliza cookie clicker para calcular el precio 
             PointsManager.Instance.AddPPs(shopItemsSO[btnNo].pointsPerSecond); // simplemente añade los puntos por segundo
             loadPanels(); // tengo que actualizar los paneles
-            if (shopItemsSO[btnNo + 1].unlocked == false) // si el siguiente objeto no esta desbloqueado lo desbloquea
+            if (btnNo + 1 != shopItemsSO.Length) // si es el ultimo objeto no lo hace sabes (NULLPOINTER)
             {
-                shopItemsSO[btnNo + 1].unlocked = true; // lo desbloquea para cuando vuelvas a abrir el juego
-                shopPanelsSO[btnNo + 1].SetActive(true); // muestra el objeto en pantalla
+                if (shopItemsSO[btnNo + 1].unlocked == false) // si el siguiente objeto no esta desbloqueado lo desbloquea
+                {
+                    shopItemsSO[btnNo + 1].unlocked = true; // lo desbloquea para cuando vuelvas a abrir el juego
+                    shopPanelsSO[btnNo + 1].SetActive(true); // muestra el objeto en pantalla
+                }
             }
         }
     }
@@ -73,9 +76,10 @@ public class ShopManagerScript : MonoBehaviour
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
-            shopPanels[i].titleText.text = shopItemsSO[i].title;
-            shopPanels[i].priceText.text = shopItemsSO[i].price.ToString();
-            shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
+                shopPanels[i].titleText.text = shopItemsSO[i].title;
+                shopPanels[i].priceText.text = shopItemsSO[i].price.ToString();
+                shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
+                shopPanels[i].spriteImage.sprite = shopItemsSO[i].sprite;           
         }
     }
     public void resetItems()
