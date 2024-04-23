@@ -1,47 +1,55 @@
 //Author: Javi﻿
 
-using UnityEngine ;
-using UnityEngine.UI ;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class SwitchToggle : MonoBehaviour
+{
+    [SerializeField] RectTransform uiHandleRectTransform;
+
+    Image backgroundImage; //imagen fondo boton
+
+    Color backgroundActiveColor; //color cuando activo
+
+    Color backgroundDefaultColor; //color cuando inactivo
+
+    Toggle toggle;
+
+    Vector2 handlePosition; //vector que se usa para cambiar la posición del círculo
+
+    void Awake()
+    {
+        toggle = GetComponent<Toggle>();
+
+        handlePosition = uiHandleRectTransform.anchoredPosition;
+
+        backgroundImage = uiHandleRectTransform.parent.GetComponent<Image>();
+
+        backgroundDefaultColor = backgroundImage.color;
 
 
-public class SwitchToggle : MonoBehaviour {
-   public RectTransform uiHandleRectTransform;
-   public Color backgroundActiveColor, handleActiveColor;     //seleccionadores de color para toggle activo
-   public Color backgroundDefaultColor, handleDefaultColor;   //seleccionadores de color para toggle inactivo
-   public float handleOffset;      //desplazamiento del boton
-   public Image backgroundImage, handleImage; //imágenes del toggle 
+        ColorUtility.TryParseHtmlString("#" + "273BF9", out backgroundActiveColor); 
 
-   Toggle toggle ;
+        toggle.onValueChanged.AddListener(OnSwitch);
 
-   void Awake ( ) {
-      toggle = GetComponent <Toggle> ( );
+        if (toggle.isOn)
+            OnSwitch(true);
+    }
 
-      toggle.onValueChanged.AddListener (OnSwitch);
-
-
-      if (toggle.isOn)
-         OnSwitch (true);
-   }
-
-   void OnSwitch (bool on) {
-        if (on)
+    private void Update()
+    {
+        if (toggle.isOn) //actualiza el color dependiendo de si está activado
         {
-            uiHandleRectTransform.position = new Vector3(uiHandleRectTransform.position.x + handleOffset, 
-                                                    uiHandleRectTransform.position.y, uiHandleRectTransform.position.z);
-            //backgroundImage.color = backgroundActiveColor;
-            //handleImage.color = handleActiveColor;
+            backgroundImage.color = backgroundActiveColor;
         }
         else
         {
-            uiHandleRectTransform.position = new Vector3(uiHandleRectTransform.position.x - handleOffset,
-                                                    uiHandleRectTransform.position.y, uiHandleRectTransform.position.z);
-            //backgroundImage.color = backgroundDefaultColor;
-            //handleImage.color = handleDefaultColor;
+            backgroundImage.color = backgroundDefaultColor;
         }
+    }
 
-   }
-
-   void OnDestroy ( ) {
-      toggle.onValueChanged.RemoveListener (OnSwitch);
-   }
+    void OnSwitch(bool on)
+    {
+        uiHandleRectTransform.anchoredPosition = on ? handlePosition * -1 : handlePosition; //mueve la posición del círculo cuando se activa o desactiva
+    }
 }

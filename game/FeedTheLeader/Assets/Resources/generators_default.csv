@@ -1,21 +1,21 @@
 ID;TITLE;DESC;PRICE;BASE PRICE;AMOUNT;P/S;UNLOCKED
 0;Criado;Un sirviente que hace lo que el todopoderoso le ordene y comande.;15;15;0;0.1;true
-1;Chef;El cocinero del supremo. ¡Conoce los códigos de unos platos sabrosos!;100;100;0;;false
-2;Cafetería;El lugar favorito de los fieles ahora se dedica a alimentar al líder. Oda al líder.;1100;1100;0;;false
-3;Hipermercado;Para crecer se necesita comprar… Comprar mucho. Comprar todo.;;;0;;false
-4;Franquicia de comida rápida;Necesita calorías. De donde sea y como sea. Calorías rápidas.;;;0;;false
-5;Granja;Nuestro señor necesita de más recursos para seguir creciendo… ¡El sector primario se une!;;;0;;false
-6;Matadero;Todo gran objetivo require de sacrificios. Los animales nos servirán.;;;0;;false
-7;Sweatshop;Se paga poco, se trabaja mucho y se genera aún más. Es el pequeño precio del éxito del líder. Todo el mundo está contento (aparentemente).;;;0;;false
-8;Séquito;Los fieles comprenden que la vida del líder vale más que las suyas. Otorgan su cuerpo y alma como obsequio. Es decir, 81.500 jugosas calorías en promedio… ¿Pero cuántas aprovechará?;;;0;;false
-9;Funeraria;No solo basta con los vivos, también nos hacen falta los muertos. Ahora los cadáveres son alimentos del supremo.;;;0;;false
-10;Granja humana;La agenda política del líder obliga a crear granjas de humanos. Miles de mujeres dan a luz a hijos que simplemente servirán como su alimento.;;;0;;false
-11;Templo de resurrección;La comunidad científica ha dado con la tecla para revivir seres humanos. Pero no se pueden rejuvenecer… Son un lastre de la sociedad, así que ahora son un plato más en la mesa del líder.;;;0;;false
-12;Fábrica de camiones;Ha evolucionado. Ahora puede consumir todo tipo de materia inorgánica. Eso incluye los grandes camiones que transportan la comida… ¿No?;;;0;;false
-13;Zonas marginadas;Los objetivos políticos del líder contemplan eliminar la pobreza y la marginación. Una buena forma de cumplir este objetivo es comérselas, eliminando el problema de raíz.;;;0;;false
-14;Central nuclear;Se ha descubierto que los átomos de plutonio y uranio tienen muuuchas calorías (1g uranio = 365 millones de calorías). El líder ha ordenado la clausura de las actividades de generación energética para su alimentación.;;;0;;false
-15;País tercermundista;El culto al líder se extiende internacionalmente. Para evitar la desigualdad, se ha decidido exterminar los países empobrecidos. Ahora son un elemento más de la cadena trófica.;;;0;;false
-16;Planeta;No importa que esté o no terraformado. El estómago del supremo ha alcanzado la siguiente fase. Puede alimentarse de cuerpos celestes.;;;0;;false
+1;Chef;El cocinero del supremo. ¡Conoce los códigos de unos platos sabrosos!;100;100;0;1;false
+2;Cafetería;El lugar favorito de los fieles ahora se dedica a alimentar al líder. Oda al líder.;1100;1100;0;8;false
+3;Hipermercado;Para crecer se necesita comprar… Comprar mucho. Comprar todo.;12000;;0;47;false
+4;Franquicia de comida rápida;Necesita calorías. De donde sea y como sea. Calorías rápidas.;130000;;0;260;false
+5;Granja;Nuestro señor necesita de más recursos para seguir creciendo… ¡El sector primario se une!;1400000;;0;1400;false
+6;Matadero;Todo gran objetivo require de sacrificios. Los animales nos servirán.;15000000;;0;7800;false
+7;Sweatshop;Se paga poco, se trabaja mucho y se genera aún más. Es el pequeño precio del éxito del líder. Todo el mundo está contento (aparentemente).;166000000;;0;44000;false
+8;Séquito;Los fieles comprenden que la vida del líder vale más que las suyas. Otorgan su cuerpo y alma como obsequio. Es decir, 81.500 jugosas calorías en promedio… ¿Pero cuántas aprovechará?;1800000000;;0;260000;false
+9;Funeraria;No solo basta con los vivos, también nos hacen falta los muertos. Ahora los cadáveres son alimentos del supremo.;20000000000;;0;1600000;false
+10;Granja humana;La agenda política del líder obliga a crear granjas de humanos. Miles de mujeres dan a luz a hijos que simplemente servirán como su alimento.;2E+11;;0;10000000;false
+11;Templo de resurrección;La comunidad científica ha dado con la tecla para revivir seres humanos. Pero no se pueden rejuvenecer… Son un lastre de la sociedad, así que ahora son un plato más en la mesa del líder.;2,1E+12;;0;65000000;false
+12;Fábrica de camiones;Ha evolucionado. Ahora puede consumir todo tipo de materia inorgánica. Eso incluye los grandes camiones que transportan la comida… ¿No?;2,3E+13;;0;430000000;false
+13;Zonas marginadas;Los objetivos políticos del líder contemplan eliminar la pobreza y la marginación. Una buena forma de cumplir este objetivo es comérselas, eliminando el problema de raíz.;2,55E+14;;0;2900000000;false
+14;Central nuclear;Se ha descubierto que los átomos de plutonio y uranio tienen muuuchas calorías (1g uranio = 365 millones de calorías). El líder ha ordenado la clausura de las actividades de generación energética para su alimentación.;2,8E+15;;0;21000000000;false
+15;País tercermundista;El culto al líder se extiende internacionalmente. Para evitar la desigualdad, se ha decidido exterminar los países empobrecidos. Ahora son un elemento más de la cadena trófica.;3,15E+16;;0;1,5E+11;false
+16;Planeta;No importa que esté o no terraformado. El estómago del supremo ha alcanzado la siguiente fase. Puede alimentarse de cuerpos celestes.;3,5E+17;;0;1,23457E+12;false
 17;Estrella;Sí, esas esferas muy calurosas y energéticas. Dicen que con el tiempo estallan como supernovas… Pero, ¿y si las ingieres antes?;;;0;;false
 18;Agujero negro;Se dice que tiene masa infinita… Perfecto para el menú de esta semana.;;;0;;false
 19;Galaxia;"No nos basta con nuestros cuerpos celestes. El líder ha desarrollado el proyecto ""Alimentación intergaláctica"" para seguir creciendo. Tiene intenciones de ser el objeto más grande del universo.";;;0;;false

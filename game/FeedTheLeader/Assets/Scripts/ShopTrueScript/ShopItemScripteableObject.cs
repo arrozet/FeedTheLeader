@@ -13,4 +13,6 @@ public class ShopItemScripteableObject : ScriptableObject {
     public int amount;
     public double pointsPerSecond;
     public bool unlocked;
+
+    
 }

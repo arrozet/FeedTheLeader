@@ -8,6 +8,8 @@ public class GameData
 {
     public double currentScore;
     public double scoreUp;
+    public double accumulatedScoreStat;
+    public double pointsPerSecond;
     public Dictionary<string, int> shopData;
 
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
@@ -16,5 +18,7 @@ public class GameData
     {
         this.currentScore = 0;
         this.scoreUp = 1;
+        this.accumulatedScoreStat = 0;
+        this.pointsPerSecond = 0;
     }
 }

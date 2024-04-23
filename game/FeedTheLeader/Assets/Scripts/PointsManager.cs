@@ -12,7 +12,6 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double currentScore;
     public double scoreUp;// no se que es serializefield
     public double accumulatedScoreStat;
-    public double pointPerSecondStat;
     public double PointsPerSecond;
     private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
@@ -21,12 +20,18 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         this.currentScore = data.currentScore;
         this.scoreUp = data.scoreUp;
+        this.accumulatedScoreStat = data.accumulatedScoreStat;
+        this.PointsPerSecond = data.pointsPerSecond;
+        
     }
 
     public void SaveData(ref GameData data)
     {
         data.currentScore = this.currentScore;
         data.scoreUp = this.scoreUp;
+        data.accumulatedScoreStat = this.accumulatedScoreStat;
+        data.pointsPerSecond = this.PointsPerSecond;
+
     }
     void Update()
     {
@@ -39,6 +44,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
             // Increment the total score
             currentScore++;
+            accumulatedScoreStat++;
         }
 
     }
@@ -70,7 +76,6 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public void AddPPs(double puntos)
     {
         PointsPerSecond += puntos;
-        pointPerSecondStat += puntos;
     }
 
     public void multiplicarMultiplicador(double num)
@@ -94,6 +99,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         currentScore = 0; // Restablece los puntos a cero
         scoreUp = 1; // Restablece multiplicador a uno
         accumulatedScoreStat = 0;
+        PointsPerSecond = 0;
     }
 
     public double getPuntos()
@@ -108,12 +114,13 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public double getPointsPerSecond()
     {
-        return pointPerSecondStat;
+        return PointsPerSecond;
     }
 
     public void AddAlot()
     {
         currentScore += 5000;
+        accumulatedScoreStat += 5000;
     }
 
 }
