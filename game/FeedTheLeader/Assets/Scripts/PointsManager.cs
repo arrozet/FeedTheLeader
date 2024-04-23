@@ -21,12 +21,20 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         this.currentScore = data.currentScore;
         this.scoreUp = data.scoreUp;
+        this.accumulatedScoreStat = data.accumulatedScoreStat;
+        this.pointPerSecondStat = data.pointPerSecondStat;
+        this.PointsPerSecond = data.pointsPerSecond;
+        
     }
 
     public void SaveData(ref GameData data)
     {
         data.currentScore = this.currentScore;
         data.scoreUp = this.scoreUp;
+        data.accumulatedScoreStat = this.accumulatedScoreStat;
+        data.pointPerSecondStat = this.pointPerSecondStat;
+        data.pointsPerSecond = this.PointsPerSecond
+
     }
     void Update()
     {
