@@ -10,4 +10,6 @@ public class Achievement : ScriptableObject
     public string description;
     public int condition;
     public bool unlocked;
+    public Sprite sprite;
+    public Sprite NotUnlockedSprite;
 }

@@ -1,4 +1,5 @@
 //Autor: Edu
+//Editor: Juanma
 
 using System.Collections;
 using UnityEngine;
@@ -9,24 +10,30 @@ public class AchievementManager : MonoBehaviour
 {
     public List<Achievement> achievements;
     public AchievementLoaderScript achievementLoader;
+    // no voy a tocar lo tuyo eduardo
+
+    public Achievement[] AchievementSO;
+    public GameObject[] AchievementPanelSO;
+    public AchievementTemplate[] AchievementPanel;
 
     void Start()
     {
         achievements = findAllAchievements();
+        // esto es de juanminator
+        for (int i = 0; i < AchievementSO.Length; i++)
+        {
+                AchievementPanelSO[i].SetActive(true);
+        }
+
+        loadPanels();
     }
 
-    
+    //To esto cosas que hizo edu (no voy a tocar)
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
-
-    
-
-    
-    
-
     public void CheckAchievements(int condition)
     {
         foreach (Achievement achievement in achievements)
@@ -42,6 +49,7 @@ public class AchievementManager : MonoBehaviour
     {
         achievement.unlocked = true;
         Debug.Log("Achievement unlocked: " + achievement.name);
+        loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
         // Falta por agregar mensaje de desbloqueo
     }
 
@@ -50,5 +58,22 @@ public class AchievementManager : MonoBehaviour
         IEnumerable<Achievement> achievementsEnum = FindObjectsOfType<Achievement>();
 
         return new List<Achievement>(achievementsEnum);
+    }
+
+    //Aqui empieza a editar la cabra (juanma)
+    public void loadPanels() // esto carga los paneles:
+                             // realmente lo que tengo es una lista de paneles ocultos (que se activan con el primer for del STart())
+                             // esta función asigna a cada panel, el nombre y el objeto de los Scripteable Objects que tenemos
+    {
+        for (int i = 0; i < AchievementSO.Length; i++)
+        {
+            if (AchievementSO[i].unlocked) // se carga su sprite 
+            {
+                AchievementPanel[i].spriteImage.sprite = AchievementSO[i].sprite;
+            } else // si no está desbloqueado carga el sprite de no desbloqueado
+            {
+                AchievementPanel[i].spriteImage.sprite = AchievementSO[i].NotUnlockedSprite;
+            }
+        }
     }
 }

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
-  m_Name: culito
+  m_Name: picha
   m_EditorClassIdentifier: 
-  title: Hamburguesa
-  id: 0
-  description: mi culito bien rico
-  condition: 10
-  unlocked: 1
-  sprite: {fileID: 21300000, guid: 3e9d95f147b528947b3d1cff0783295d, type: 3}
-  NotUnlockedSprite: {fileID: 21300000, guid: cf2d471b56af6444cb9d7ee14f091981, type: 3}
+  title: Biblia
+  id: 1
+  description: 
+  condition: 50
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: a9e2742613ed1e944be7b0d1a6a2f91c, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 715b8a1016756cb4cbef097c6679aeb2, type: 3}
