@@ -20,10 +20,11 @@ public class DataPersistenceManager : MonoBehaviour
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
+    private List<IDataPersistence> dataPersistenceScriptableObjects;
     private FileDataHandler dataHandler;
     private float timePast;
     //se pueden obtener los datos publicamente, solo se podrán modificar dentro de la clase
-    public static DataPersistenceManager instance {  get; private set; }
+    public static DataPersistenceManager instance { get; private set; }
 
     private void Awake()
     {
@@ -55,6 +56,7 @@ public class DataPersistenceManager : MonoBehaviour
         //Guarda en un path por defecto
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
         this.dataPersistenceObjects = findAllDataPersistenceObjects();
+        
         LoadGame();
     }
     public void NewGame()
@@ -67,26 +69,31 @@ public class DataPersistenceManager : MonoBehaviour
         //CARGAR DATOS USANDO DATA HANDLER
         this.gameData = dataHandler.Load();
 
-        if(this.gameData == null)
+        if (this.gameData == null)
         {
             Debug.Log("No se encontraron datos. Inicializando datos por defecto.");
             NewGame();
         }
-        
-        foreach(IDataPersistence dataPersistenceObj in dataPersistenceObjects)
+
+        foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.LoadData(gameData);
         }
+
+       
         Debug.Log("Loaded current score: " + gameData.currentScore);
     }
-    
+
     public void SaveGame()
     {
-        
+
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
             dataPersistenceObj.SaveData(ref gameData);
         }
+
+        
+
         Debug.Log("Saved current score: " + gameData.currentScore);
         //GUARDAR DATOS EN UN ARCHIVO .JSON CON EL DATA HANDLER
         dataHandler.Save(gameData);

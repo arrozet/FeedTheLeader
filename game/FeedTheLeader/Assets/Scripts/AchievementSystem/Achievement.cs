@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Achievement", menuName = "Achievement")]
-public class Achievement : ScriptableObject
+public class Achievement : ScriptableObject, IDataPersistence
 {
     public string title;
     public int id;
@@ -12,4 +12,22 @@ public class Achievement : ScriptableObject
     public bool unlocked;
     public Sprite sprite;
     public Sprite NotUnlockedSprite;
+
+
+    public void LoadData(GameData data)
+    {
+
+        Dictionary<int, bool> achievementData = data.achievementData;
+        unlocked = achievementData.GetValueOrDefault(id);
+
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (data.achievementData.ContainsKey(id))
+        {
+            data.achievementData.Remove(id);
+        }
+        data.achievementData.Add(id, unlocked);
+    }
 }

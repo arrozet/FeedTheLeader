@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public class AchievementManager : MonoBehaviour
+public class AchievementManager : MonoBehaviour, IDataPersistence
 {
     public List<Achievement> achievements;
     public AchievementLoaderScript achievementLoader;
@@ -26,6 +26,22 @@ public class AchievementManager : MonoBehaviour
         }
 
         loadPanels();
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        foreach(Achievement a in AchievementSO)
+        {
+            a.LoadData(gameData);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        foreach(Achievement a in AchievementSO)
+        {
+            a.SaveData(ref data);
+        }
     }
 
     //To esto cosas que hizo edu (no voy a tocar)

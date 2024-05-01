@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class ShopManagerScript : MonoBehaviour
+public class ShopManagerScript : MonoBehaviour, IDataPersistence
 {
     public ShopItemScripteableObject[] shopItemsSO;
     public GameObject[] shopPanelsSO;
@@ -25,6 +25,22 @@ public class ShopManagerScript : MonoBehaviour
 
         loadPanels();
         CheckPurchaseable();
+    }
+
+    public void LoadData(GameData data)
+    {
+        foreach(ShopItemScripteableObject shopItem in shopItemsSO)
+        {
+            shopItem.LoadData(data);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        foreach(ShopItemScripteableObject shopItem in shopItemsSO)
+        {
+            shopItem.SaveData(ref data);
+        }
     }
 
     // Update is called once per frame
