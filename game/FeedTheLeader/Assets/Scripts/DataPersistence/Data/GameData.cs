@@ -11,6 +11,7 @@ public class GameData
     public double accumulatedScoreStat;
     public double pointsPerSecond;
     public Dictionary<string, int> shopData;
+    public Dictionary<int, int> achievementData;
 
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
     //Ser� necesario a�adir en un futuro algo que guarde las mejoras de la tienda
