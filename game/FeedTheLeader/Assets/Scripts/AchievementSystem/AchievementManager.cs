@@ -18,7 +18,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
 
     void Start()
     {
-        achievements = findAllAchievements();
+        achievements = findAllAchievements(); //Hasta que se añadan los logros a AchievementSO se usa esto
         // esto es de juanminator
         for (int i = 0; i < AchievementSO.Length; i++)
         {
@@ -67,6 +67,18 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         Debug.Log("Achievement unlocked: " + achievement.name);
         loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
         // Falta por agregar mensaje de desbloqueo
+    }
+
+    void UnlockAchievementById(int id)
+    {
+        foreach(Achievement achievement in AchievementSO)
+        {
+            if (id == achievement.id)
+            {
+                UnlockAchievement(achievement);
+                break;
+            }
+        }
     }
 
     private List<Achievement> findAllAchievements()

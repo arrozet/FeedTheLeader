@@ -1,3 +1,4 @@
+//Autor: Edu
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Achievement : ScriptableObject, IDataPersistence
     public string description;
     public int condition;
     public bool unlocked;
+    //public string type; AUN NO IMPLEMENTADO EN LOS LOGROS, SE USARÁ PARA DESBLOQUEAR POR CONDICIÓN
     public Sprite sprite;
     public Sprite NotUnlockedSprite;
 
