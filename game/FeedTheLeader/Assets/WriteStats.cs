@@ -11,12 +11,14 @@ public class WriteStats : MonoBehaviour
     public TMP_Text PointsPerSecond;
     public TMP_Text PointsPerClick;
     public TMP_Text EventsClicked;
+    public TMP_Text PlayedTime;
 
     private double puntosActuales;
     private double puntosAcumulados;
     private double puntosPorSegundo;
     private double puntosPorClick;
     private double eventosClicados;
+    private double tiempoJugado;
 
     /*Pasos:
      -Creas un  public TMP_Text con el nombre que le quieras dar
@@ -42,6 +44,7 @@ public class WriteStats : MonoBehaviour
             PointsPerSecond.text = "Puntos por segundo: No disponibles";
             PointsPerClick.text = "Puntos por clic: No disponibles";
             EventsClicked.text = "Eventos aleatorios clicados: No disponibles";
+            PlayedTime.text = "Tiempo jugado : No disponible";
         }
         else
         {
@@ -50,11 +53,15 @@ public class WriteStats : MonoBehaviour
             puntosPorSegundo = PointsManager.Instance.getPointsPerSecond();
             puntosPorClick = PointsManager.Instance.getScoreUp();
             eventosClicados = PointsManager.Instance.getEventsClicked();
+            tiempoJugado = Time.time - (PointsManager.Instance.getStartTime());
+            tiempoJugado = Mathf.RoundToInt((float)tiempoJugado);
+
             CurrentPoints.text = "Puntos actuales: " + puntosActuales;
             AccumulatedPoints.text = "Puntos acumulados: " + puntosAcumulados;
             PointsPerSecond.text = "Puntos por segundo: " + puntosPorSegundo;
             PointsPerClick.text = "Puntos por click: " + puntosPorClick;
             EventsClicked.text = "Eventos aleatorios clicados: " + eventosClicados;
+            PlayedTime.text = "Tiempo jugado: " + tiempoJugado + " segundos";
         }
 
     }
