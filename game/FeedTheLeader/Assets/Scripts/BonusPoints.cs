@@ -10,6 +10,7 @@ public class BonusPoints : MonoBehaviour
     {
         // Esta función se ejecuta cuando se hace clic en el objetivo
         int pointsToAdd = Mathf.RoundToInt((float)(PointsManager.Instance.getPuntos() * 0.1f)); // Calculamos el 10% de los puntos totales y lo pasamos a Int
+        PointsManager.Instance.UpdateEventsClicked(1);
         if (pointsToAdd < 10)
         {
             pointsToAdd = 10; // Mínimo sumar 10 puntos
