@@ -13,6 +13,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double scoreUp;// no se que es serializefield
     public double accumulatedScoreStat;
     public double PointsPerSecond;
+    public double EventsClicked = 0;
     private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
 
@@ -116,6 +117,23 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         return PointsPerSecond;
     }
+
+    public double getScoreUp()
+    {
+        return scoreUp;
+    }
+
+    public void UpdateEventsClicked(int n)
+    {
+        EventsClicked += n;
+    }
+
+    public double getEventsClicked()
+    {
+        return EventsClicked;
+    }
+
+
 
     public void AddAlot()
     {
