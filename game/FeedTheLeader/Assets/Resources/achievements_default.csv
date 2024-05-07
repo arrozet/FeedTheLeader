@@ -1,4 +1,27 @@
-ID;TITLE;DESCRIPTION;CONDITION;UNLOCKED
-1000;culito;mi culito bien rico;10;false
-1001;test 1;test 1;1;false
-1002;test 1;test 1;2;false
+ID;TITLE;DESCRIPTION;TIPO;CONDITION;UNLOCKED
+1000;Mi primer click;Da tu primer click al líder;Click;10;false
+1001;Modo andaluz;Compra tu primer generador para que trabaje por ti;Tienda;1;false
+1002;Power UP!;Compra tu primera mejora en la tienda;Tienda;2;false
+1003;¿Uy y esto?;Clica tu primer elemento aleatorio;Aleatorio;;
+1004;Ciento por ciento;Clica 100 veces al líder;Click;;
+1005;Mil por mil;Clica 1.000 veces al líder;Click;;
+1006;Millón por millón;Clica 1.000.000 veces al líder;Click;;
+1007;Billón por billón;Clica 1.000.000.000.000 veces al líder;Click;;
+1008;Pokedex;Compra al menos un generador de cada tipo;Tienda;;
+1009;Chambeo máximo;Compra un generador hasta agotar existencias;Tienda;;
+1010;Chambeo masivo;Compra 10 generadores hasta agotar existencias;Tienda;;
+1011;Chambeo definitivo;Compra TODOS los generadores posibles;Tienda;;
+1012;Fuerza máxima;Compra todas las mejoras de un generador;Tienda;;
+1013;Empresario;Compra todas las mejoras de 5 generadores;Tienda;;
+1014;Magnate;Compra todas las mejoras de 15 generadores;Tienda;;
+1015;Psicópata;Compra todas las mejoras de TODOS los generadores;Tienda;;
+1016;Not bad;Llega a 100 puntos;Puntos;;
+1017;Ojito;Llega a 10.000 puntos;Puntos;;
+1018;TU PRIMER MILLÓN;Llega a un millón de puntos;Puntos;;
+1019;Illo que hace?;Llega a un billón de puntos;Puntos;;
+1020;Una fokin bestia;Llega a un trillón de puntos;Puntos;;
+1021;La cabra;Llega a un cuatrillón de puntos;Puntos;;
+1022;Fe máxima;Llega a un quintillón de puntos;Puntos;;
+1023;Again;Prestigia;Prestigio;;
+1024;Forma final;Consigue la forma final del líder;Puntos;;
+1025;Platino;Consigue todos los logros;Especial;;
