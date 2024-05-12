@@ -1,6 +1,7 @@
 // Autos Juanma
 //Edit: Guardado de datos, Edu
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,8 +14,13 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double scoreUp;// no se que es serializefield
     public double accumulatedScoreStat;
     public double PointsPerSecond;
+    public double EventsClicked = 0;
     private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
+
+    //Esto a lo mejor habría que hacerlo en un TimeManager
+    private bool primeraVez = true;
+    private double startTime;
 
     public void LoadData(GameData data)
     {
@@ -66,7 +72,14 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         if(scoreUp == 0)
         {
             scoreUp = 1;
-        } 
+        }
+
+        //Esto es de tiempo
+        if (primeraVez)
+        {
+            startTime = Time.time;
+            primeraVez = false;
+        }
     }
     public void SumarPuntos(double puntos)
     {
@@ -116,6 +129,27 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         return PointsPerSecond;
     }
+
+    public double getScoreUp()
+    {
+        return scoreUp;
+    }
+
+    public void UpdateEventsClicked(int n)
+    {
+        EventsClicked += n;
+    }
+
+    public double getEventsClicked()
+    {
+        return EventsClicked;
+    }
+
+    public double getStartTime()
+    {
+        return startTime;
+    }
+
 
     public void AddAlot()
     {

@@ -24,10 +24,12 @@ public class FPSCounter : MonoBehaviour
 
             GUIStyle style = new GUIStyle();
 
-            Rect rect = new Rect(0, 0, w, h * 2 / 100);
+            int fontSize = h * 2 / 80;
+
+            Rect rect = new Rect(0, 0, w, fontSize);
             style.alignment = TextAnchor.UpperLeft;
-            style.fontSize = h * 2 / 100;
-            style.normal.textColor = new Color(0.0f, 0.0f, 0.5f, 1.0f);
+            style.fontSize = fontSize;
+            style.normal.textColor = new Color(0.7f, 0.7f, 0.7f, 0.7f);
             float fps = 1.0f / deltaTime;
             string text = string.Format("{0:0.} fps", fps);
             GUI.Label(rect, text, style);
