@@ -2760,7 +2760,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4431844d55793da4b82e2fe7bf3dc1e5, type: 3}
   - {fileID: 8300000, guid: 503db0646dce2de4f9c6dd6e9c312776, type: 3}
   - {fileID: 8300000, guid: c424669ac4995d74ab4f23d457947ddb, type: 3}
-  mainMenuSongIndex: 0
 --- !u!4 &1378570104
 Transform:
   m_ObjectHideFlags: 0
@@ -2881,7 +2880,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 49
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3284,7 +3283,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
