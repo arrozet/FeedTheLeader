@@ -10,6 +10,12 @@ using UnityEngine.SocialPlatforms.Impl;
 public class PointsManager : MonoBehaviour, IDataPersistence
 {
     public static PointsManager Instance;
+
+    // esto es una locura, voy a hacer que por cada vez que sume 1000 puntos por segundo, lo que sume sea en vez de 1 por segundo que sume 2 y asi hasta el infinito
+    public double desbug = 1;
+    public double regPerSecond = 0;
+
+
     public double currentScore;
     public double scoreUp;// no se que es serializefield
     private int clics=0;
@@ -42,16 +48,75 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     }
     void Update()
     {
+        // GUARRERIA GUARRERIA PERO NO SE BUGEA MAS 
+        if (PointsPerSecond < 1000000000000)
+        {
+            while (PointsPerSecond - regPerSecond >= 1000)
+            {
+                desbug++;
+                regPerSecond += 1000;
+            }
+        }
+        else if (PointsPerSecond - regPerSecond >= 100000000 && PointsPerSecond < 1000000000000)
+        {
+            while (PointsPerSecond - regPerSecond >= 100000)
+            {
+                desbug += 100;
+                regPerSecond += 100000;
+            }
+        }
+        else if (PointsPerSecond >= 1000000000000 && PointsPerSecond < 100000000000000)
+        {
+            while (PointsPerSecond - regPerSecond >= 1000000000)
+            {
+                desbug += 10000;
+                regPerSecond += 1000000000;
+            }
+        }
+        else if (PointsPerSecond >= 100000000000000 && PointsPerSecond < 1000000000000000000)
+        {
+            while (PointsPerSecond - regPerSecond >= 100000000000)
+            {
+                desbug += 1000000;
+                regPerSecond += 100000000000;
+            }
+        }
+        else if (PointsPerSecond >= 1000000000000000000 && PointsPerSecond < 10000000000000000000000d)
+        {
+            while (PointsPerSecond - regPerSecond >= 10000000000000)
+            {
+                desbug += 100000000;
+                regPerSecond += 10000000000000;
+            }
+        }
+        else if (PointsPerSecond >= 10000000000000000000000d && PointsPerSecond < 100000000000000000000000000d)
+        {
+            while (PointsPerSecond - regPerSecond >= 10000000000000)
+            {
+                desbug += 10000000000;
+                regPerSecond += 10000000000000;
+            }
+        } else
+        {
+            while (PointsPerSecond - regPerSecond >= 1000000000000000000)
+            {
+                desbug += 1000000000000;
+                regPerSecond += 10000000000000000000;
+            }
+        }
+
+
         double pointsThisFrame = PointsPerSecond * Time.deltaTime;
         pointsAdded += pointsThisFrame;
+        pointsAdded /= desbug; 
         while (pointsAdded >= 1f)
         {
-            // Subtract 1 point from the total added
-            pointsAdded -= 1f;
+            // Quita el desbug
+            pointsAdded -= desbug;
 
             // Increment the total score
-            currentScore++;
-            accumulatedScoreStat++;
+            currentScore+= desbug;
+            accumulatedScoreStat+= desbug;
         }
 
     }
@@ -111,6 +176,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void ResetPoints()
     {
+        desbug = 1;
+        regPerSecond = 0;
         currentScore = 0; // Restablece los puntos a cero
         scoreUp = 1; // Restablece multiplicador a uno
         accumulatedScoreStat = 0;
@@ -165,8 +232,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void AddAlot()
     {
-        currentScore += 1000000;
-        accumulatedScoreStat += 1000000;
+        currentScore += 100000000000000000000000000000000d;
+        accumulatedScoreStat += 100000000000000000000000000000000d;
     }
 
 }

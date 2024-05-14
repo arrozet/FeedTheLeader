@@ -10219,6 +10219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbbde9eaf637af43b0c73e21a885c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  desbug: 1
+  regPerSecond: 0
   currentScore: 0
   scoreUp: 0
   accumulatedScoreStat: 0
@@ -13067,7 +13069,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -28.653946, z: -1176.3499, w: -254.27649}
+  m_margin: {x: 0, y: -28.653946, z: -1708.4476, w: -254.27649}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

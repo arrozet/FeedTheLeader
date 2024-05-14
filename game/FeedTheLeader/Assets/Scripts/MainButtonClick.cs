@@ -88,8 +88,9 @@ public class ClickingScript : MonoBehaviour
     }
     public static int AnalizarNumero(double numero)
     {
+        double numerito = Math.Round(numero, 15);
         // esto es la cosa mas guarra que he hecho en mi vida
-        string numeroStr = numero.ToString();
+        string numeroStr = numerito.ToString();
         int index = numeroStr.IndexOf(',');
 
         if (index == -1)
