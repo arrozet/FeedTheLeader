@@ -12,8 +12,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public static PointsManager Instance;
 
     // esto es una locura, voy a hacer que por cada vez que sume 1000 puntos por segundo, lo que sume sea en vez de 1 por segundo que sume 2 y asi hasta el infinito
-    public double desbug = 1;
-    public double regPerSecond = 0;
+    public double debug;
+    public double regPerSecond;
 
 
     public double currentScore;
@@ -35,6 +35,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         this.scoreUp = data.scoreUp;
         this.accumulatedScoreStat = data.accumulatedScoreStat;
         this.PointsPerSecond = data.pointsPerSecond;
+        this.debug = data.debug;
+        this.regPerSecond = data.regPerSecond;
         
     }
 
@@ -44,6 +46,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.scoreUp = this.scoreUp;
         data.accumulatedScoreStat = this.accumulatedScoreStat;
         data.pointsPerSecond = this.PointsPerSecond;
+        data.debug = this.debug;
+        data.regPerSecond = this.regPerSecond;
 
     }
     void Update()
@@ -53,7 +57,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 1000)
             {
-                desbug++;
+                debug++;
                 regPerSecond += 1000;
             }
         }
@@ -61,7 +65,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 100000)
             {
-                desbug += 100;
+                debug += 100;
                 regPerSecond += 100000;
             }
         }
@@ -69,7 +73,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 1000000000)
             {
-                desbug += 10000;
+                debug += 10000;
                 regPerSecond += 1000000000;
             }
         }
@@ -77,7 +81,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 100000000000)
             {
-                desbug += 1000000;
+                debug += 1000000;
                 regPerSecond += 100000000000;
             }
         }
@@ -85,7 +89,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 10000000000000)
             {
-                desbug += 100000000;
+                debug += 100000000;
                 regPerSecond += 10000000000000;
             }
         }
@@ -93,14 +97,14 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             while (PointsPerSecond - regPerSecond >= 10000000000000)
             {
-                desbug += 10000000000;
+                debug += 10000000000;
                 regPerSecond += 10000000000000;
             }
         } else
         {
             while (PointsPerSecond - regPerSecond >= 1000000000000000000)
             {
-                desbug += 1000000000000;
+                debug += 1000000000000;
                 regPerSecond += 10000000000000000000;
             }
         }
@@ -108,15 +112,15 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
         double pointsThisFrame = PointsPerSecond * Time.deltaTime;
         pointsAdded += pointsThisFrame;
-        pointsAdded /= desbug; 
+        pointsAdded /= debug; 
         while (pointsAdded >= 1f)
         {
-            // Quita el desbug
-            pointsAdded -= desbug;
+            // Quita el debug
+            pointsAdded -= debug;
 
             // Increment the total score
-            currentScore+= desbug;
-            accumulatedScoreStat+= desbug;
+            currentScore+= debug;
+            accumulatedScoreStat+= debug;
         }
 
     }
@@ -176,7 +180,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void ResetPoints()
     {
-        desbug = 1;
+        debug = 1;
         regPerSecond = 0;
         currentScore = 0; // Restablece los puntos a cero
         scoreUp = 1; // Restablece multiplicador a uno
