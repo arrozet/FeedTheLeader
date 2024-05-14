@@ -9,6 +9,7 @@ public class TargetController : MonoBehaviour
     public int pointsToAdd; // La cantidad de puntos que se agregarán al hacer clic en el objetivo
     private bool clicked = false; // Variable para rastrear si se hizo clic en el objeto    
 
+
     void Start()
     {
         // Al inicio, desactivamos el objetivo
@@ -20,7 +21,8 @@ public class TargetController : MonoBehaviour
     void AppearRandomly()
     {
         // Generamos una posición aleatoria dentro de la pantalla
-        Vector3 randomPosition = new Vector3(Random.Range(30f, 1260f), Random.Range(30f, 1050f), 0f);
+        //Por alguna razon ahora 4f equivale a la pos 432 y 2 a la 216. Cada numero añade 108 pixeles
+        Vector3 randomPosition = new Vector3(Random.Range(-8f, 4f), Random.Range(-4f, 4f), 100f);
         transform.position = randomPosition; // Establecemos la posición del objetivo
         clicked = false;
 
