@@ -1,0 +1,5 @@
+Si al meter el subtitulo en word, te asigna uno de los numeros que ya existen; eso significa que uno de los numeros asignados a las fotos en esta carpeta ha dejado de ser valido. Debes ponerlos bien.
+
+Por ejemplo, si en esta carpeta esta 14 y 15; y tu al meter en el word te asigna el 14 (porque lo has metido antes), entonces ahora las fotos 14 y 15 son las 15 y 16, respectivamente. Cambia el numerín de la foto en esta carpeta, porfi
+
+Un saludete
