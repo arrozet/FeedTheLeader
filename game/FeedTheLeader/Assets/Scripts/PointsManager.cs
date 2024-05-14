@@ -84,7 +84,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     }
     public void SumarPuntos(double puntos)
     {
-        clics++;
+        clics++; 
         currentScore += puntos;
         accumulatedScoreStat += puntos;
     }
@@ -165,8 +165,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void AddAlot()
     {
-        currentScore += 500000000000000000;
-        accumulatedScoreStat += 500000000000000000;
+        currentScore += 1000000;
+        accumulatedScoreStat += 1000000;
     }
 
 }
