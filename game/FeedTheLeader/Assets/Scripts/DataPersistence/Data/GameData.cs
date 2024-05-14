@@ -13,6 +13,9 @@ public class GameData
     public SerializableDictionary<int, int> shopData;
     public SerializableDictionary<int, bool> achievementData;
 
+    public double debug;
+    public double regPerSecond;
+
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
     //Ser� necesario a�adir en un futuro algo que guarde las mejoras de la tienda
     public GameData()
@@ -23,5 +26,7 @@ public class GameData
         this.pointsPerSecond = 0;
         shopData = new SerializableDictionary<int, int>();
         achievementData = new SerializableDictionary<int, bool>();
+        this.debug = 1;
+        this.regPerSecond = 0;
     }
 }
