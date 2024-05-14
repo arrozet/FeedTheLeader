@@ -2719,6 +2719,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8516844927119693110, guid: 590bec1501709f74e8b608db97c3f8a9, type: 3}
+      propertyPath: m_text
+      value: Pantalla completa
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516844927119693110, guid: 590bec1501709f74e8b608db97c3f8a9, type: 3}
       propertyPath: m_fontSize
       value: 40
       objectReference: {fileID: 0}

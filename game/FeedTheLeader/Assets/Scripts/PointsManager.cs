@@ -12,6 +12,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public static PointsManager Instance;
     public double currentScore;
     public double scoreUp;// no se que es serializefield
+    private int clics=0;
     public double accumulatedScoreStat;
     public double PointsPerSecond;
     public double EventsClicked = 0;
@@ -83,6 +84,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     }
     public void SumarPuntos(double puntos)
     {
+        clics++;
         currentScore += puntos;
         accumulatedScoreStat += puntos;
     }
@@ -148,6 +150,16 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double getStartTime()
     {
         return startTime;
+    }
+
+    public int getClics()
+    {
+        return clics;
+    }
+
+    public void setScoreUp(double n)
+    {
+        scoreUp = n;
     }
 
 

@@ -1,0 +1,82 @@
+TITLE:Ode ad ducem
+GENRE: gregorian chant
+LYRICS:
+// LATIN
+[intro: no lyrics gregorian chant]
+[Vers. 1]
+In lumine tuo videmus lumen lucere;
+Spiritus tuus in nobis requiescit nunc.
+Sacrae Scripturae narrant nobis.
+Dux lux est et vita, nos bene novimus.
+
+[Vers. 2]
+Veni, Sancte Spiritus,
+Imple corda fidelium tuorum suavitate tuo.
+Deus meus, clamabo ad te;
+Per fidem vitae aeternae te semper laudabo.
+
+[Chorus]
+Lux aeterna, duc in tenebris;
+In nomine ducis, filii, et spiritus sancti, amen.
+Lux aeterna luceat in aeternum.
+Ode ad ducem, in omni mente.
+
+[Vers. 3]
+In lumine tuo invenimus esse nostrum;
+In fide, in caritate, in omni luce.
+Gloria Patri, et Filio, et Spiritui Sancto.
+In luce eterna, in hoc cantico.
+
+[Chorus]
+Lux aeterna, duc in tenebris;
+In nomine ducis, filii, et spiritus sancti, amen.
+Lux aeterna luceat in aeternum.
+Ode ad ducem, in omni mente.
+
+[Outro]
+In tua luce vivimus, in tuo amore canimus;
+Ode ad ducem, in omni gradu sumamus.
+Lux aeterna, in hoc aeterna ambulamus;
+In fide, in spe, in omni vigilia.
+
+[ending: no lyrics gregorian chant]
+
+// SPANISH
+[introducción: canto gregoriano sin letra]
+[Verso. 1]
+En tu luz vemos la luz brillar;
+Tu espíritu descansa en nosotros ahora.
+Las Sagradas Escrituras nos lo dicen.
+El líder es luz y vida, lo sabemos bien.
+
+[Verso. 2]
+Ven, espíritu santo,
+Llena los corazones de tus fieles con tu dulzura.
+Dios mío, a ti clamaré;
+Por la fe de la vida eterna siempre te alabaré.
+
+[coro]
+Luz eterna, guía en las tinieblas;
+En el nombre del líder, del hijo y del espíritu santo, amén.
+Deja que la luz eterna brille para siempre.
+Oda al líder, en cada mente.
+
+[Verso. 3.]
+En tu luz encontramos nuestro ser;
+En fe, en caridad, en toda luz.
+Gloria al Padre, al Hijo y al Espíritu Santo.
+En la luz eterna, en esta canción.
+
+[coro]
+Luz eterna, guía en las tinieblas;
+En el nombre del líder, del hijo y del espíritu santo, amén.
+Deja que la luz eterna brille para siempre.
+Oda al líder, en cada mente.
+
+[Outro]
+Vivimos en tu luz, cantamos en tu amor;
+Oda al líder, hagámoslo en todos los niveles.
+Luz eterna, caminamos en esta luz eterna;
+En fe, en esperanza, en cada vigilia.
+
+[final: sin letra canto gregoriano]

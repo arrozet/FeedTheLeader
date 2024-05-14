@@ -1,27 +1,27 @@
 ID;TITLE;DESCRIPTION;TIPO;CONDITION;UNLOCKED
-1000;Mi primer click;Da tu primer click al líder;Click;10;false
-1001;Modo andaluz;Compra tu primer generador para que trabaje por ti;Tienda;1;false
-1002;Power UP!;Compra tu primera mejora en la tienda;Tienda;2;false
-1003;¿Uy y esto?;Clica tu primer elemento aleatorio;Aleatorio;;
-1004;Ciento por ciento;Clica 100 veces al líder;Click;;
-1005;Mil por mil;Clica 1.000 veces al líder;Click;;
-1006;Millón por millón;Clica 1.000.000 veces al líder;Click;;
-1007;Billón por billón;Clica 1.000.000.000.000 veces al líder;Click;;
-1008;Pokedex;Compra al menos un generador de cada tipo;Tienda;;
-1009;Chambeo máximo;Compra un generador hasta agotar existencias;Tienda;;
-1010;Chambeo masivo;Compra 10 generadores hasta agotar existencias;Tienda;;
-1011;Chambeo definitivo;Compra TODOS los generadores posibles;Tienda;;
-1012;Fuerza máxima;Compra todas las mejoras de un generador;Tienda;;
-1013;Empresario;Compra todas las mejoras de 5 generadores;Tienda;;
-1014;Magnate;Compra todas las mejoras de 15 generadores;Tienda;;
-1015;Psicópata;Compra todas las mejoras de TODOS los generadores;Tienda;;
-1016;Not bad;Llega a 100 puntos;Puntos;;
-1017;Ojito;Llega a 10.000 puntos;Puntos;;
-1018;TU PRIMER MILLÓN;Llega a un millón de puntos;Puntos;;
-1019;Illo que hace?;Llega a un billón de puntos;Puntos;;
-1020;Una fokin bestia;Llega a un trillón de puntos;Puntos;;
-1021;La cabra;Llega a un cuatrillón de puntos;Puntos;;
-1022;Fe máxima;Llega a un quintillón de puntos;Puntos;;
-1023;Again;Prestigia;Prestigio;;
-1024;Forma final;Consigue la forma final del líder;Puntos;;
-1025;Platino;Consigue todos los logros;Especial;;
+1000;Mi primer click;Da tu primer click al líder. Has puesto el primer ladrillo para el nuevo imperio.;Click;10;false
+1001;Oh, sí, ¡sigue!;Clica manualmente 100 veces al líder. Le estás cogiendo el gustillo… ¿A que sí?;Click;;false
+1002;Estoy cansado, jefe;Clica manualmente 1.000 veces al líder. Debes seguir rindiendo a este nivel… ¡Si sigues así el líder te ascenderá!;Click;;false
+1003;Se me rompió el ratón;Clica manualmente 1.000.000 veces al líder. Gracias por gastar tu ratón en este juego.;Click;;false
+1004;Uy, ¿y esto?;Clica tu primer elemento aleatorio. Por fin la hamburguesa esta que da vueltas sirvió para algo.;Aleatorio;;false
+1005;Andaluz;Compra tu primer generador. El capitalismo te corre por las venas, y las pocas ganas de trabajar también.;Tienda;1;false
+1006;Pokédex;Compra al menos un generador de cada tipo. Ya hasta los coleccionas en la maquinita esta con la que estás jugando ahora mismo.;Tienda;;false
+1007;Explotación;Compra un generador hasta agotar existencias. Te mola el tema de no trabajar, eh.;Tienda;;false
+1008;Capitalismo;Compra diez generadores hasta agotar existencias. Te has alineado con el pensamiento de occidente. Buen trabajo.;Tienda;;false
+1009;Fin de la agenda política;Compra todos los generadores posibles. Este es el fin, pequeñín. ¿O no?;Tienda;;false
+1010;Only UP!;Compra tu primera mejora en la tienda. Cuando estás en el fondo, solo queda subir.;Tienda;2;false
+1011;Cafeína;Compra todas las mejoras de un generador. Pruebas tu primer estimulante… Y mola cantidubi.;Tienda;;false
+1012;Cocaína;Compra todas las mejoras de cinco generadores. Dices que te hace falta algo más fuerte, pero que te puedes controlar. Sí, sí.;Tienda;;false
+1013;Éxtasis;Compra todas las mejoras de quince generadores. Crees que no hay nada más, que esta es la cúspide. Pero estás equivocado.;Tienda;;false
+1014;Has despertado;Compra todas las mejoras de todos los generadores. No te estabas drogando, solo estabas soñando. Es más, ahora mismo sigues en un sueño.;Tienda;;false
+1015;Mis primeros pasos;Llega a 100 puntos. Mira qué cosita, tan pequeñito y frágil…;Puntos;;false
+1016;Ya voy al cole;Llega a 10.000 puntos. ¡Pero cómo has crecido! Estarás hasta el cogote de petit-suisse.;Puntos;;false
+1017;TU PRIMER MILLÓN;Llega a un millón de puntos. Ya eres un hombre, has empezado a trabajar y por fin sabes lo que es levantarse a las 5AM.;Puntos;;false
+1018;La cabra;Llega a un cuatrillón de puntos. El mejor de todos los tiempos (sin contar al líder).;Puntos;;false
+1019;I <3 Barba;Llega a un decillón de puntos. Te encantan las barbas. Sobre todo alguna como la de C-Cristo.;Puntos;;false
+1020;JAJERJE;Consigue la forma final del líder. Ya no puede engordar más. Total, no queda más espacio tangible.;Puntos;;false
+1021;Generalísimo;Prestigia. Has subido de rango. Ahora todo es más fácil y rápido (supuestamente).;Prestigio;;false
+1022;Con el corazón llenito;Saciaste al líder. Al menos, temporalmente…;Especial;;false
+1023;Ministro del régimen;Tu lealtad al régimen ha sido recompensada. Total, después de 50 horas aquí metido algo tendrías que ganar.;Especial;;false
+1024;Persiste;Pudiste prestigiar, pero la curiosidad te pudo. Dicen que la curiosidad mató al gato, pero el líder la recompensa.;Especial;;false
+1025;Agustito;Consigue todos los logros. Gracias por jugar esta cosita pequeñita. Desde JAJERJE studios, te queremos. Todos los integrentes, de la J a la E.;Especial;;false
