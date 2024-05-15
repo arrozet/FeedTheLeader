@@ -125,7 +125,7 @@ public class ClickingScript : MonoBehaviour
                 {
                     return 0;
                 }
-                else if (parteDecimal[0].Equals('0'))
+                else if (parteDecimal[1].Equals('0'))
                 {
                     return 1;
                 }
@@ -140,11 +140,11 @@ public class ClickingScript : MonoBehaviour
                 {
                     return 0;
                 }
-                else if (parteDecimal[0].Equals('0') && parteDecimal[1].Equals('0'))
+                else if (parteDecimal[1].Equals('0') && parteDecimal[2].Equals('0'))
                 {
                     return 1;
                 }
-                else if (parteDecimal[0].Equals('0'))
+                else if (parteDecimal[2].Equals('0'))
                 {
                     return 2;
                 }
