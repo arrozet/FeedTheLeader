@@ -21,12 +21,13 @@ public class ClickingScript : MonoBehaviour
     private float scoreUp;
 
     // CLICK 
-    //public GameObject plusObject;
-    //public TMP_Text plusText;
+    public GameObject plusObject;
+    public TMP_Text plusText;
 
     void Start()
     {
         PointsManager.Instance.comienzo();
+        plusObject.SetActive(false);
 
     }
 
@@ -34,7 +35,7 @@ public class ClickingScript : MonoBehaviour
     {
         scoreText.text = formatScore(PointsManager.Instance.currentScore);
 
-        //plusText.text = "+ " + PointsManager.Instance.scoreUp;
+        plusText.text = "+ " + PointsManager.Instance.scoreUp;
     }
 
     public void click()
@@ -43,18 +44,20 @@ public class ClickingScript : MonoBehaviour
 
         //plusObject.SetActive(false);
 
-        //Vector3 clickPosition = Input.mousePosition;
-        //clickPosition.z = -Camera.main.transform.position.z;
-        //Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
 
-        //plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
+        Vector3 clickPosition = Input.mousePosition;
+        clickPosition.z = -Camera.main.transform.position.z;
+        Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
 
-        //plusObject.SetActive(true);
+        plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
 
-        //Fly();
+        plusObject.SetActive(true);
+
+        Fly();
+
     }
 
-    /*
+
     IEnumerator Fly()
     {
         for(int i=0; i<=19; i++)
@@ -66,7 +69,7 @@ public class ClickingScript : MonoBehaviour
 
         plusObject.SetActive(false);
     }
-    */
+    
 
     private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
         "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
