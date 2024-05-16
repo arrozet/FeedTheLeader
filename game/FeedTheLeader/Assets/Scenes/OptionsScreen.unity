@@ -645,51 +645,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5105939001941293594, guid: 590bec1501709f74e8b608db97c3f8a9, type: 3}
   m_PrefabInstance: {fileID: 1618195444}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &346463008
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 346463010}
-  - component: {fileID: 346463009}
-  m_Layer: 0
-  m_Name: FpsLimiter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &346463009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346463008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3037638f16a04864b90e2051ead10a00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsSlider: {fileID: 547137269}
---- !u!4 &346463010
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346463008}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2691221, y: -0.28608686, z: 1587.2441}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352820374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,14 +2905,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3301887, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.26666668, g: 0.42352945, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a8c51aa9015bcc74f978f3be4e527664, type: 3}
+  m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3646,6 +3601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMixer: {fileID: 24100000, guid: 9dd0054072b15d74aae9f836a78ef747, type: 2}
+  fpsSlider: {fileID: 547137269}
   resolutionDropdown: {fileID: 825388195}
   musicSlider: {fileID: 55624956}
   effectsSlider: {fileID: 1825427192}
@@ -3955,4 +3911,3 @@ SceneRoots:
   - {fileID: 72675549}
   - {fileID: 1954748369}
   - {fileID: 1866184515}
-  - {fileID: 346463010}
