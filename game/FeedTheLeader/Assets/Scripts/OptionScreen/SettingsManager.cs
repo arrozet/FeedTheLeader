@@ -1,6 +1,7 @@
 // Author: Rubén
 // Author: Javi, parte de FPS
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,8 +19,9 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer mainMixer;
 
     [Header("FPS")]
+    public UnityEngine.UI.Toggle fpsToggle;
     public UnityEngine.UI.Slider fpsSlider;
-    private int[] fpsValues = { 30, 60, 120, -1 }; // -1 para ilimitado
+    private int[] fpsValues = { 30, 60, 120, -1 }; // -1 para 
 
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown;
@@ -42,8 +44,19 @@ public class SettingsMenu : MonoBehaviour
         fpsSlider.minValue = 0;
         fpsSlider.maxValue = fpsValues.Length - 1;
         fpsSlider.wholeNumbers = true;
-        fpsSlider.onValueChanged.AddListener(OnSliderValueChanged);
-        fpsSlider.value = PlayerPrefs.GetFloat("FPSSliderValue", fpsSlider.maxValue);
+        //fpsSlider.onValueChanged.AddListener();
+        fpsSlider.value = PlayerPrefs.GetFloat("FpsSliderValue", fpsSlider.maxValue);
+
+        // Cargar valor de fpsToggle. No se puede hacer setBool, asi que trabajo con enteros
+        int valorFpsToggle = PlayerPrefs.GetInt("FpsToggleValue", 1);
+        if(valorFpsToggle == 1)
+        {
+            fpsToggle.isOn = true;
+        }
+        else
+        {
+            fpsToggle.isOn = false;
+        }
     }
 
     //RESOLUCIONES
@@ -106,8 +119,6 @@ public class SettingsMenu : MonoBehaviour
         Screen.fullScreen = fullScreen;
     }
 
-   
-
     //VOLUMEN
     public void SetMusicVolume(float sliderVolume)
     {
@@ -124,9 +135,9 @@ public class SettingsMenu : MonoBehaviour
     }
 
     //FPS
-    void OnSliderValueChanged(float value)
+    public void SetFpsLimit(float sliderValue)
     {
-        int fpsLimit = fpsValues[(int)value];
+        int fpsLimit = fpsValues[(int)sliderValue];
         if (fpsLimit == -1)
         {
             // Desactiva la limitación de FPS
@@ -138,13 +149,31 @@ public class SettingsMenu : MonoBehaviour
             Application.targetFrameRate = fpsLimit;
         }
     }
+    /*
+    public void EnableFps(bool enabled)
+    {
+        fpsCounter = GetComponent<FPSCounter>();
 
+        fpsCounter.enabled = enabled;
+    }
+    */
     //Parte de guardado: Edu
     private void OnDestroy()
     {
         PlayerPrefs.SetFloat("MusicSliderValue", musicSlider.value);
         PlayerPrefs.SetFloat("EffectsSliderValue", effectsSlider.value);
-        PlayerPrefs.SetFloat("FPSSliderValue", fpsSlider.value);
+        PlayerPrefs.SetFloat("FpsSliderValue", fpsSlider.value);
+
+        // Guardar valor de fpsToggle. No se puede hacer setBool, asi que trabajo con enteros
+        if (fpsToggle.isOn)
+        {
+            PlayerPrefs.SetInt("FpsToggleValue", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("FpsToggleValue", 0);
+        }
+        
     }
 
     
