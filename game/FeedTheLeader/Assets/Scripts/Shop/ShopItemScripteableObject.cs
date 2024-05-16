@@ -18,7 +18,7 @@ public class ShopItemScripteableObject : ScriptableObject, IDataPersistence {
 
     public void LoadData(GameData data)
     {
-        Debug.Log("Hola");
+        //Debug.Log("Hola");
         SerializableDictionary<int, int> shopData = data.shopData;
         amount = shopData.GetValueOrDefault(id);
 

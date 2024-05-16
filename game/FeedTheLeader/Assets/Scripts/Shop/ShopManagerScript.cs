@@ -131,22 +131,22 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         string resultado;
         if (analizado == 0)
         {
-            Debug.Log("ME meti en 0");
+            //Debug.Log("ME meti en 0");
             resultado = numero.ToString("N0");
         }
         else if (analizado == 1)
         {
-            Debug.Log("ME meti en 1");
+            //Debug.Log("ME meti en 1");
             resultado = numero.ToString("N1").TrimEnd('0').TrimEnd('.');
         }
         else if (analizado == 2)
         {
-            Debug.Log("ME meti en 2");
+            //Debug.Log("ME meti en 2");
             resultado = numero.ToString("N2").TrimEnd('0').TrimEnd('.');
         }
         else
         {
-            Debug.Log("ME meti en 3");
+            //Debug.Log("ME meti en 3");
             resultado = numero.ToString("N3").TrimEnd('0').TrimEnd('.');
         }
 
