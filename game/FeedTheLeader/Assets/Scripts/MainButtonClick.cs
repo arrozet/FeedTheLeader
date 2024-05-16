@@ -20,6 +20,10 @@ public class ClickingScript : MonoBehaviour
     private float currentScore;
     private float scoreUp;
 
+    // CLICK 
+    //public GameObject plusObject;
+    //public TMP_Text plusText;
+
     void Start()
     {
         PointsManager.Instance.comienzo();
@@ -29,12 +33,40 @@ public class ClickingScript : MonoBehaviour
     void Update()
     {
         scoreText.text = formatScore(PointsManager.Instance.currentScore);
+
+        //plusText.text = "+ " + PointsManager.Instance.scoreUp;
     }
 
     public void click()
     {
         PointsManager.Instance.SumarPuntos(PointsManager.Instance.scoreUp);
+
+        //plusObject.SetActive(false);
+
+        //Vector3 clickPosition = Input.mousePosition;
+        //clickPosition.z = -Camera.main.transform.position.z;
+        //Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+
+        //plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
+
+        //plusObject.SetActive(true);
+
+        //Fly();
     }
+
+    /*
+    IEnumerator Fly()
+    {
+        for(int i=0; i<=19; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x,plusObject.transform.position.y + 2, 0);
+        }
+
+        plusObject.SetActive(false);
+    }
+    */
 
     private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
         "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
