@@ -4,12 +4,22 @@ using UnityEngine.UI;
 
 public class FPSCounter : MonoBehaviour
 {
-    public Toggle toggle; 
     float deltaTime = 0.0f;
+    public static FPSCounter instance;
 
-    void Awake()
+    // para crearlo como singleton (solo va a haber 1 solo uno siempre)
+    private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
     }
 
 
