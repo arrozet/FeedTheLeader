@@ -11,7 +11,7 @@ public class Achievement : ScriptableObject, IDataPersistence
     public string description;
     public int condition;
     public bool unlocked;
-    //public string type; AUN NO IMPLEMENTADO EN LOS LOGROS, SE USARÁ PARA DESBLOQUEAR POR CONDICIÓN
+    public string type;
     public Sprite sprite;
     public Sprite NotUnlockedSprite;
 

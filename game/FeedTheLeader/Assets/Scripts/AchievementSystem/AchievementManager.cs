@@ -50,11 +50,11 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
     {
         DontDestroyOnLoad(gameObject);
     }
-    public void CheckAchievements(int condition)
+    public void CheckAchievementsByType(string type, int condition)
     {
         foreach (Achievement achievement in achievements)
         {
-            if (!achievement.unlocked && condition >= achievement.condition)
+            if (!achievement.unlocked && type.Equals(achievement.type) && condition >= achievement.condition)
             {
                 UnlockAchievement(achievement);
             }
