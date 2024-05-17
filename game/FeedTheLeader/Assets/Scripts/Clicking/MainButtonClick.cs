@@ -16,6 +16,7 @@ public class ClickingScript : MonoBehaviour
 {
     // CLICKER
     public TMP_Text scoreText;
+    public TMP_Text scoreText2;
 
     private float currentScore;
     private float scoreUp;
@@ -33,7 +34,8 @@ public class ClickingScript : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = formatScore(PointsManager.Instance.currentScore);
+        scoreText.text = formatScore(PointsManager.Instance.currentScore).Item1;
+        scoreText2.text = formatScore(PointsManager.Instance.currentScore).Item2;
 
         plusText.text = "+ " + PointsManager.Instance.scoreUp;
     }
@@ -75,10 +77,10 @@ public class ClickingScript : MonoBehaviour
         "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
         "trevigintillon", "quattuorvigintillon", "quinvigintillon", "sexvigintillon", "septenvigintillon", "octovigintillon", "novemvigintillon", "trigintillon" };
 
-    public static string formatScore(double numero)
+    public static Tuple<string,string> formatScore(double numero)
     {
         if (numero < 1000000)
-            return numero.ToString("N0");
+            return Tuple.Create(numero.ToString("N0"),"");
 
         int unidad = 0;
         while (numero >= 1000000)
@@ -86,47 +88,49 @@ public class ClickingScript : MonoBehaviour
             unidad++;
             numero /= 1000000;
         }
-        int analizado = AnalizarNumero(numero);
+        double numerito = Math.Round(numero, 3); // solo necesitamos 3 cifras decimales para mostrar, las demas son prescindibles
+        int analizado = AnalizarNumero(numerito);
         string resultado;
         if (analizado == 0)
         {
             //Debug.Log("ME meti en 0");
-            resultado = numero.ToString("N0");
+            resultado = numerito.ToString("N0");
         }
         else if (analizado == 1)
         {
             //Debug.Log("ME meti en 1");
-            resultado = numero.ToString("N1").TrimEnd('0').TrimEnd('.');
+            resultado = numerito.ToString("N1").TrimEnd('0').TrimEnd('.');
         }
         else if (analizado == 2)
         {
             //Debug.Log("ME meti en 2");
-            resultado = numero.ToString("N2").TrimEnd('0').TrimEnd('.');
+            resultado = numerito.ToString("N2").TrimEnd('0').TrimEnd('.');
         }
         else
         {
             //Debug.Log("ME meti en 3");
-            resultado = numero.ToString("N3").TrimEnd('0').TrimEnd('.');
+            resultado = numerito.ToString("N3").TrimEnd('0').TrimEnd('.');
         }
+        string resultado2 = "";
 
         if (unidad > 0)
         {
             int numAux = (int)numero;
             resultado += " ";
             if (numAux == 1 && analizado == 0)
-                resultado += Unidades[unidad];
+                resultado2 += Unidades[unidad];
             else
-                resultado += Unidades[unidad] + "es";
+                resultado2 += Unidades[unidad] + "es";
         }
 
-        return resultado;
+        return Tuple.Create(resultado,resultado2);
     }
     public static int AnalizarNumero(double numero)
     {
-        double numerito = Math.Round(numero, 15);
+        
         // esto es la cosa mas guarra que he hecho en mi vida
-        string numeroStr = numerito.ToString();
-        int index = numeroStr.IndexOf(',');
+        string numeroStr = numero.ToString();
+        int index = numeroStr.IndexOf(','); // si no hay coma el index sera -1
 
         if (index == -1)
         {
@@ -135,23 +139,19 @@ public class ClickingScript : MonoBehaviour
         }
         else
         {
-
-
-           
-
             // Si hay parte decimal
-            string parteDecimal = numeroStr.Substring(index + 1);
+            string parteDecimal = numeroStr.Substring(index + 1); // tomas el prmera numero decimal
 
 
-            if (parteDecimal.Length == 1)
+            if (parteDecimal.Length == 1) // si solo es un numero 
             {
-                if (parteDecimal[0].Equals('0'))
+                if (parteDecimal[0].Equals('0')) // si es 0
                 {
-                    return 0;
+                    return 0; // significa que no tenemos que representar ningun numero
                 }
                 else
                 {
-                    return 1;
+                    return 1; // si no si tenemos que representarlo
                 }
             }
             else if (parteDecimal.Length == 2)
