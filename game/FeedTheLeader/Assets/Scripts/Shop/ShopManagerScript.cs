@@ -95,7 +95,8 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 shopPanels[i].titleText.text = shopItemsSO[i].title;
                 shopPanels[i].priceText.text = formatScore(shopItemsSO[i].price);
                 shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
-                shopPanels[i].spriteImage.sprite = shopItemsSO[i].sprite;           
+                shopPanels[i].spriteImage.sprite = shopItemsSO[i].sprite;
+                shopPanels[i].description.text = shopItemsSO[i].description;
         }
     }
     public void resetItems()

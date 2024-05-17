@@ -12,4 +12,5 @@ public class TemplateShop : MonoBehaviour
     public TMP_Text priceText;
     public TMP_Text amountText;
     public Image spriteImage;
+    public TMP_Text description;
 }
