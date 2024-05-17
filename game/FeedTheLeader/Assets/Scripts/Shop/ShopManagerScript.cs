@@ -12,6 +12,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
     public GameObject[] shopPanelsSO;
     public TemplateShop[] shopPanels;
     public Button[] myPurchaseBtns;
+    public int AmountObjects;
     // Start is called before the first frame update
     void Start()
     {// muestra solamente los paneles que hay en función de los scripteble objects que hemos creado
@@ -22,7 +23,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 shopPanelsSO[i].SetActive(true);
             }
         }
-
+        AmountObjects = 1;
         loadPanels();
         CheckPurchaseable();
     }
@@ -44,6 +45,19 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
     }
 
     // Update is called once per frame
+    public void Check10Amount()
+    {
+        if(AmountObjects == 1)
+        {
+            AmountObjects = 10;
+        } else
+        {
+            AmountObjects = 1;
+        }
+        loadPanels();
+        
+    }
+
     void Update()
     {
         // esto es super poco eficiente porque lo ejecuta todo el rato, voy a buscar la manera de invocarla desde otro script
@@ -55,7 +69,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
-            if (PointsManager.Instance.getPuntos() >= shopItemsSO[i].price)
+            if (PointsManager.Instance.getPuntos() >= calcularPrecio(i))
             {
                 myPurchaseBtns[i].interactable = true;
             }
@@ -67,12 +81,12 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
     }
     public void PurchaseItem(int btnNo) // simplemente resta, y comporueba que boton se ha pulsado para poder restarle el precio y dar el efecto a dicho boton
     {
-        if (PointsManager.Instance.getPuntos() >= shopItemsSO[btnNo].price)
+        if (PointsManager.Instance.getPuntos() >= calcularPrecio(btnNo))
         {
-            PointsManager.Instance.RestarPuntos(shopItemsSO[btnNo].price);
-            shopItemsSO[btnNo].amount++;
-            shopItemsSO[btnNo].price = Math.Round(shopItemsSO[btnNo].basePrice * Math.Pow(1.15, shopItemsSO[btnNo].amount)); // voy a usar la formula que utiliza cookie clicker para calcular el precio 
-            PointsManager.Instance.AddPPs(shopItemsSO[btnNo].pointsPerSecond); // simplemente añade los puntos por segundo
+            PointsManager.Instance.RestarPuntos(calcularPrecio(btnNo));
+            shopItemsSO[btnNo].amount+=AmountObjects;
+            shopItemsSO[btnNo].price = Math.Round(shopItemsSO[btnNo].basePrice * Math.Pow(1.15, shopItemsSO[btnNo].amount)); // voy a usar la formula que utiliza cookie clicker para calcular el precio (aqui no hace falta usar el calcular porque calcula el precio que tendria el objeto numero 11
+            PointsManager.Instance.AddPPs(shopItemsSO[btnNo].pointsPerSecond*AmountObjects); // simplemente añade los puntos por segundo
             loadPanels(); // tengo que actualizar los paneles
             if (btnNo + 1 != shopItemsSO.Length) // si es el ultimo objeto no lo hace sabes (NULLPOINTER)
             {
@@ -93,7 +107,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
                 shopPanels[i].titleText.text = shopItemsSO[i].title;
-                shopPanels[i].priceText.text = formatScore(shopItemsSO[i].price);
+                shopPanels[i].priceText.text = formatScore(calcularPrecio(i));
                 shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
                 shopPanels[i].spriteImage.sprite = shopItemsSO[i].sprite;
                 shopPanels[i].description.text = shopItemsSO[i].description;
@@ -111,6 +125,16 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
             } 
         }
         loadPanels();
+    }
+    public double calcularPrecio(int btnNo) // esta funcion calcula el precio en funcion de cuantos objetos quieras comprar (si 10 o 1) [metere 100 si esta gente quiere]
+    {
+        double res = 0;
+        for (int i = 0;i<AmountObjects;i++)
+        {
+            res+=Math.Round(shopItemsSO[btnNo].basePrice * Math.Pow(1.15, shopItemsSO[btnNo].amount+i));
+        }
+        return res;
+        
     }
 
     private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
