@@ -39,39 +39,47 @@ public class ClickingScript : MonoBehaviour
 
         plusText.text = "+ " + PointsManager.Instance.scoreUp;
     }
+    /*Vector3 clickPosition = Input.mousePosition;
+      clickPosition.z = -Camera.main.transform.position.z;
+      Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
 
+      plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
+
+      plusObject.SetActive(true);
+
+      Fly();*/
     public void click()
     {
         PointsManager.Instance.SumarPuntos(PointsManager.Instance.scoreUp);
 
-        //plusObject.SetActive(false);
+        plusObject.SetActive(false);
 
+        Vector3 clickPosition = Input.mousePosition; // Obtiene la posición del clic en píxeles
 
-        Vector3 clickPosition = Input.mousePosition;
-        clickPosition.z = -Camera.main.transform.position.z;
-        Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(clickPosition); // Convierte la posición del clic a coordenadas del mundo
 
-        plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
-
+        // Instancia el objeto en la posición calculada
+        plusObject.transform.position = new Vector3(worldPosition.x, worldPosition.y, 100);
         plusObject.SetActive(true);
-
-        Fly();
+        StartCoroutine(Fly());
 
     }
 
 
     IEnumerator Fly()
     {
-        for(int i=0; i<=19; i++)
+        for(int i=0; i<=9; i++)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.1f);
 
-            plusObject.transform.position = new Vector3(plusObject.transform.position.x,plusObject.transform.position.y + 2, 0);
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x,plusObject.transform.position.y + 0.3f, 100);
         }
 
         plusObject.SetActive(false);
     }
-    
+
+   
+
 
     private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
         "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
