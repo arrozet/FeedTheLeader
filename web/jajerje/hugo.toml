@@ -1,0 +1,55 @@
+baseURL = 'https://openbokeron.uma.es'
+title = 'Feed The Leader'
+
+timeZone = 'Europe/Madrid'
+
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = true
+
+buildFuture = true
+
+
+[languages]
+  
+  [languages.es]
+    disabled = false
+    contentDir = 'content/es'
+    languageCode = 'es-es'
+    languageName = 'Español'
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        identifier = "home"
+        name = "Inicio"
+        url = "/es"
+        weight = 10
+
+      [[languages.es.menu.main]]
+        identifier = "posts"
+        name = "Publicaciones"
+        url = "/es/posts"
+        weight = 20
+
+      [[languages.es.menu.main]]
+        identifier = "download"
+        name = "¡Descárgame!"
+        url = "/es/download"
+        weight = 30
+
+      [[languages.es.menu.main]]
+        identifier = "contact"
+        name = "Contacto"
+        url = "/es/contact"
+        weight = 40
+
+      [[languages.es.menu.main]]
+      identifier = "whoarewe"
+      name = "¿Quiénes somos?"
+      url = "/es/whoarewe"
+      weight = 50
+
+    #[languages.es.params]
+    #  description = 'Asociación de Software Libre basada en Málaga, España'
+
+#[params]
+#  [params.social]
+#    twitter = 'OpenBokeron'

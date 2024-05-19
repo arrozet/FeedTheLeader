@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ .Content }}
+<div class="row center-xs middle-xs">
+  {{ range .Pages.ByDate.Reverse }}
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="row center-xs middle-xs">
+      <div class="col-xs">
+        <img src="/{{ .Params.image }}" alt="Event image">
+      </div>
+      <div class="col-xs">
+        <p><strong>{{ .Title }}</strong></p>
+        <p>{{ .Description }}</p>
+        <p>📅: {{ partial "time.html" . }}</p>
+        <p>📍: {{ .Params.place }}</p>
+        <p><i>{{ T (cond (eq (.Params.finished) true) "finished" "unfinished") }}</i></p>
+        <a class="button" href="{{ .Permalink }}">Info</a>
+      </div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,8 @@
+<nav>
+  <!-- TODO: Add active attribute when being visited -->
+  <ul>
+    {{ range .Site.Menus.main.ByWeight -}}
+      {{ .Pre }}<li><a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a></li>{{ .Post }}
+    {{- end }}
+  </ul>
+</nav>
