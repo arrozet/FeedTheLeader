@@ -39,15 +39,7 @@ public class ClickingScript : MonoBehaviour
 
         plusText.text = "+ " + PointsManager.Instance.scoreUp;
     }
-    /*Vector3 clickPosition = Input.mousePosition;
-      clickPosition.z = -Camera.main.transform.position.z;
-      Vector3 worldClickPosition = Camera.main.ScreenToWorldPoint(clickPosition);
-
-      plusObject.transform.position = new Vector3(worldClickPosition.x, worldClickPosition.y, 0);
-
-      plusObject.SetActive(true);
-
-      Fly();*/
+    
     public void click()
     {
         PointsManager.Instance.SumarPuntos(PointsManager.Instance.scoreUp);
@@ -55,12 +47,13 @@ public class ClickingScript : MonoBehaviour
         plusObject.SetActive(false);
 
         Vector3 clickPosition = Input.mousePosition; // Obtiene la posición del clic en píxeles
-
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(clickPosition); // Convierte la posición del clic a coordenadas del mundo
 
         // Instancia el objeto en la posición calculada
         plusObject.transform.position = new Vector3(worldPosition.x, worldPosition.y, 100);
         plusObject.SetActive(true);
+
+        StopAllCoroutines();
         StartCoroutine(Fly());
 
     }
@@ -68,13 +61,19 @@ public class ClickingScript : MonoBehaviour
 
     IEnumerator Fly()
     {
-        for(int i=0; i<=9; i++)
-        {
-            yield return new WaitForSeconds(0.1f);
+        float duration = 1f; // Duración de la animación en segundos
+        float elapsed = 0f;
+        Vector3 startPosition = plusObject.transform.position;
+        Vector3 endPosition = new Vector3(startPosition.x, startPosition.y + 3f, startPosition.z); // Cambia 3f por la cantidad que deseas mover en Y
 
-            plusObject.transform.position = new Vector3(plusObject.transform.position.x,plusObject.transform.position.y + 0.3f, 100);
+        while (elapsed < duration)
+        {
+            plusObject.transform.position = Vector3.Lerp(startPosition, endPosition, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null; // Espera hasta el siguiente frame
         }
 
+        plusObject.transform.position = endPosition; // Asegura que la posición final sea exacta
         plusObject.SetActive(false);
     }
 
