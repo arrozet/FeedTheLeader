@@ -26,13 +26,16 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double accumulatedScoreStat;
     public double PointsPerSecond;
     public double EventsClicked;
-    private double pointsAdded; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
+    private double pointsAdded; // esto no se si es del todo necesario, pero lo voy a usar para aï¿½adir los puntos
     // Start is called before the first frame update
     public int achievementCounter;
 
-    //Esto a lo mejor habría que hacerlo en un TimeManager
+    //Esto a lo mejor habrï¿½a que hacerlo en un TimeManager
     private bool primeraVez = true;
     private double startTime;
+
+    //multiplicador de puntos despues de prestigiar
+    public double prestigeMultiplier = 1;
 
     public void LoadData(GameData data)
     {
@@ -47,6 +50,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         this.EventsClicked = data.EventsClicked;
         this.pointsAdded = data.pointsAdded;
         this.achievementCounter = data.achievementCounter;
+        //this.prestigeMultiplier = data.prestigeMultiplier;
     }
 
     public void SaveData(ref GameData data)
@@ -61,7 +65,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.clics = this.clics;
         data.EventsClicked = this.EventsClicked;
         data.pointsAdded = this.pointsAdded;
-        data.achievementCounter = this.achievementCounter;
+      //  data.achievementCounter = this.achievementCounter;
     }
     void Update()
     {
@@ -202,7 +206,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         debug = 1;
         regPerSecond = 0;
         currentScore = 0; // Restablece los puntos a cero
-        scoreUp = 1; // Restablece multiplicador a uno
+        scoreUp = 1*prestigeMultiplier; // Restablece multiplicador a uno (por el multiplicador de prestigio)
         accumulatedScoreStat = 0;
         PointsPerSecond = 0;
     }
@@ -252,6 +256,16 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         scoreUp = n;
     }
 
+    public double getPrestigeMultiplier()
+    {
+        return prestigeMultiplier;
+    }
+
+    public void setPrestigeMultiplier(double n)
+    {
+        prestigeMultiplier = n;
+    }
+
 
     public void AddAlot()
     {
@@ -259,4 +273,15 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         accumulatedScoreStat += 10000000000000000000000000d;
     }
 
+    public void Prestige(double num)
+    {
+        prestigeMultiplier *= num;
+
+        ResetPoints();
+    }
+
+    public void ResetPrestigeMultiplier()
+    {
+        prestigeMultiplier = 1;
+    }
 }

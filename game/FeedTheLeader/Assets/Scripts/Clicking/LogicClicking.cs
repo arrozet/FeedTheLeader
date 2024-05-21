@@ -40,6 +40,7 @@ public class LogicClicking : MonoBehaviour
     public void ConfirmPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
+        SceneManager.LoadScene("PrestigeScreen");
     }
 
     public void CancelPrestige()
