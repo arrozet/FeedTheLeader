@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class LogicClicking : MonoBehaviour
 {
+    public GameObject confirmationPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,23 @@ public class LogicClicking : MonoBehaviour
 
     public void ResetPoints()
     {
-        // Llama a la función para resetear los puntos en el GameManager
+        // Llama a la funciï¿½n para resetear los puntos en el GameManager
         PointsManager.Instance.ResetPoints();
+    }
+
+    //Prestigio
+    public void ActivePrestigePanel()
+    {
+        confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta funciÃ³n
+    }
+
+    public void ConfirmPrestige()
+    {
+        confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
+    }
+
+    public void CancelPrestige()
+    {
+        confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
     }
 }
