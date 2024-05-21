@@ -24,9 +24,9 @@ buildFuture = true
         weight = 10
 
       [[languages.es.menu.main]]
-        identifier = "posts"
-        name = "Publicaciones"
-        url = "/es/posts"
+        identifier = "principles"
+        name = "Ideario"
+        url = "/es/principles"
         weight = 20
 
       [[languages.es.menu.main]]
