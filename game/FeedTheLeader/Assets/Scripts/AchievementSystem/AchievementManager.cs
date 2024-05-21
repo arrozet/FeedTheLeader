@@ -9,7 +9,9 @@ using System.Linq;
 public class AchievementManager : MonoBehaviour, IDataPersistence
 {
     public List<Achievement> achievements;
-    public AchievementLoaderScript achievementLoader;
+    //public AchievementLoaderScript achievementLoader;
+
+    public PointsManager pointsManager;
     // no voy a tocar lo tuyo eduardo
 
     public Achievement[] AchievementSO;
@@ -50,15 +52,20 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
     {
         DontDestroyOnLoad(gameObject);
     }
-    public void CheckAchievementsByType(string type, int condition)
+
+
+    public int CheckAchievementsByType(string type, int condition)
     {
+        int n = 0;
         foreach (Achievement achievement in achievements)
         {
             if (!achievement.unlocked && type.Equals(achievement.type) && condition >= achievement.condition)
             {
                 UnlockAchievement(achievement);
+                n++;
             }
         }
+        return n;
     }
 
     void UnlockAchievement(Achievement achievement)

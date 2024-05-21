@@ -6,10 +6,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements;
 
 public class PointsManager : MonoBehaviour, IDataPersistence
 {
     public static PointsManager Instance;
+
+    public AchievementManager achievementManager;
 
     // esto es una locura, voy a hacer que por cada vez que sume 1000 puntos por segundo, lo que sume sea en vez de 1 por segundo que sume 2 y asi hasta el infinito
     public double debug;
@@ -24,6 +27,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public double EventsClicked = 0;
     private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
+    public int achievementCounter = 0;
 
     //Esto a lo mejor habría que hacerlo en un TimeManager
     private bool primeraVez = true;
@@ -52,6 +56,12 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     }
     void Update()
     {
+        achievementCounter += achievementManager.CheckAchievementsByType("Click", clics);
+        achievementCounter += achievementManager.CheckAchievementsByType("Puntos", (int)currentScore);
+
+
+
+
         // GUARRERIA GUARRERIA PERO NO SE BUGEA MAS 
         if (PointsPerSecond < 1000000000000)
         {
