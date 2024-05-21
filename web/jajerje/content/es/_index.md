@@ -10,7 +10,7 @@ Como fieles a su régimen, exponemos sus ideas principales para que se dé a con
 
 # Ideario
 Las ideas del líder se pueden simplificar en dos: 
-- Seguir creciendo. 🆙
+- Seguir creciendo.
 - Eliminar los males del mundo (como sea). 
 
 Así pues, el líder comienza a tratar de hacer de este mundo algo mejor haciendo uso del medio más potente que existe en occidente: el **progreso** (y la compentencia, o la falta de ella).

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inicio on Feed The Leader</title>
+    <link>http://localhost:1313/es/</link>
+    <description>Recent content in Inicio on Feed The Leader</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Amarás al líder sobre todas las cosas</title>
+      <link>http://localhost:1313/es/principles/1-amaras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/1-amaras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>2. No tomarás el nombre del líder en vano</title>
+      <link>http://localhost:1313/es/principles/2-no_tomaras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/2-no_tomaras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>3. Santificarás las victorias del régimen</title>
+      <link>http://localhost:1313/es/principles/3-santificar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/3-santificar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>4. Honrarás al líder y a sus deciciones</title>
+      <link>http://localhost:1313/es/principles/4-honraras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/4-honraras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>5. No matarás, siempre que no sea encomendado por el líder</title>
+      <link>http://localhost:1313/es/principles/5-no_matar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/5-no_matar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>6. No cometerás actos impuros, ni efectuarás calumnias o injurias sobre el líder</title>
+      <link>http://localhost:1313/es/principles/6-no_actos_impuros/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/6-no_actos_impuros/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>7. No robarás, siempre que no sea encomendado por el líder</title>
+      <link>http://localhost:1313/es/principles/7-no_robaras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/7-no_robaras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>8. No mentirás, siempre que no sea encomendado por el líder</title>
+      <link>http://localhost:1313/es/principles/8-no_mentiras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/8-no_mentiras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>9. No pensarás fuera de lo establecido, siempre que no sea encomendado por el líder</title>
+      <link>http://localhost:1313/es/principles/9-no_pensa/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/9-no_pensa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>10. No codiciarás los bienes ajenos, salvo si así lo requiere la agenda política del líder</title>
+      <link>http://localhost:1313/es/principles/10-no_codiciaras/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/principles/10-no_codiciaras/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>¡Descárgame!</title>
+      <link>http://localhost:1313/es/download/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/download/</guid>
+      <description>Descarga Actualmente, Feed The Leader solo puede ser ejecutado en un ordenador corriendo el sistema operativo Windows. En un futuro cercano esperamos poder desplegar el ideario del líder en otras plataformas.&#xA;Para descargarlo, pulsa el siguiente botón:&#xA;Instalación La instalación es muy simple. Si sigues estos pasos, no te perderás. Te lo aseguro.&#xA;Descarga el archivo desde el botón de arriba. Verás que se te ha descargado un archivo con la extensión zip.</description>
+    </item>
+    <item>
+      <title>¿Quiénes somos?</title>
+      <link>http://localhost:1313/es/whoarewe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/whoarewe/</guid>
+      <description>Sobre nosotros JAJERJE studios es un pequeño grupo formado por siete integrantes nacido con la necesidad de cumplimentar un proyecto de la asignatura Introducción a la Ingeniería del Software. Ante el interrogante sobre qué proyecto llevar a cabo y la indecisión que nos corroía, decidimos (intentar) crear un clicker en Unity. Nunca habíamos usado Unity ni C#, pero aún así aceptamos el reto.&#xA;El resultado es el que podéis probar en esta misma página web, desplanzadoos al apartado de ¡Descárgame!</description>
+    </item>
+    <item>
+      <title>Contacto</title>
+      <link>http://localhost:1313/es/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/es/contact/</guid>
+      <description>¡Habla con los cercanos al líder! ¿Quieres tener unas palabras con algunos de los más fieles seguidores del régimen? ¡No te preocupes! Siempre puedes ponerte en contacto con nosotros a través de nuestro correo electrónico developer@jajerje.fun&#xA;¡Estaremos encantados de responder a tus preguntas, recibir tus sugerencias o simplemente charlar sobre la grandeza de nuestro líder!&#xA;Nuestras redes sociales Desgraciadamente, estamos maquinando para poder adquirir los usernames @FeedTheLeader en las distintas plataformas, pero actualmente están ocupadas.</description>
+    </item>
+  </channel>
+</rss>
