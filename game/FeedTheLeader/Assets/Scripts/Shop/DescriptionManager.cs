@@ -9,12 +9,15 @@ public class DescriptionManager : MonoBehaviour
     public GameObject textPanel; // Asigna el panel de texto en el editor
     public bool hasEmerged;
 
-    // Método que se llama cuando el ratón pasa por encima del objeto
 
+    // Método que se llama cuando el ratón pasa por encima del objeto
+    
     public void ActivePanel()
-    { 
-        hasEmerged = false; // es imposible que salga si todavia no ha entrado asi que aqui lo inicializamos a false
-        StartCoroutine(activar());
+    {
+    
+           hasEmerged = false; // es imposible que salga si todavia no ha entrado asi que aqui lo inicializamos a false
+           StartCoroutine(activar());
+        
 
     }
     private IEnumerator activar()
@@ -32,4 +35,5 @@ public class DescriptionManager : MonoBehaviour
         hasEmerged = true;
         textPanel.SetActive(false);
     }
+ 
 }
