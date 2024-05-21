@@ -98,7 +98,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         {
             if (id == achievement.id)
             {
-                UnlockAchievement(achievement);
+                if (condition >= achievement.condition) UnlockAchievement(achievement);
                 break;
             }
         }
