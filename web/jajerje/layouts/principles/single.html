@@ -1,0 +1,11 @@
+{{ define "main" }}
+<p class="notice">
+  {{ .Description }}
+  <br />
+  <br />
+  📅: {{ partial "time.html" . }}
+  <br />
+  📍: {{ .Params.place }}
+</p>
+{{ .Content }}
+{{ end }}
