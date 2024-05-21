@@ -22,13 +22,13 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public double currentScore;
     public double scoreUp;// no se que es serializefield
-    private int clics=0;
+    private int clics;
     public double accumulatedScoreStat;
     public double PointsPerSecond;
-    public double EventsClicked = 0;
-    private double pointsAdded = 0f; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
+    public double EventsClicked;
+    private double pointsAdded; // esto no se si es del todo necesario, pero lo voy a usar para añadir los puntos
     // Start is called before the first frame update
-    public int achievementCounter = 0;
+    public int achievementCounter;
 
     //Esto a lo mejor habría que hacerlo en un TimeManager
     private bool primeraVez = true;
@@ -43,7 +43,10 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         this.PointsPerSecond = data.pointsPerSecond;
         this.debug = data.debug;
         this.regPerSecond = data.regPerSecond;
-        
+        this.clics = data.clics;
+        this.EventsClicked = data.EventsClicked;
+        this.pointsAdded = data.pointsAdded;
+        this.achievementCounter = data.achievementCounter;
     }
 
     public void SaveData(ref GameData data)
@@ -55,7 +58,10 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.pointsPerSecond = this.PointsPerSecond;
         data.debug = this.debug;
         data.regPerSecond = this.regPerSecond;
-
+        data.clics = this.clics;
+        data.EventsClicked = this.EventsClicked;
+        data.pointsAdded = this.pointsAdded;
+        data.achievementCounter = this.achievementCounter;
     }
     void Update()
     {

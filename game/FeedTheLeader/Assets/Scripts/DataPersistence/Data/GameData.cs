@@ -13,6 +13,11 @@ public class GameData
     public SerializableDictionary<int, int> shopData;
     public SerializableDictionary<int, bool> achievementData;
 
+    public int clics;
+    public double EventsClicked;
+    public double pointsAdded;
+    public int achievementCounter;
+
     public double debug;
     public double regPerSecond;
 
@@ -28,5 +33,9 @@ public class GameData
         achievementData = new SerializableDictionary<int, bool>();
         this.debug = 1;
         this.regPerSecond = 0;
-    }
+        this.clics = 0;
+        this.EventsClicked = 0;
+        this.pointsAdded = 0f;
+        this.achievementCounter = 0;
+}
 }
