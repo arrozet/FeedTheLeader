@@ -4217,7 +4217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: data.game
   useEncryption: 0
-  timeBetweenSaves: 60
+  timeBetweenSaves: 5
 --- !u!4 &486251546
 Transform:
   m_ObjectHideFlags: 0
@@ -9368,7 +9368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   achievements: []
-  achievementLoader: {fileID: 0}
+  pointsManager: {fileID: 1351391738}
   AchievementSO: []
   AchievementPanelSO: []
   AchievementPanel: []
@@ -10790,6 +10790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cbbde9eaf637af43b0c73e21a885c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  achievementManager: {fileID: 1147068650}
   debug: 0
   regPerSecond: 0
   currentScore: 0
@@ -10797,6 +10798,7 @@ MonoBehaviour:
   accumulatedScoreStat: 0
   PointsPerSecond: 0
   EventsClicked: 0
+  achievementCounter: 0
 --- !u!4 &1351391739
 Transform:
   m_ObjectHideFlags: 0

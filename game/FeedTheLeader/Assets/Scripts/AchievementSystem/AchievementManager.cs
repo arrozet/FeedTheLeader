@@ -68,6 +68,22 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         return n;
     }
 
+    public int CheckShopAchievements(GameData data)
+    {
+        Dictionary<int,int> dic = data.shopData;
+        int n = 0;
+
+        foreach(Achievement achievement in AchievementSO)
+        {
+            int cond = dic.GetValueOrDefault(achievement.id, 0);
+            CheckAchievementById(achievement.id, cond);
+            if (achievement.unlocked) n++;
+        }
+
+
+        return n;
+    }
+
     void UnlockAchievement(Achievement achievement)
     {
         achievement.unlocked = true;
@@ -76,7 +92,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         // Falta por agregar mensaje de desbloqueo
     }
 
-    void UnlockAchievementById(int id)
+    void CheckAchievementById(int id, int condition)
     {
         foreach(Achievement achievement in AchievementSO)
         {
