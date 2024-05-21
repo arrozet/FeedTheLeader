@@ -34,7 +34,9 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         {
             shopItem.LoadData(data);
         }
+        first(); // funcion que se tiene que ejecutar para cargar los paneles que deben aparecer por pantalla
     }
+    
 
     public void SaveData(ref GameData data)
     {
@@ -42,6 +44,20 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         {
             shopItem.SaveData(ref data);
         }
+    }
+    public void first()
+    {
+        for (int i = 0; i < shopItemsSO.Length; i++)
+        {
+            if (shopItemsSO[i].unlocked == true) // si no esta desbloqueado el objeto, no lo muestra
+            {
+                shopPanelsSO[i].SetActive(true);
+            }
+        }
+        AmountObjects = 1;
+        loadPanels();
+        CheckPurchaseable();
+
     }
 
     // Update is called once per frame
