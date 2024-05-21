@@ -65,6 +65,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
                 n++;
             }
         }
+        if (n > 0) Debug.Log("Desbloqueados " + n + " logros");
         return n;
     }
 
@@ -80,7 +81,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
             if (achievement.unlocked) n++;
         }
 
-
+        if (n > 0) Debug.Log("Desbloqueados " +  n + " logros de la tienda");
         return n;
     }
 
