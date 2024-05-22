@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
+  m_Name: 1020-JAJERJE
+  m_EditorClassIdentifier: 
+  id: 1020
+  title: JAJERJE
+  description: "Consigue la forma final del l\xEDder. Ya no puede engordar m\xE1s.
+    Total, no queda m\xE1s espacio tangible."
+  type: Puntos
+  condition: 0
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: a477d28db2ca54c4dad9a29a42c0a929, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 934af86489a3123459ce8d5ce3d3e8d6, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
+  m_Name: 1002-Estoy cansado, jefe
+  m_EditorClassIdentifier: 
+  id: 1002
+  title: Estoy cansado, jefe
+  description: "Clica manualmente 1.000 veces al l\xEDder. Debes seguir rindiendo
+    a este nivel... \xA1Si sigues as\xED el l\xEDder te ascender\xE1!"
+  type: Click
+  condition: 1000
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: 07b35a87f79818244aa71f39d238bc05, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 934af86489a3123459ce8d5ce3d3e8d6, type: 3}

@@ -6,12 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Achievement", menuName = "Achievement")]
 public class Achievement : ScriptableObject, IDataPersistence
 {
-    public string title;
     public int id;
+    public string title;
     public string description;
-    public int condition;
-    public bool unlocked;
     public string type;
+    public float condition;   //TODO: cambiar a float las dependencias - ROZ
+    public bool unlocked;
     public Sprite sprite;
     public Sprite NotUnlockedSprite;
 

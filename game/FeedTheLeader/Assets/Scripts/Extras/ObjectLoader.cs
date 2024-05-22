@@ -26,8 +26,9 @@ public class ObjectLoader : MonoBehaviour
     private string imagePathGenerator = "Images/Generators/toLoadShop/";    // ruta relativa a resources
 
     //ACHIEVEMENTS
-    private string filePathAchievement = "Assets/Resources/achievements_default.csv";   // ruta del archivo
+    private string filePathAchievement = "Assets/Resources/achievements_default-toload.txt";   // ruta del archivo
     Achievement achievementItem; // tipo de item a cargar
+    private string imagePathAchievements = "Images/Achievements/toLoadAchievements/";    // ruta relativa a resources
 
     void Start()
     {
@@ -74,8 +75,8 @@ public class ObjectLoader : MonoBehaviour
                         generatorItem.pointsPerSecond = double.Parse(parts[6]);
                         generatorItem.unlocked = bool.Parse(parts[7]);
 
-                    // Cojo el sprite de resources y lo cargo. No se debe poner la extensión
-                    string image = imagePathGenerator + generatorItem.name;
+                        // Cojo el sprite de resources y lo cargo. No se debe poner la extensión
+                        string image = imagePathGenerator + generatorItem.name;
                         generatorItem.sprite = Resources.Load<Sprite>(image);
 
                         // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
@@ -108,15 +109,14 @@ public class ObjectLoader : MonoBehaviour
     //Author:Eduardo, modificación de ObjectLoader.cs de Rubén. Los comentarios del script original se mantendrán en la mayoría de lo posible
     //Mod:ROZ
     
-    public List<Achievement> LoadAchievements()
+    void LoadAchievements()
     {
-        List<Achievement> listAchievements = new List<Achievement>();
 #if UNITY_EDITOR
         //some code here that uses something from the UnityEditor namespace
 
         if (File.Exists(filePathAchievement))
         {
-            using (StreamReader reader = new StreamReader(filePathAchievement))
+            using (StreamReader reader = new StreamReader(filePathAchievement, Encoding.GetEncoding("ISO-8859-1")))
             {
                 reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
                 while (!reader.EndOfStream)
@@ -127,11 +127,31 @@ public class ObjectLoader : MonoBehaviour
                     // relleno el objeto con los datos pertinentes
                     achievementItem = ScriptableObject.CreateInstance<Achievement>();
                     achievementItem.id = int.Parse(parts[0]);
-                    achievementItem.name = parts[1];
+
+                    // Tenía problemas con algunos caracteres
+                    if (parts[1].Contains("Uy,"))   // '¿', '?' son caracteres inválidos para poner en un nombre de archivo
+                    {
+                        achievementItem.name = achievementItem.id + "-" + "uy, y esto";
+                    }
+                    else if (parts[1].Contains("Barba"))// '<' son caracteres inválidos para poner en un nombre de archivo
+                    {
+                        achievementItem.name = achievementItem.id + "-" + "I love Barba";
+                    }
+                    else
+                    {
+                        achievementItem.name = achievementItem.id + "-" + parts[1];
+                    }
+                    
                     achievementItem.title = parts[1];
                     achievementItem.description = parts[2];
-                    achievementItem.condition = int.Parse(parts[3]);
-                    achievementItem.unlocked = bool.Parse(parts[4]);
+                    achievementItem.type = parts[3];
+                    achievementItem.condition = float.Parse(parts[4]);
+                    achievementItem.unlocked = bool.Parse(parts[5]);
+
+                    // Cojo el sprite de resources y lo cargo. No se debe poner la 
+                    string image = imagePathAchievements + achievementItem.id.ToString();   // esta vez lo hago con id porque es muy tedioso hacerlo con los nombres en este caso
+                    achievementItem.sprite = Resources.Load<Sprite>(image);
+                    achievementItem.NotUnlockedSprite = Resources.Load<Sprite>(imagePathAchievements + "locked");
 
                     // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
                     string assetPath = "Assets/Scripts/AchievementSystem/Achievements/";  // donde se va a guardar los items. cuidadin con donde se pone
@@ -146,7 +166,7 @@ public class ObjectLoader : MonoBehaviour
                     assetPath += addItem;   // actualizo el directorio para que se cree ok
                     AssetDatabase.CreateAsset(achievementItem, assetPath);
                     AssetDatabase.SaveAssets();
-                    listAchievements.Add(achievementItem);
+                    //listAchievements.Add(achievementItem);
                 }
             }
             Debug.Log("Loaded achievements succesfully");
@@ -157,7 +177,7 @@ public class ObjectLoader : MonoBehaviour
         }
 #endif
         // cuidado, si el return está después del endif, la declaración de la lista debe estar detrás del if
-        return listAchievements;
+        //return listAchievements;
     }
     
     

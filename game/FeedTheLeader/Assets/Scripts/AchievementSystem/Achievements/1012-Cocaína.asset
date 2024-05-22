@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
+  m_Name: "1012-Coca\xEDna"
+  m_EditorClassIdentifier: 
+  id: 1012
+  title: "Coca\xEDna"
+  description: "Compra todas las mejoras de cinco generadores. Dices que te hace
+    falta algo m\xE1s fuerte, pero que te puedes controlar. S\xED, s\xED."
+  type: Tienda
+  condition: 5
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: 48f3eb463702e314cab49754d05c8aa2, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 934af86489a3123459ce8d5ce3d3e8d6, type: 3}

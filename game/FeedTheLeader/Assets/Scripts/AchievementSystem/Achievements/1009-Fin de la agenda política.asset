@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
+  m_Name: "1009-Fin de la agenda pol\xEDtica"
+  m_EditorClassIdentifier: 
+  id: 1009
+  title: "Fin de la agenda pol\xEDtica"
+  description: "Compra todos los generadores que hay al menos una vez. Este es el
+    fin, peque\xF1\xEDn. \xBFO no?"
+  type: Tienda
+  condition: 1000000
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: 08827603190a1cf48a961a0b92c8dba8, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 934af86489a3123459ce8d5ce3d3e8d6, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902616bab10e89d4cb66cf4fd29b9823, type: 3}
+  m_Name: 1019-I love Barba
+  m_EditorClassIdentifier: 
+  id: 1019
+  title: I <3 Barba
+  description: "Llega a un decill\xF3n de puntos. Te encantan las barbas. Sobre todo
+    alguna como la de C-Cristo."
+  type: Puntos
+  condition: 1e+33
+  unlocked: 0
+  sprite: {fileID: 21300000, guid: 11ed20fa8ae2c4249ba5f3b0f43d96bd, type: 3}
+  NotUnlockedSprite: {fileID: 21300000, guid: 934af86489a3123459ce8d5ce3d3e8d6, type: 3}
