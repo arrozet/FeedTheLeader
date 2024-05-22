@@ -40,11 +40,16 @@ public class LogicClicking : MonoBehaviour
     public void ConfirmPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
-        SceneManager.LoadScene("PrestigeScreen");
+        PointsManager.Instance.Prestige(CalculateMultiplier());
     }
 
     public void CancelPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
+    }
+
+    public double CalculateMultiplier() //aqúi debería calcularse el multiplicador de prestigio
+    {
+        return 2;
     }
 }

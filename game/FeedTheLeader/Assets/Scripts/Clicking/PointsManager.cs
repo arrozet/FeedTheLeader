@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
 
@@ -282,6 +283,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void ResetPrestigeMultiplier()
     {
+        if (prestigeMultiplier != 0) scoreUp = scoreUp / prestigeMultiplier;
         prestigeMultiplier = 1;
     }
+
 }
