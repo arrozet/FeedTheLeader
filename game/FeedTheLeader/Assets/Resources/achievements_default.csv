@@ -6,9 +6,9 @@ ID;TITLE;DESCRIPTION;TIPO;CONDITION;UNLOCKED
 1004;Uy, ¿y esto?;Clica tu primer elemento aleatorio. Por fin la hamburguesa esta que da vueltas sirvió para algo.;Aleatorio;1;false
 1005;Andaluz;Compra tu primer generador. El capitalismo te corre por las venas, y las pocas ganas de trabajar también.;Tienda;1;false
 1006;Pokédex;Compra al menos un generador de cada tipo. Ya hasta los coleccionas en la maquinita esta con la que estás jugando ahora mismo.;Tienda;1;false
-1007;Explotación;Compra un generador hasta agotar existencias. Te mola el tema de no trabajar, eh.;Tienda;50000;false
-1008;Capitalismo;Compra diez generadores hasta agotar existencias. Te has alineado con el pensamiento de occidente. Buen trabajo.;Tienda;10;false
-1009;Fin de la agenda política;Compra todos los generadores posibles. Este es el fin, pequeñín. ¿O no?;Tienda;1000000;false
+1007;Explotación;Compra un generador. Te mola el tema de no trabajar, eh.;Tienda;50000;false
+1008;Capitalismo;Compra diez generadores distintos. Te has alineado con el pensamiento de occidente. Buen trabajo.;Tienda;10;false
+1009;Fin de la agenda política;Compra todos los generadores que hay al menos una vez. Este es el fin, pequeñín. ¿O no?;Tienda;1000000;false
 1010;Only UP!;Compra tu primera mejora en la tienda. Cuando estás en el fondo, solo queda subir.;Tienda;2;false
 1011;Cafeína;Compra todas las mejoras de un generador. Pruebas tu primer estimulante… Y mola cantidubi.;Tienda;100000000;false
 1012;Cocaína;Compra todas las mejoras de cinco generadores. Dices que te hace falta algo más fuerte, pero que te puedes controlar. Sí, sí.;Tienda;5;false
@@ -17,8 +17,8 @@ ID;TITLE;DESCRIPTION;TIPO;CONDITION;UNLOCKED
 1015;Mis primeros pasos;Llega a 100 puntos. Mira qué cosita, tan pequeñito y frágil…;Puntos;100;false
 1016;Ya voy al cole;Llega a 10.000 puntos. ¡Pero cómo has crecido! Estarás hasta el cogote de petit-suisse.;Puntos;10000;false
 1017;TU PRIMER MILLÓN;Llega a un millón de puntos. Ya eres un hombre, has empezado a trabajar y por fin sabes lo que es levantarse a las 5AM.;Puntos;1000000;false
-1018;La cabra;Llega a un cuatrillón de puntos. El mejor de todos los tiempos (sin contar al líder).;Puntos;0;false
-1019;I <3 Barba;Llega a un decillón de puntos. Te encantan las barbas. Sobre todo alguna como la de C-Cristo.;Puntos;0;false
+1018;La cabra;Llega a un cuatrillón de puntos. El mejor de todos los tiempos (sin contar al líder).;Puntos;1E+24;false
+1019;I <3 Barba;Llega a un decillón de puntos. Te encantan las barbas. Sobre todo alguna como la de C-Cristo.;Puntos;1E+33;false
 1020;JAJERJE;Consigue la forma final del líder. Ya no puede engordar más. Total, no queda más espacio tangible.;Puntos;0;false
 1021;Generalísimo;Prestigia. Has subido de rango. Ahora todo es más fácil y rápido (supuestamente).;Prestigio;1;false
 1022;Con el corazón llenito;Saciaste al líder. Al menos, temporalmente…;Especial;0;false
