@@ -26,16 +26,17 @@ public class SettingsMenu : MonoBehaviour
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown;
     List<Resolution> resolutions = new List<Resolution>();  // guardo las resoluciones disponibles en el pc en una lista
-    private List<string> myResolutionsWithCurrentRefresh = new List<string>();  
+    
     private int width, height;
     private RefreshRate refreshRate;
+
+    // Lo necesito para poder poner el dropdown en caso de que sea la primera vez (antes estaba declarado en getResolutions)
+    private List<string> myResolutionsWithCurrentRefresh = new List<string>();
+    int currentResolutionIndex = 0;
 
     [Header("Slider Música")]
     public UnityEngine.UI.Slider musicSlider;
     public UnityEngine.UI.Slider effectsSlider;
-
-    //Boolean firstTime = true;
-    int currentResolutionIndex = 0;
 
 
     private void Start()
@@ -146,7 +147,7 @@ public class SettingsMenu : MonoBehaviour
             {
                 if (i > 0)
                 {
-                    i--;    // si se ha pasado y no es la primera, que coja la anterior
+                    i--;    // si se ha pasado y no es la primera, que coja la anterior -> Para evitar OutOfBounds
                 }
                 
                 found = true;
@@ -175,11 +176,13 @@ public class SettingsMenu : MonoBehaviour
          * a pagar.
          * */
 
+        // Consigo mi resolución falsa
         string fakeRes = getFakeResolution(myResolutionsWithCurrentRefresh, resolutionIndex);
         string[] dividedFakeRes = fakeRes.Split('x');
         int width = int.Parse(dividedFakeRes[0]);
         int height = int.Parse(dividedFakeRes[1]);
 
+        // La pongo
         Screen.SetResolution(width, height, Screen.fullScreen);
         //Debug.Log("SetResolution: set to " + fakeRes
     }
