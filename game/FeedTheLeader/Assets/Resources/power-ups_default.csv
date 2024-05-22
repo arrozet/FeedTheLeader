@@ -114,8 +114,8 @@ ID;LEVEL;TYPE;TITLE;DESC;EFFECT (MULTIPLICADOR);PRICE;UNLOCKED
 213;2;22generador;El despertar;Como en un bucle de realidades, vas despertando de las simulaciones y consumiéndolas.;3;3,20E+23;false
 214;1;23generador;Ser supremo;Tu consciencia evoluciona al estado definitivo. Tú creas y tú consumes con total autosuficiencia.;1,5;3,70E+23;false
 215;2;23generador;EL LÍDER;La mejora final. Te has aburrido de este universo, de esta realidad, de este todo. Solo te queda usar tu poder para volver a empezar.;3;5,00E+30;false
-216;1;15generador;Doyouknowdawae;Empiezas por los países que en su mayoría tienen población indígena, están indefensos ante el poder del líder;1,25;-1;false
-217;2;15generador;Parte de Asia;El líder poco a poco acaba con los países más empobrecidos de Asia, no son muchos pero están deliciosos;1,5;-1;false
-218;3;15generador;América Latina;Tanto territorio sumido en la pobreza… qué desperdicio… creo que el líder puede solucionarlo;1,75;-1;false
-219;4;15generador;África;Quizá no sea el continente más grande, pero en cuanto a número de países no desarrollados no tiene rival, nos sirve;2;-1;false
+216;1;15generador;Doyouknowdawae;Empiezas por los países que en su mayoría tienen población indígena, están indefensos ante el poder del líder.;1,25;-1;false
+217;2;15generador;Parte de Asia;El líder poco a poco acaba con los países más empobrecidos de Asia, no son muchos pero están deliciosos.;1,5;-1;false
+218;3;15generador;América Latina;Tanto territorio sumido en la pobreza… qué desperdicio… creo que el líder puede solucionarlo.;1,75;-1;false
+219;4;15generador;África;Quizá no sea el continente más grande, pero en cuanto a número de países no desarrollados no tiene rival, nos sirve.;2;-1;false
 220;5;15generador;Clasismo;Empiezas a considerar como pobres países que quizá no lo eran tanto… ¡ups!;3;-1;false
