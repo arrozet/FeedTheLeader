@@ -14,9 +14,17 @@ public class WriteStats : MonoBehaviour
     public TMP_Text PlayedTime;
 
     private double puntosActuales;
+    private Tuple<String, String> TuplaPuntosActuales;
+
     private double puntosAcumulados;
+    private Tuple<String, String> TuplaPuntosAcumulados;
+
     private double puntosPorSegundo;
+    private Tuple<String, String> TuplaPuntosPorSegundos;
+
     private double puntosPorClick;
+    private Tuple<String, String> TuplaPuntosPorClick;
+
     private double eventosClicados;
     private double tiempoJugado;
 
@@ -54,18 +62,25 @@ public class WriteStats : MonoBehaviour
         else
         {
             puntosActuales = PointsManager.Instance.getPuntos();
+            TuplaPuntosActuales = formatScore(puntosActuales);
+
             puntosAcumulados = PointsManager.Instance.getAccumulatedScore();
+            TuplaPuntosAcumulados = formatScore(puntosAcumulados);
+
             puntosPorSegundo = PointsManager.Instance.getPointsPerSecond();
+            TuplaPuntosPorSegundos = formatScore(puntosPorSegundo);
+
             puntosPorClick = PointsManager.Instance.getScoreUp();
+            TuplaPuntosPorClick = formatScore(puntosPorClick);
+
             eventosClicados = PointsManager.Instance.getEventsClicked();
             tiempoJugado = Time.time - (PointsManager.Instance.getStartTime());
-            //tiempoJugado = Mathf.RoundToInt((float)tiempoJugado);
             ConvertirTiempo(tiempoJugado);
 
-            CurrentPoints.text = "Puntos actuales: " + puntosActuales;
-            AccumulatedPoints.text = "Puntos acumulados: " + puntosAcumulados;
-            PointsPerSecond.text = "Puntos por segundo: " + puntosPorSegundo;
-            PointsPerClick.text = "Puntos por click: " + puntosPorClick;
+            CurrentPoints.text = "Puntos actuales: " + TuplaPuntosActuales.Item1 + " " + TuplaPuntosActuales.Item2;
+            AccumulatedPoints.text = "Puntos acumulados: " + TuplaPuntosAcumulados.Item1 + " " + TuplaPuntosAcumulados.Item2;
+            PointsPerSecond.text = "Puntos por segundo: " + TuplaPuntosPorSegundos.Item1 + " " + TuplaPuntosPorSegundos.Item2;
+            PointsPerClick.text = "Puntos por click: " + TuplaPuntosPorClick.Item1 + " " + TuplaPuntosPorClick.Item2;
             EventsClicked.text = "Eventos aleatorios clicados: " + eventosClicados;
             PlayedTime.text = "Tiempo jugado: " + dias + " días " + horas + " horas " + minutos + " minutos " + segundosRestantes + " segundos";
         }
@@ -82,6 +97,127 @@ public class WriteStats : MonoBehaviour
         minutos = (int)(segundos / 60); // 60 segundos en un minuto
         segundos %= 60;
         segundosRestantes = (int)segundos;
+
+    }
+
+    private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
+        "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
+        "trevigintillon", "quattuorvigintillon", "quinvigintillon", "sexvigintillon", "septenvigintillon", "octovigintillon", "novemvigintillon", "trigintillon" };
+
+    public static Tuple<string, string> formatScore(double numero)
+    {
+        if (numero < 1000000)
+            return Tuple.Create(numero.ToString("N0"), "");
+
+        int unidad = 0;
+        while (numero >= 1000000)
+        {
+            unidad++;
+            numero /= 1000000;
+        }
+        double numerito = Math.Round(numero, 3); // solo necesitamos 3 cifras decimales para mostrar, las demas son prescindibles
+        int analizado = AnalizarNumero(numerito);
+        string resultado;
+        if (analizado == 0)
+        {
+            //Debug.Log("ME meti en 0");
+            resultado = numerito.ToString("N0");
+        }
+        else if (analizado == 1)
+        {
+            //Debug.Log("ME meti en 1");
+            resultado = numerito.ToString("N1").TrimEnd('0').TrimEnd('.');
+        }
+        else if (analizado == 2)
+        {
+            //Debug.Log("ME meti en 2");
+            resultado = numerito.ToString("N2").TrimEnd('0').TrimEnd('.');
+        }
+        else
+        {
+            //Debug.Log("ME meti en 3");
+            resultado = numerito.ToString("N3").TrimEnd('0').TrimEnd('.');
+        }
+        string resultado2 = "";
+
+        if (unidad > 0)
+        {
+            int numAux = (int)numero;
+            resultado += " ";
+            if (numAux == 1 && analizado == 0)
+                resultado2 += Unidades[unidad];
+            else
+                resultado2 += Unidades[unidad] + "es";
+        }
+
+        return Tuple.Create(resultado, resultado2);
+    }
+
+    public static int AnalizarNumero(double numero)
+    {
+
+        // esto es la cosa mas guarra que he hecho en mi vida
+        string numeroStr = numero.ToString();
+        int index = numeroStr.IndexOf(','); // si no hay coma el index sera -1
+
+        if (index == -1)
+        {
+            // Si no hay parte decimal
+            return 0;
+        }
+        else
+        {
+            // Si hay parte decimal
+            string parteDecimal = numeroStr.Substring(index + 1); // tomas el prmera numero decimal
+
+
+            if (parteDecimal.Length == 1) // si solo es un numero 
+            {
+                if (parteDecimal[0].Equals('0')) // si es 0
+                {
+                    return 0; // significa que no tenemos que representar ningun numero
+                }
+                else
+                {
+                    return 1; // si no si tenemos que representarlo
+                }
+            }
+            else if (parteDecimal.Length == 2)
+            {
+                if (parteDecimal[0].Equals('0') && parteDecimal[1].Equals('0'))
+                {
+                    return 0;
+                }
+                else if (parteDecimal[1].Equals('0'))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            else
+            {
+                if (parteDecimal[0].Equals('0') && parteDecimal[1].Equals('0') && parteDecimal[2].Equals('0'))
+                {
+                    return 0;
+                }
+                else if (parteDecimal[1].Equals('0') && parteDecimal[2].Equals('0'))
+                {
+                    return 1;
+                }
+                else if (parteDecimal[2].Equals('0'))
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+
+        }
 
     }
 
