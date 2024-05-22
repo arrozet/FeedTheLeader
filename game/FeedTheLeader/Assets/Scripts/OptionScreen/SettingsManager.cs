@@ -25,7 +25,8 @@ public class SettingsMenu : MonoBehaviour
 
     [Header("Resoluciones")]
     public TMP_Dropdown resolutionDropdown;
-    List<Resolution> resolutions = new List<Resolution>();
+    List<Resolution> resolutions = new List<Resolution>();  // guardo las resoluciones disponibles en el pc en una lista
+    private List<string> myResolutionsWithCurrentRefresh = new List<string>();  
     private int width, height;
     private RefreshRate refreshRate;
 
@@ -33,12 +34,21 @@ public class SettingsMenu : MonoBehaviour
     public UnityEngine.UI.Slider musicSlider;
     public UnityEngine.UI.Slider effectsSlider;
 
+    //Boolean firstTime = true;
+    int currentResolutionIndex = 0;
+
 
     private void Start()
     {
+        //myResolutionsWithCurrentRefresh.Clear();    // si no lo borro, genera bugs
         getResolutions();
+        
+
         musicSlider.value = PlayerPrefs.GetFloat("MusicSliderValue", 1f);
         effectsSlider.value = PlayerPrefs.GetFloat("EffectsSliderValue", 1f);
+
+        //Tengo que coger el valor actual de mi dropdown, para poder "mentir" con la resolución que tengo en realidad
+        resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionDropdownValue", currentResolutionIndex);
 
         // Configura el slider de FPS
         fpsSlider.minValue = 0;
@@ -77,8 +87,7 @@ public class SettingsMenu : MonoBehaviour
         // borro las resoluciones que haya en mi dropdown
         resolutionDropdown.ClearOptions();
 
-        // guardo las resoluciones disponibles en el pc en una lista
-        List<string> myResolutionsWithCurrentRefresh = new List<string>();
+        
 
         // guardo el índice para que se muestre correctamente en el display de resoluciones
         int currentResolutionIndex = 0;
@@ -103,13 +112,76 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    public string getFakeResolution(List<string> myRes, int currentResIndex)
+    {       
+        // Estas son las resoluciones 16:9 frecuentes
+                                         // HD          FHD         QHD          UHD
+        string[] frequentSixteenByNine = { "1280x720", "1920x1080", "2560x1440", "3840x2160"};
+
+        // Saco la altura de mi resolución
+        string currentRes = myRes[currentResIndex];
+        string[] dividedCurrentRes = currentRes.Split('x');
+        int currentHeight = int.Parse(dividedCurrentRes[1]);
+
+        
+        Boolean found = false;
+        int i = 0;
+        while (!found)
+        {
+            // Saco la altura de la resolución frecuente
+            string frequentRes = frequentSixteenByNine[i];
+            string[] dividedFrequentRes = frequentRes.Split('x');
+            int frequentHeight = int.Parse(dividedFrequentRes[1]);
+            //Debug.Log("Frequent " + frequentHeight + " Current: " + currentHeight);
+            // Busco la resolución frecuente más alta sin pasarse (si tengo 900 de altura, me pondrá 720; si tengo 1080 me pondrá 1080; si tengo 1600 me pondrá 1440)
+            if (frequentHeight < currentHeight)    // si sigue siendo más pequeña, paso a la siguiente
+            {
+                i++;
+            }
+            else if(frequentHeight == currentHeight)
+            {
+                found = true;   // es exactamente la que quiero
+            }
+            else
+            {
+                if (i > 0)
+                {
+                    i--;    // si se ha pasado y no es la primera, que coja la anterior
+                }
+                
+                found = true;
+            }
+        }
+
+        // Ya tengo el índice que busco
+        return frequentSixteenByNine[i];
+    }
     
     public void SetResolution(int resolutionIndex)
     {
+        /*
+        //También tengo que cambiar esto
         Resolution resolution = resolutions[resolutionIndex];
-
+        
         // actualizo de verdad mi resolución
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        */
+
+        /* Para evitar solucionar problemas de anclaje y como medida desesperada (es una guarrada, pero el tiempo es crucial), 
+         * he decidido enmascarar la verdadera resolución por una estándar de 16:9. En 16:9, el juego no se rompe y en pantallas de 
+         * diferente aspect ratio, se muestran bordes negros (aceptable). Además, la mayoría de pantallas son 16:9.
+         * 
+         * Al jugador se le mostrará que tiene cierta resolución, cuando en realidad tiene su primo-hermano en 16:9. Es un pequeño precio
+         * a pagar.
+         * */
+
+        string fakeRes = getFakeResolution(myResolutionsWithCurrentRefresh, resolutionIndex);
+        string[] dividedFakeRes = fakeRes.Split('x');
+        int width = int.Parse(dividedFakeRes[0]);
+        int height = int.Parse(dividedFakeRes[1]);
+
+        Screen.SetResolution(width, height, Screen.fullScreen);
+        //Debug.Log("SetResolution: set to " + fakeRes
     }
 
     //PANTALLA COMPLETA
@@ -163,6 +235,9 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.SetFloat("MusicSliderValue", musicSlider.value);
         PlayerPrefs.SetFloat("EffectsSliderValue", effectsSlider.value);
         PlayerPrefs.SetFloat("FpsSliderValue", fpsSlider.value);
+
+        // Tengo que guardar el valor del dropdown que tengo, para poder "mentir" con la resolución que muestro (en realidad no es la real)
+        PlayerPrefs.SetInt("ResolutionDropdownValue", resolutionDropdown.value);
 
         // Guardar valor de fpsToggle. No se puede hacer setBool, asi que trabajo con enteros
         if (fpsToggle.isOn)
