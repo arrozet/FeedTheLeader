@@ -1,4 +1,4 @@
-baseURL = 'https://openbokeron.uma.es'
+baseURL = 'https://jajerje.fun'
 title = 'Feed The Leader'
 
 timeZone = 'Europe/Madrid'
@@ -47,9 +47,9 @@ buildFuture = true
       url = "/es/whoarewe"
       weight = 50
 
-    #[languages.es.params]
-    #  description = 'Asociación de Software Libre basada en Málaga, España'
+    [languages.es.params]
+      description = 'Oda al líder'
 
-#[params]
-#  [params.social]
-#    twitter = 'OpenBokeron'
+[params]
+  [params.social]
+    twitter = 'FeedTheLeader'
