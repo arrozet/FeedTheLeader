@@ -53,3 +53,6 @@ buildFuture = true
 [params]
   [params.social]
     twitter = 'FeedTheLeader'
+    title = 'Feed The Leader - JAJERJE studios'
+    description = 'Oda al líder.'
+    image = 'https://jajerje.fun/favicon.ico'
