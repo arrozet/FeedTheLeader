@@ -18,7 +18,7 @@ MonoBehaviour:
   desc: "Tus sirvientes forman una jerarqu\xEDa: todos est\xE1n condenados a seguir
     al l\xEDder, pero con distinto rango."
   effect: 2
-  price: 100
+  price: 1000
   unlocked: 0
   bought: 0
   type: 0generador
