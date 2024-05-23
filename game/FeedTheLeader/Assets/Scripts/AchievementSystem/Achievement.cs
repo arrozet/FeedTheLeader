@@ -6,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Achievement", menuName = "Achievement")]
 public class Achievement : ScriptableObject, IDataPersistence
 {
-    public int id;
+    public int id;              // Id empieza en 1000
     public string title;
     public string description;
-    public string type;
-    public float condition;   //TODO: cambiar a float las dependencias - ROZ
+    public string type;         // Indica el tipo de logro que es
+    public float condition;     // Indica un parámetro clave para cumplimentar la condición del logro   //TODO: cambiar a float las dependencias - ROZ
     public bool unlocked;
     public Sprite sprite;
     public Sprite NotUnlockedSprite;

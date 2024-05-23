@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(fileName = "ShopMenu", menuName = "Scripteable Obects/New Shop Item", order = 1)]
 public class ShopItemScripteableObject : ScriptableObject, IDataPersistence { 
-    public int id;
-    public string title;
+    public int id;              // Id empieza en 0
+    public string title;        
     public string description;
     public double price;
-    public double basePrice;
-    public int amount;
+    public double basePrice;    // Default es el mismo que price
+    public int amount;          // Default es 0
     public double pointsPerSecond;
     public bool unlocked;
     public Sprite sprite;

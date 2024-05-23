@@ -30,6 +30,12 @@ public class ObjectLoader : MonoBehaviour
     Achievement achievementItem; // tipo de item a cargar
     private string imagePathAchievements = "Images/Achievements/toLoadAchievements/";    // ruta relativa a resources
 
+    //POWERUPS
+    private string filePathPowerup = "Assets/Resources/............................./";   // ruta del archivo
+    PowerUpSO powerupItem; // tipo de item a cargar
+    private string imagePathPowerup = "Images/PowerUps/toLoadPowerUps/mejora/";    // ruta relativa a resources
+    private string marcoPathPowerup = "Images/PowerUps/toLoadPowerUps/marco/";    // ruta relativa a resources
+
     void Start()
     {
         // DESCOMENTA LO QUE QUIERAS CARGAR PARA CARGAR LOS VALORES DEFAULT DE DICHA COSA
@@ -179,6 +185,63 @@ public class ObjectLoader : MonoBehaviour
         // cuidado, si el return está después del endif, la declaración de la lista debe estar detrás del if
         //return listAchievements;
     }
-    
-    
+
+
+    void LoadPowerups()
+    {
+#if UNITY_EDITOR
+        //some code here that uses something from the UnityEditor namespace
+
+        if (File.Exists(filePathGenerator))
+        {
+            using (StreamReader reader = new StreamReader(filePathGenerator, Encoding.GetEncoding("ISO-8859-1")))
+            {
+                reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] parts = line.Split(';');   // divido por cada ;
+
+                    // relleno el objeto con los datos pertinentes
+                    generatorItem = ScriptableObject.CreateInstance<ShopItemScripteableObject>();
+                    generatorItem.id = int.Parse(parts[0]);
+                    generatorItem.name = generatorItem.id + "-" + parts[1];
+                    generatorItem.title = parts[1];
+                    generatorItem.description = parts[2];
+                    generatorItem.price = double.Parse(parts[3]);
+                    generatorItem.basePrice = double.Parse(parts[3]);
+                    generatorItem.amount = int.Parse(parts[5]);
+                    generatorItem.pointsPerSecond = double.Parse(parts[6]);
+                    generatorItem.unlocked = bool.Parse(parts[7]);
+
+                    // Cojo el sprite de resources y lo cargo. No se debe poner la extensión
+                    string image = imagePathGenerator + generatorItem.name;
+                    generatorItem.sprite = Resources.Load<Sprite>(image);
+
+                    // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
+                    string assetPath = "Assets/Scripts/Shop/ShopSO/";  // donde se va a guardar los items. cuidadin con donde se pone
+                    string addItem = generatorItem.name + ".asset";  // para añadir el item
+
+                    // por si no existe el directorio
+                    if (!Directory.Exists(assetPath))
+                    {
+                        Directory.CreateDirectory(assetPath);
+                    }
+
+                    assetPath += addItem;   // actualizo el directorio para que se cree ok
+                    AssetDatabase.CreateAsset(generatorItem, assetPath);
+                    AssetDatabase.SaveAssets();
+
+                }
+            }
+            Debug.Log("Loaded shop succesfully");
+        }
+        else
+        {
+            Debug.LogError("El archivo no existe en la ruta especificada: " + filePathGenerator);
+        }
+#endif
+    }
+
+
 }
