@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: "174-Centro Pok\xE9mon"
+  m_EditorClassIdentifier: 
+  id: 174
+  level: 2
+  title: "Centro Pok\xE9mon"
+  desc: "Puedes revivir a varias personas simult\xE1neamente y usarlos como comida
+    para el l\xEDder."
+  effect: 4
+  price: 1.4e+17
+  unlocked: 0
+  bought: 0
+  type: 11generador
+  sprite: {fileID: 21300000, guid: 6406eabb3fd580b4aa32ead25838a65f, type: 3}
+  frame: {fileID: 21300000, guid: 38b188217d1d1a64aa4f89066e05fabe, type: 3}
+  generator: 11

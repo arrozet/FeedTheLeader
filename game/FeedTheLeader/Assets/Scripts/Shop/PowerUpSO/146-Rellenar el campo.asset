@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: 146-Rellenar el campo
+  m_EditorClassIdentifier: 
+  id: 146
+  level: 4
+  title: Rellenar el campo
+  desc: "Has conseguido ocupar todo el terreno f\xE9rtil, te has tomado en serio
+    lo de \xABEl campo est\xE1 vac\xEDo\xBB."
+  effect: 4
+  price: 7e+19
+  unlocked: 0
+  bought: 0
+  type: 5generador
+  sprite: {fileID: 21300000, guid: 2f7ee63dc89057d47b81ce897c4e4d31, type: 3}
+  frame: {fileID: 21300000, guid: d54cc584e30bd544187223d381455ba9, type: 3}
+  generator: 5

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: "103-Cu\xE1druple click"
+  m_EditorClassIdentifier: 
+  id: 103
+  level: 0
+  title: "Cu\xE1druple click"
+  desc: "De peque\xF1o te regalaron un omnitrix, resulta que funciona de verdad y
+    puedes transformarte en Cuatrobrazos."
+  effect: 4
+  price: 10000
+  unlocked: 0
+  bought: 0
+  type: click
+  sprite: {fileID: 21300000, guid: a430bc9dfed6930409a24335ede0b572, type: 3}
+  frame: {fileID: 21300000, guid: de1f57ad98f9bc94a8eaa509df6ba126, type: 3}
+  generator: -100

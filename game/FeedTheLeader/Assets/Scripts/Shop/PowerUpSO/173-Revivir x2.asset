@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: 173-Revivir x2
+  m_EditorClassIdentifier: 
+  id: 173
+  level: 1
+  title: Revivir x2
+  desc: "La tecnolog\xEDa anterior solo te permit\xEDa revivir una vez."
+  effect: 2
+  price: 140000000000000
+  unlocked: 0
+  bought: 0
+  type: 11generador
+  sprite: {fileID: 21300000, guid: 6406eabb3fd580b4aa32ead25838a65f, type: 3}
+  frame: {fileID: 21300000, guid: 614fa352cf3da7f4c80642267bf57610, type: 3}
+  generator: 11

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: "195-\xC1frica"
+  m_EditorClassIdentifier: 
+  id: 195
+  level: 3
+  title: "\xC1frica"
+  desc: "Quiz\xE1 no sea el continente m\xE1s grande, pero en cuanto a n\xFAmero
+    de pa\xEDses no desarrollados no tiene rival. Nos sirve."
+  effect: 4
+  price: 3.1e+22
+  unlocked: 0
+  bought: 0
+  type: 15generador
+  sprite: {fileID: 21300000, guid: f8e78d23860ca6b4bb0166fcd2915a20, type: 3}
+  frame: {fileID: 21300000, guid: 5aad787d933be0a458dba8f312c80b42, type: 3}
+  generator: 15

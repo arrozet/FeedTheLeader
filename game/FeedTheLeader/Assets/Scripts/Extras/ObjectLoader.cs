@@ -30,6 +30,12 @@ public class ObjectLoader : MonoBehaviour
     Achievement achievementItem; // tipo de item a cargar
     private string imagePathAchievements = "Images/Achievements/toLoadAchievements/";    // ruta relativa a resources
 
+    //POWERUPS
+    private string filePathPowerup = "Assets/Resources/power-ups_default-toload.txt";   // ruta del archivo
+    PowerUpSO powerupItem; // tipo de item a cargar
+    private string imagePathPowerup = "Images/PowerUps/toLoadPowerUps/mejora/";    // ruta relativa a resources
+    private string marcoPathPowerup = "Images/PowerUps/toLoadPowerUps/marco/";    // ruta relativa a resources
+
     void Start()
     {
         // DESCOMENTA LO QUE QUIERAS CARGAR PARA CARGAR LOS VALORES DEFAULT DE DICHA COSA
@@ -37,6 +43,7 @@ public class ObjectLoader : MonoBehaviour
 
         //LoadShop();
         //LoadAchievements();
+        //LoadPowerups();
         
     }
 
@@ -104,11 +111,11 @@ public class ObjectLoader : MonoBehaviour
     #endif
         
     }
-    
+
 
     //Author:Eduardo, modificación de ObjectLoader.cs de Rubén. Los comentarios del script original se mantendrán en la mayoría de lo posible
     //Mod:ROZ
-    
+
     void LoadAchievements()
     {
 #if UNITY_EDITOR
@@ -141,7 +148,7 @@ public class ObjectLoader : MonoBehaviour
                     {
                         achievementItem.name = achievementItem.id + "-" + parts[1];
                     }
-                    
+
                     achievementItem.title = parts[1];
                     achievementItem.description = parts[2];
                     achievementItem.type = parts[3];
@@ -179,6 +186,71 @@ public class ObjectLoader : MonoBehaviour
         // cuidado, si el return está después del endif, la declaración de la lista debe estar detrás del if
         //return listAchievements;
     }
-    
-    
+
+
+    void LoadPowerups()
+    {
+#if UNITY_EDITOR
+        //some code here that uses something from the UnityEditor namespace
+
+        if (File.Exists(filePathPowerup))
+        {
+            Debug.Log("FIle exists");
+            using (StreamReader reader = new StreamReader(filePathPowerup, Encoding.GetEncoding("ISO-8859-1")))
+            {
+                reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] parts = line.Split(';');   // divido por cada ;
+
+                    Debug.Log(line);
+                    // relleno el objeto con los datos pertinentes
+                    powerupItem = ScriptableObject.CreateInstance<PowerUpSO>();
+                    powerupItem.id = int.Parse(parts[0]);
+                    powerupItem.level = int.Parse(parts[1]);
+                    powerupItem.name = powerupItem.id + "-" + parts[2];
+                    powerupItem.title = parts[2];
+                    powerupItem.desc = parts[3];
+                    powerupItem.effect = double.Parse(parts[4]);
+                    powerupItem.price = double.Parse(parts[5]);
+                    powerupItem.unlocked = bool.Parse(parts[6]);
+                    powerupItem.bought = bool.Parse(parts[7]);
+                    powerupItem.type = parts[8];
+
+                    
+
+                    // Cojo el sprite de resources y lo cargo. No se debe poner la extensión
+                    string image = imagePathPowerup + parts[9]; // el nombre del sprite está guardado en parts[8]
+                    powerupItem.sprite = Resources.Load<Sprite>(image);
+                    powerupItem.frame = Resources.Load<Sprite>(marcoPathPowerup + powerupItem.level);
+
+                    powerupItem.generator = int.Parse(parts[10]);
+
+                    // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
+                    string assetPath = "Assets/Scripts/Shop/PowerUpSO/";  // donde se va a guardar los items. cuidadin con donde se pone
+                    string addItem = powerupItem.name + ".asset";  // para añadir el item
+
+                    // por si no existe el directorio
+                    if (!Directory.Exists(assetPath))
+                    {
+                        Directory.CreateDirectory(assetPath);
+                    }
+
+                    assetPath += addItem;   // actualizo el directorio para que se cree ok
+                    AssetDatabase.CreateAsset(powerupItem, assetPath);
+                    AssetDatabase.SaveAssets();
+
+                }
+            }
+            Debug.Log("Loaded powerups succesfully");
+        }
+        else
+        {
+            Debug.LogError("El archivo no existe en la ruta especificada: " + filePathPowerup);
+        }
+#endif
+    }
+
+
 }

@@ -3,6 +3,13 @@
 
 <head>
   {{ partial "head.html" . -}}
+  <!-- Meta Tags for Social Media Previews -->
+  <meta property="og:title" content="{{ .Site.Params.social.title }}">
+  <meta property="og:description" content="{{ .Site.Params.social.description }}">
+  <meta property="og:image" content="{{ .Site.Params.social.image }}">
+  <meta property="og:url" content="{{ .Site.BaseURL }}">
+  <meta property="og:type" content="website">
+  
 </head>
 
 <body>

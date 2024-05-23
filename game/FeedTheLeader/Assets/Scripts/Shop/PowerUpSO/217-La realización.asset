@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: "217-La realizaci\xF3n"
+  m_EditorClassIdentifier: 
+  id: 217
+  level: 0
+  title: "La realizaci\xF3n"
+  desc: "Con el poder del l\xEDder creas una simulaci\xF3n que iguala perfectamente
+    a la nuestra, espera, esto significa..."
+  effect: 16
+  price: 3.7e+23
+  unlocked: 0
+  bought: 0
+  type: 22generador
+  sprite: {fileID: 21300000, guid: e93e52b5b007bdf4e8013e55df26a181, type: 3}
+  frame: {fileID: 21300000, guid: de1f57ad98f9bc94a8eaa509df6ba126, type: 3}
+  generator: 22
