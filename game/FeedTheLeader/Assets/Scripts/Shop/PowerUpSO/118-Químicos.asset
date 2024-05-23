@@ -17,7 +17,7 @@ MonoBehaviour:
   title: "Qu\xEDmicos"
   desc: "Dise\xF1as unas drogas especiales que aumentan la eficiencia de tus sirvientes."
   effect: 4
-  price: 1000
+  price: 10000
   unlocked: 0
   bought: 0
   type: 0generador

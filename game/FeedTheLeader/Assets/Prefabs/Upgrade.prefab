@@ -210,9 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f2818aaa787f394b911558e9bca21e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleText: {fileID: 0}
-  priceText: {fileID: 0}
   spriteImage: {fileID: 2076044131161032986}
+  frameImage: {fileID: 7092180267006783209}
 --- !u!1 &7843566002334541249
 GameObject:
   m_ObjectHideFlags: 0

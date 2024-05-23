@@ -8,6 +8,8 @@ using System;
 
 public class ShopManagerScript : MonoBehaviour, IDataPersistence
 {
+    public static ShopManagerScript Instance;
+
     public ShopItemScripteableObject[] shopItemsSO;
     public GameObject[] shopPanelsSO;
     public TemplateShop[] shopPanels;
@@ -57,7 +59,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         AmountObjects = 1;
         loadPanels();
         CheckPurchaseable();
-
+        PowerUpManager.Instance.unlockFOR();
     }
 
     // Update is called once per frame
@@ -95,6 +97,21 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
             }
         }
     }
+
+    public void Awake()
+    {
+        // esto es de un tutorial, es para que no destruya el objeto entre escenas
+        if (ShopManagerScript.Instance == null)
+        {
+            ShopManagerScript.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void PurchaseItem(int btnNo) // simplemente resta, y comporueba que boton se ha pulsado para poder restarle el precio y dar el efecto a dicho boton
     {
         if (PointsManager.Instance.getPuntos() >= calcularPrecio(btnNo))
@@ -122,12 +139,22 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
     {
         for (int i = 0; i < shopItemsSO.Length; i++)
         {
+            if (shopItemsSO[i].unlocked == true) // si no esta desbloqueado el objeto, no lo muestra
+            {
+                shopPanelsSO[i].SetActive(true);
+            }
+        }
+
+        for (int i = 0; i < shopItemsSO.Length; i++)
+        {
                 shopPanels[i].titleText.text = shopItemsSO[i].title;
                 shopPanels[i].priceText.text = formatScore(calcularPrecio(i));
                 shopPanels[i].amountText.text = shopItemsSO[i].amount.ToString();
                 shopPanels[i].spriteImage.sprite = shopItemsSO[i].sprite;
                 shopPanels[i].description.text = shopItemsSO[i].description;
         }
+        PowerUpManager.Instance.unlockFOR();
+
     }
     public void resetItems()
     {

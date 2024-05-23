@@ -270,8 +270,8 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void AddAlot()
     {
-        currentScore += 10000000000000000000000000d;
-        accumulatedScoreStat += 10000000000000000000000000d;
+        currentScore += 1000000000000000;
+        accumulatedScoreStat += 1000000000000000;
     }
 
     public void Prestige(double num)

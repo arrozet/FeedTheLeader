@@ -18,7 +18,7 @@ MonoBehaviour:
   desc: "Los criados necesitan un incentivo, la mano dura es el m\xE9todo m\xE1s
     efectivo. Triplica su eficiencia."
   effect: 2
-  price: 10000
+  price: 100
   unlocked: 0
   bought: 0
   type: 0generador
