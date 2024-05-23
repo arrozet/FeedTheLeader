@@ -15,6 +15,7 @@ public class PowerUpSO : ScriptableObject
     public bool unlocked;
     public bool bought;     // Determina si está comprado o no
     public string type;     // Determina el tipo de objeto que es. No es muy importante
-    public Sprite sprite;
+    public Sprite sprite;   // Sprite principal
+    public Sprite frame;    // Marco que indica el nivel
     public int generator;   // A qué generador se refiere la mejora. Si no se refiere a un generador, será un número negativo (click -> -100, prensa cuantica -> -500, sinergia chef y cafeteria -> -1 )
 }

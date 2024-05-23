@@ -31,7 +31,7 @@ public class ObjectLoader : MonoBehaviour
     private string imagePathAchievements = "Images/Achievements/toLoadAchievements/";    // ruta relativa a resources
 
     //POWERUPS
-    private string filePathPowerup = "Assets/Resources/............................./";   // ruta del archivo
+    private string filePathPowerup = "Assets/Resources/power-ups_default-toload.txt";   // ruta del archivo
     PowerUpSO powerupItem; // tipo de item a cargar
     private string imagePathPowerup = "Images/PowerUps/toLoadPowerUps/mejora/";    // ruta relativa a resources
     private string marcoPathPowerup = "Images/PowerUps/toLoadPowerUps/marco/";    // ruta relativa a resources
@@ -43,6 +43,7 @@ public class ObjectLoader : MonoBehaviour
 
         //LoadShop();
         //LoadAchievements();
+        //LoadPowerups();
         
     }
 
@@ -110,11 +111,11 @@ public class ObjectLoader : MonoBehaviour
     #endif
         
     }
-    
+
 
     //Author:Eduardo, modificación de ObjectLoader.cs de Rubén. Los comentarios del script original se mantendrán en la mayoría de lo posible
     //Mod:ROZ
-    
+
     void LoadAchievements()
     {
 #if UNITY_EDITOR
@@ -147,7 +148,7 @@ public class ObjectLoader : MonoBehaviour
                     {
                         achievementItem.name = achievementItem.id + "-" + parts[1];
                     }
-                    
+
                     achievementItem.title = parts[1];
                     achievementItem.description = parts[2];
                     achievementItem.type = parts[3];
@@ -192,9 +193,10 @@ public class ObjectLoader : MonoBehaviour
 #if UNITY_EDITOR
         //some code here that uses something from the UnityEditor namespace
 
-        if (File.Exists(filePathGenerator))
+        if (File.Exists(filePathPowerup))
         {
-            using (StreamReader reader = new StreamReader(filePathGenerator, Encoding.GetEncoding("ISO-8859-1")))
+            Debug.Log("FIle exists");
+            using (StreamReader reader = new StreamReader(filePathPowerup, Encoding.GetEncoding("ISO-8859-1")))
             {
                 reader.ReadLine();  // siempre habrá al menos una línea, la que describe las columnas. para que se la salte y solo lea los datos, se pone esto
                 while (!reader.EndOfStream)
@@ -202,25 +204,32 @@ public class ObjectLoader : MonoBehaviour
                     string line = reader.ReadLine();
                     string[] parts = line.Split(';');   // divido por cada ;
 
+                    Debug.Log(line);
                     // relleno el objeto con los datos pertinentes
-                    generatorItem = ScriptableObject.CreateInstance<ShopItemScripteableObject>();
-                    generatorItem.id = int.Parse(parts[0]);
-                    generatorItem.name = generatorItem.id + "-" + parts[1];
-                    generatorItem.title = parts[1];
-                    generatorItem.description = parts[2];
-                    generatorItem.price = double.Parse(parts[3]);
-                    generatorItem.basePrice = double.Parse(parts[3]);
-                    generatorItem.amount = int.Parse(parts[5]);
-                    generatorItem.pointsPerSecond = double.Parse(parts[6]);
-                    generatorItem.unlocked = bool.Parse(parts[7]);
+                    powerupItem = ScriptableObject.CreateInstance<PowerUpSO>();
+                    powerupItem.id = int.Parse(parts[0]);
+                    powerupItem.level = int.Parse(parts[1]);
+                    powerupItem.name = powerupItem.id + "-" + parts[2];
+                    powerupItem.title = parts[2];
+                    powerupItem.desc = parts[3];
+                    powerupItem.effect = double.Parse(parts[4]);
+                    powerupItem.price = double.Parse(parts[5]);
+                    powerupItem.unlocked = bool.Parse(parts[6]);
+                    powerupItem.bought = bool.Parse(parts[7]);
+                    powerupItem.type = parts[8];
+
+                    
 
                     // Cojo el sprite de resources y lo cargo. No se debe poner la extensión
-                    string image = imagePathGenerator + generatorItem.name;
-                    generatorItem.sprite = Resources.Load<Sprite>(image);
+                    string image = imagePathPowerup + parts[9]; // el nombre del sprite está guardado en parts[8]
+                    powerupItem.sprite = Resources.Load<Sprite>(image);
+                    powerupItem.frame = Resources.Load<Sprite>(marcoPathPowerup + powerupItem.level);
+
+                    powerupItem.generator = int.Parse(parts[10]);
 
                     // una vez creado el objeto, lo guardo en la ruta de los scriptableobjects para tienda
-                    string assetPath = "Assets/Scripts/Shop/ShopSO/";  // donde se va a guardar los items. cuidadin con donde se pone
-                    string addItem = generatorItem.name + ".asset";  // para añadir el item
+                    string assetPath = "Assets/Scripts/Shop/PowerUpSO/";  // donde se va a guardar los items. cuidadin con donde se pone
+                    string addItem = powerupItem.name + ".asset";  // para añadir el item
 
                     // por si no existe el directorio
                     if (!Directory.Exists(assetPath))
@@ -229,16 +238,16 @@ public class ObjectLoader : MonoBehaviour
                     }
 
                     assetPath += addItem;   // actualizo el directorio para que se cree ok
-                    AssetDatabase.CreateAsset(generatorItem, assetPath);
+                    AssetDatabase.CreateAsset(powerupItem, assetPath);
                     AssetDatabase.SaveAssets();
 
                 }
             }
-            Debug.Log("Loaded shop succesfully");
+            Debug.Log("Loaded powerups succesfully");
         }
         else
         {
-            Debug.LogError("El archivo no existe en la ruta especificada: " + filePathGenerator);
+            Debug.LogError("El archivo no existe en la ruta especificada: " + filePathPowerup);
         }
 #endif
     }

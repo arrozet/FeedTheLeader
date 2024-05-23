@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ad089522fd6f84784643b453e0aa37, type: 3}
+  m_Name: "111-Prensa cu\xE1ntica"
+  m_EditorClassIdentifier: 
+  id: 111
+  level: 0
+  title: "Prensa cu\xE1ntica"
+  desc: "Fuck relatividad, comprime los alimentos y los hace m\xE1s densamente energ\xE9ticos."
+  effect: 1.25
+  price: 5000
+  unlocked: 0
+  bought: 0
+  type: prensa
+  sprite: {fileID: 21300000, guid: 10b22c025f760f54397fbfd5d7300287, type: 3}
+  frame: {fileID: 21300000, guid: de1f57ad98f9bc94a8eaa509df6ba126, type: 3}
+  generator: -500
