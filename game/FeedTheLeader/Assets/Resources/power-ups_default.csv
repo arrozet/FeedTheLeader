@@ -1,121 +1,121 @@
-ID;LEVEL;TYPE;TITLE;DESC;EFFECT (MULTIPLICADOR);PRICE;UNLOCKED
-101;0;click;Doble click;Has aprendido a usar las dos manos para alimentar al líder, ¿por qué no lo habías hecho antes?;2;1000;false
-102;0;click;Triple click;No sabemos de donde has sacado el tercer brazo, pero te sirve para alimentar al líder.;3;5000;false
-103;0;click;Cuádruple click;De pequeño te regalaron un omnitrix, resulta que funciona de verdad y puedes transformarte en Cuatrobrazos.;4;10000;false
-104;0;click;Quíntuple click;Ahora cada click vale 5… No hace falta escuchar la rima.;5;50000;false
-105;0;click;Deci-click;Enhorabuena, tienes un 10.;10;100000;false
-106;0;click;Centi-click;Tu ritmo de alimentación es prácticamente inhumano.;100;1000000;false
-107;0;click;Mil-click;Podrías alimentar a toda África en segundos... Pero el líder es más importante.;1000;10000000;false
-108;0;click;Millón-click;Ahora con la comida que generas y ofreces por segundo podrías acabar con el hambre mundial, mala suerte que el mundo no entienda tu propósito.;1000000;10000000000;false
-109;0;click;Billón-click;Puedes coger planetas con las manos y dárselos al líder.;1000000000;1E+13;false
-110;0;click;Billardo-click;Tus manos son agujeros de gusano que extraen materia del universo y la conducen directamente a la boca del líder.;1E+12;1E+16;false
-111;0;prensa;Prensa cuántica;Fuck relatividad, comprime los alimentos y los hace más densamente energéticos.;1,25;5000;false
-112;0;prensa;Prensa cuántica II;Mejora a nivel 2 de la prensa cuántica. ¡Es como ponerle mantequilla de cacahuete entre alimento y alimento!;1,5;50000;false
-113;0;prensa;Prensa cuántica III;Mejora nivel 3 de la prensa cuántica. Ahora le echas diesel a cada bocado para aportarle un toque de energía.;1,75;1000000;false
-114;0;prensa;Prensa cuántica IV;Mejora nivel 4 de la prensa cuántica. Has empezado a echarle uranio a la comida para que haya más calorías. Qué sabio eres.;2;10000000000;false
-115;0;prensa;Prensa cuántica V;Mejora nivel 5 de la prensa cuántica. Los alimentos son ahora un pozo energético.;3;1E+16;false
-116;1;0generador;Látigo;Los criados necesitan un incentivo, la mano dura es el método más efectivo. Triplica su eficiencia.;1,25;10000;false
-117;2;0generador;Jerarquía;Tus sirvientes forman una jerarquía: todos están condenados a seguir al líder, pero con distinto rango.;1,5;100;false
-118;3;0generador;Químicos;Diseñas unas drogas especiales que aumentan la eficiencia de tus sirvientes.;1,75;1000;false
-119;4;0generador;Mejores medios;Mejoras el equipamiento de tus sirvientes para que hagan mejor su trabajo.;2;100000;false
-120;5;0generador;Sí, mi señor;Tus sirvientes son devotos al líder, hacen todo lo que dice sin pensar.;3;1000000;false
-121;1;1generador;Thermomix;Tus chefs no pueden satisfacer solos al líder.;1,25;1000;false
-122;2;1generador;Batería de cocina;Es hora de comprar mejor material para tus chefs.;1,5;5000;false
-123;3;1generador;Ratatouille;Resulta que tener ratas en el gorro aumenta la coordinación de los chefs.;1,75;50000;false
-124;4;1generador;Alberto Chicote;Has probado a obligar a los chefs a ver pesadilla en la cocina en bucle en sus descansos.;2;5000000;false
-125;5;1generador;Masterchef;Alimentar al líder se ha convertido en un concurso televisado.;3;500000000;false
-126;1;2generador;Valoraciones falsas;Has contratado bots en google maps para que den 5 estrellas a tus cafeterías.;1,25;11000;false
-127;2;2generador;A tiempo parcial;Aumentas tu plantilla con estudiantes y personas en situación precaria, es lo más rentable.;1,5;55000;false
-128;3;2generador;Ponme un mitad;Tus negocios introducen los cafés andaluces y los normaliza (ya era hora).;1,75;55000000;false
-129;4;2generador;Tips;Copias a los americanos y obligas a los clientes a dejar propina.;2;5,5E+11;false
-130;5;2generador;Starbucks;Has consumido a la mayor empresa de café del mundo. Tus cafeterías son ahora un monopolio.;3;5,5E+17;false
-131;0;1+2generador;Estrella michelín;La calidad de las cafeterías y los chefs es digna de pesadilla en la cocina, se necesita una renovación de plantilla.;2;500000;false
-132;1;3generador;Cobro automático;Introduces en tus hipermercados estaciones de autocobro.;1,25;120000;false
-133;2;3generador;Más cajeras;Contratas muchas cajeras, los clientes les tiran muchos piropos.;1,5;600000;false
-134;3;3generador;MercaGuGu;En los altavoces de tus establecimientos resuena ahora una canción, MercaGuuuGu, MercaGuGu.;1,75;600000000;false
-135;4;3generador;Productos frescos;Empiezas a promocionar todos tus productos como frescos y locales… Porque lo son, ¿verdad?;2;6E+13;false
-136;5;3generador;CarreGuGu;Ahora te has convertido en un monopolio, hay un CarreGuGu en cada esquina.;3;6E+19;false
-137;1;4generador;GuGuAuto;Tus establecimientos ofrecen servicio para comida para llevar dirigida a los automóviles.;1,25;1300000;false
-138;2;4generador;A domicilio;Introduces motos de reparto, además son eco-friendly.;1,5;6500000;false
-139;3;4generador;Marketing;Ahora en la tele sale Messi comiéndose una BigGuGu.;1,75;6500000000;false
-140;4;4generador;Vegan-friendly;Introduces productos veganos. Poca gente los compra pero te da mejor fama.;2;6,5E+13;false
-141;5;4generador;Burguer-GuGu;Tus productos están en la dieta de todos. El sobrepeso ha aumentado pero los beneficios también.;3;6,5E+19;false
-142;1;5generador;Stardew Valley;Por algún motivo no paran de aparecer abuelos que dejaron tierras a sus nietos. Podemos aprovecharlo.;1,25;14000000;false
-143;2;5generador;Sistemas de autorriego;Los granjeros están hartos de pasear mangueras. Podemos mejorar eso.;1,5;70000000;false
-144;3;5generador;Pesticidas mejorados;Una nueva fórmula ha demostrado ser más eficaz y barata contra las plagas, no se ha demostrado que perjudique a la salud (por ahora).;1,75;70000000000;false
-145;4;5generador;No llevan zarcillos;Recolectas la sabiduría de todos los veteranos del campo. Sus ideales te conmueven.;2;7E+14;false
-146;5;5generador;Rellenar el campo;Has conseguido ocupar todo el terreno fértil, te has tomado en serio lo de «El campo está vacío».;3;7E+19;false
-147;1;6generador;El lugar donde morirán;Ocupas un montón de naves vacías destinadas a llenarlas de animales.;1,25;200000000;false
-148;2;6generador;Más nutrientes;Mejoras el pienso de tus animales. Se hacen más grandes más rápido.;1,5;1000000000;false
-149;3;6generador;Planta de procesado;No mucha gente quiere trabajar asesinando a pobres seres. Automatizas el proceso.;1,75;1E+12;false
-150;4;6generador;Incubadoras;¿Qué mejor que una madre para cuidar de un hijo? Pero nuestras incubadoras son mejores.;2;;false
-151;5;6generador;Mutaciones;Inyectas sueros que hacen mutar a tus animales. Ahora son la comida perfecta para el líder y no consumen prácticamente recursos.;3;1E+16;false
-152;1;7generador;Países de Oriente;Empiezan a surgir tus fábricas en Oriente. Hay algunos rumores sobre la edad o calidad laboral de tus empleados.;1,25;1E+23;false
-153;2;7generador;Telares;Compras las telas más baratas para hacer tus productos. Al final cumplen la misma función.;1,5;330000000;false
-154;3;7generador;AliGuGu;Tiendas de Oriente venden tus productos a precios ridículos. Esto atrae al resto del mundo.;1,75;1600000000;false
-155;4;7generador;Certificado de calidad;Los inspectores de calidad casualmente tienen una estrecha relación con los peces gordos de tus fábricas. Dicen que está todo bien.;2;1,6E+12;false
-156;5;7generador;Más fábricas;Poco a poco te has hecho con todo el mercado. Los polígonos llevan el nombre de tu marca.;3;1,6E+16;false
-157;1;8generador;Curso online;Para atraer más fieles a tu séquito creas un curso online. Al parecer llamarlos «panzas» y «mileuristas» los anima a unirse.;1,25;5100000000;false
-158;2;8generador;Secta;Poco a poco se va corriendo la voz. Algunos lo llaman secta, otros lo ven como una forma de vida.;1,5;26000000000;false
-159;3;8generador;Culto;Los fieles empiezan a despertar y ven al líder como una deidad.;1,75;2,6E+13;false
-160;4;8generador;Religión;Poco a poco vas opacando a otras religiones. Ya es cultura general que la única manera digna de morir sea «ser entregado a nuestro líder»;2;2,6E+17;false
-161;5;8generador;Dictadura;Toda la autoridad que has ganado permite que tu religión se imponga sobre el resto de poderes. El líder es el único camino. Oda al líder.;3;2,6E+21;false
-162;1;9generador;Morgue;La policía se pregunta por qué no pueden investigar los cadáveres, desaparecen antes extrañamente.;1,25;75000000000;false
-163;2;9generador;Post mortem;Creas una cultura para que la gente voluntariamente done sus cuerpos al líder.;1,5;4E+11;false
-164;3;9generador;Profanar;No todos quieren donarse al líder. Tendremos que sacarlos de sus tumbas.;1,75;7,5E+13;false
-165;4;9generador;Accidentes;Empiezan a desaparecer personas. Nunca se encuentran sus cadáveres.;2;7,5E+22;false
-166;5;9generador;Veneno;Tu franquicia crea sustancias que selectivamente acaban con personas que son alimento potencial para el líder.;3;-1;false
-167;1;10generador;Ginecólogos;Contratas ginecólogos que mejoran la salud íntima de las mujeres.;1,25;1E+12;false
-168;2;10generador;Fertilidad;Expertos en fertilidad consiguen que la producción de niños aumente.;1,5;1E+13;false
-169;3;10generador;Pienso;Consigues crear un pienso que contiene todos los nutrientes necesarios para los seres humanos.;1,75;1,53E+15;false
-170;4;10generador;Autosuficiencia;Tus granjas se vuelven autosuficientes. Descubres que puedes enseñar a los humanos a cumplir la mayoría de funciones.;2;1,53E+19;false
-171;5;10generador;Superproducción;Como animales, los humanos son sacrificados para el líder de forma masiva.;3;1,53E+23;false
-172;1;11generador;Después de la muerte;Esparces el rumor de que es posible revivir, pero no indicas el motivo…;1,25;1,4E+13;false
-173;2;11generador;Revivir x2;La tecnología anterior solo te permitía revivir una vez.;1,5;1,4E+14;false
-174;3;11generador;Centro Pokémon;Puedes revivir a varias personas simultáneamente y usarlos como comida para el líder.;1,75;1,4E+17;false
-175;4;11generador;Revivir infinito;Ya no es suficiente con dos veces, ahora puedes generar un bucle infinito de alimento.;2;1,4E+21;false
-176;5;11generador;Traerlos a la vida;Ahora puedes decididir quién, cuándo, cuántos y cómo. Traes a grandes figuras del pasado para que el líder las consuma.;3;1,4E+25;false
-177;1;12generador;EuroTruck;Empiezas a negociar con empresas de camiones la compra de sus fábricas.;1,25;1,7E+14;false
-178;2;12generador;Combustible;El líder prefiere los camiones con el tanque lleno. Compras petroleras.;1,5;1,7E+15;false
-179;3;12generador;Trailer;No es suficiente con camiones. Empiezas a introducir vehículos articulados.;1,75;1,7E+18;false
-180;4;12generador;Autobús;El líder quiere más (si los autobuses están llenos de gente, mejor).;2;1,7E+22;false
-181;5;12generador;Desguace;Compras todos los desguaces y talleres. Los coches no tienen una segunda vida, acaban todos en la boca del líder.;3;1,7E+26;false
-182;1;13generador;Negociaciones;Los políticos empiezan a discutir la posibilidad de esta medida del líder para acabar con la pobreza.;1,25;2,1E+15;false
-183;2;13generador;Tradeo;Los padres de niños pobres nos venden sus hijos por dinero. Nadie sabe adonde van.;1,5;2,1E+16;false
-184;3;13generador;Secuestros;Empieza a desaparecer gente. Como son pobres no se hace mucho eco.;1,75;2,1E+18;false
-185;4;13generador;Limpieza;Empiezan a limpiarse barrios pobres del mapa. La criminalidad disminuye.;2;2,1E+22;false
-186;5;13generador;Purga;De repente todo el mundo es de clase media o superior: si te vuelves pobre mueres mágicamente.;3;2,1E+26;false
-187;1;14generador;Uranio-235;Inviertes en minas para recolectar elementos radiactivos.;1,25;2,6E+16;false
-188;2;14generador;¡Mosquis!;Más centrales nucleares, más operarios… No tienen por qué ser muy competentes.;1,5;2,6E+17;false
-189;3;14generador;Esfera de Dyson;El poder del sol en la palma de tu mano. Eventualmente la humanidad daría este paso. Bien por nuestro líder.;1,75;2,6E+20;false
-190;4;14generador;La energía más limpia;El mundo por fin entiende que las centrales nucleares rentan (y mucho). Se vuelve la única fuente de energía.;2;2,6E+24;false
-191;5;14generador;Desastre nuclear;Tus centrales nucleares generan las reacciones en cadena directamente dentro del líder.;3;2,6E+28;false
-192;1;16generador;Sistema solar;Empiezas a seleccionar qué planetas de nuestro sistema podrían ser adecuados para el líder.;1,25;3,1E+17;false
-193;2;16generador;Planetas enanos;Para ir haciendo el estómago del líder empiezas por planetas enanos. Plutón tiene los días contados.;1,5;3,1E+18;false
-194;3;16generador;Planetas habitables;La ciencia no llegará a conocer si seremos seres interplanetarios, porque el líder se comerá todas las opciones.;1,75;3,1E+20;false
-195;4;16generador;Gigantes gaseosos;El estómago del líder ha evolucionado para consumir planetas más grandes, aunque le cueste tener pedos galácticos.;2;3,1E+22;false
-196;5;16generador;Galactus;Conquistas y consumes planeta tras planeta sin cuestionar. Se te empieza a conocer en el universo.;3;3,1E+25;false
-197;1;17generador;Take me to the Sun;Consigues dominar el Sol y estrellas de tamaño similar.;1,25;7,1E+17;false
-198;2;17generador;Gigante roja;Avanzas a estrellas más grandes en tamaño (varias veces el del Sol).;1,5;7,1E+18;false
-199;3;17generador;Enana blanca;Pueden parecer más pequeñas por su nombre, pero su tremenda densidad satisface al líder.;1,75;7,1E+20;false
-200;4;17generador;Supergigantes;Consumes supergigantes amarillas y rojas. Son inestables pero sabrosas.;2;7,1E+22;false
-201;5;17generador;Supernovas;El líder prefiere que las estrellas exploten en su boca como polvos picapica.;3;7,1E+25;false
-202;1;18generador;Now I have become death…;Canalizas agujeros negros dentro del líder. Es díficil entender cómo no lo consumen a él.;1,5;1,2E+21;false
-203;2;18generador;Singularidades;Cada vez consumes agujeros negros más masivos.;2;1,2E+22;false
-204;3;18generador;Agujeros de gusano;Al final resulta que eran reales. Los usas para traer más materia al líder y seguir buscando agujeros negros.;3;1,2E+24;false
-205;1;19generador;Vía Láctea;Tiene un sabor como a leche… Empiezas a consumir galaxias de tamaño similar.;1,5;1,2E+27;false
-206;2;19generador;Andrómeda;Saludas a nuestras galaxias vecinas para acabar consumiéndolas.;2;1,2E+29;false
-207;3;19generador;Guantelete del Infinito;No eres tan benevolente como Thanos. Vas consumiendo galaxia tras galaxia.;3;1,7E+23;false
-208;1;20generador;Teoría de cuerdas;Diez dimensiones que el líder puede consumir, una tras otra.;1,5;1,70E+24;false
-209;2;20generador;Mecánica cuántica;El líder se comió al gato de Schrödinger, en sus tripas está el secreto de los distintos universos.;3;2,20E+23;false
-210;1;21generador;Si te dijera que hay distintas realidades;El líder es capaz de ingerir líneas temporales como si fueran simples fideos. ;1,5;2,20E+24;false
-211;2;21generador;Kang el Conquistador;No hay una realidad en la que no exista el líder, porque te las has comido.;3;2,70E+33;false
-212;1;22generador;La realización;Con el poder del líder creas una simulación que iguala perfectamente a la nuestra, espera, esto significa…;1,5;2,70E+24;false
-213;2;22generador;El despertar;Como en un bucle de realidades, vas despertando de las simulaciones y consumiéndolas.;3;3,20E+23;false
-214;1;23generador;Ser supremo;Tu consciencia evoluciona al estado definitivo. Tú creas y tú consumes con total autosuficiencia.;1,5;3,70E+23;false
-215;2;23generador;EL LÍDER;La mejora final. Te has aburrido de este universo, de esta realidad, de este todo. Solo te queda usar tu poder para volver a empezar.;3;5,00E+30;false
-216;1;15generador;Doyouknowdawae;Empiezas por los países que en su mayoría tienen población indígena. Están indefensos ante el poder del líder.;1,25;-1;false
-217;2;15generador;Parte de Asia;El líder poco a poco acaba con los países más empobrecidos de Asia. No son muchos pero están deliciosos.;1,5;-1;false
-218;3;15generador;América Latina;Tanto territorio sumido en la pobreza… Qué desperdicio… Creo que el líder puede solucionarlo.;1,75;-1;false
-219;4;15generador;África;Quizá no sea el continente más grande, pero en cuanto a número de países no desarrollados no tiene rival. Nos sirve.;2;-1;false
-220;5;15generador;Clasismo;Empiezas a considerar como pobres a países que quizá no lo eran tanto… ¡Ups!;3;-1;false
+ID;LEVEL;TITLE;DESC;EFFECT (MULTIPLICADOR);PRICE;UNLOCKED;TYPE;SPRITE
+101;0;Doble click;Has aprendido a usar las dos manos para alimentar al líder, ¿por qué no lo habías hecho antes?;2;1000;false;click;1-doble-click
+102;0;Triple click;No sabemos de donde has sacado el tercer brazo, pero te sirve para alimentar al líder.;3;5000;false;click;2-triple-click
+103;0;Cuádruple click;De pequeño te regalaron un omnitrix, resulta que funciona de verdad y puedes transformarte en Cuatrobrazos.;4;10000;false;click;3-quad-click
+104;0;Quíntuple click;Ahora cada click vale 5… No hace falta escuchar la rima.;5;50000;false;click;4-cinco-click
+105;0;Deci-click;Enhorabuena, tienes un 10.;10;100000;false;click;5-deci-click
+106;0;Centi-click;Tu ritmo de alimentación es prácticamente inhumano.;100;1000000;false;click;6-centi-click
+107;0;Mil-click;Podrías alimentar a toda África en segundos... Pero el líder es más importante.;1000;10000000;false;click;7-mil-click
+108;0;Millón-click;Ahora con la comida que generas y ofreces por segundo podrías acabar con el hambre mundial, mala suerte que el mundo no entienda tu propósito.;1000000;10000000000;false;click;8-millon-click
+109;0;Billón-click;Puedes coger planetas con las manos y dárselos al líder.;1000000000;1E+13;false;click;9-billon-click
+110;0;Billardo-click;Tus manos son agujeros de gusano que extraen materia del universo y la conducen directamente a la boca del líder.;1E+12;1E+16;false;click;10-billardo-click
+111;0;Prensa cuántica;Fuck relatividad, comprime los alimentos y los hace más densamente energéticos.;1,25;5000;false;prensa;11-Prensa_cuantica
+112;1;Prensa cuántica II;Mejora a nivel 2 de la prensa cuántica. ¡Es como ponerle mantequilla de cacahuete entre alimento y alimento!;1,5;50000;false;prensa;12-Prensa_cuantica
+113;2;Prensa cuántica III;Mejora nivel 3 de la prensa cuántica. Ahora le echas diesel a cada bocado para aportarle un toque de energía.;1,75;1000000;false;prensa;13-Prensa_cuantica
+114;3;Prensa cuántica IV;Mejora nivel 4 de la prensa cuántica. Has empezado a echarle uranio a la comida para que haya más calorías. Qué sabio eres.;2;10000000000;false;prensa;14-Prensa_cuantica
+115;4;Prensa cuántica V;Mejora nivel 5 de la prensa cuántica. Los alimentos son ahora un pozo energético.;3;1E+16;false;prensa;15-Prensa_cuantica
+116;0;Látigo;Los criados necesitan un incentivo, la mano dura es el método más efectivo. Triplica su eficiencia.;1,25;10000;false;0generador;mejoras16-20
+117;1;Jerarquía;Tus sirvientes forman una jerarquía: todos están condenados a seguir al líder, pero con distinto rango.;1,5;100;false;0generador;mejoras16-20
+118;2;Químicos;Diseñas unas drogas especiales que aumentan la eficiencia de tus sirvientes.;1,75;1000;false;0generador;mejoras16-20
+119;3;Mejores medios;Mejoras el equipamiento de tus sirvientes para que hagan mejor su trabajo.;2;100000;false;0generador;mejoras16-20
+120;4;Sí, mi señor;Tus sirvientes son devotos al líder, hacen todo lo que dice sin pensar.;3;1000000;false;0generador;mejoras16-20
+121;0;Thermomix;Tus chefs no pueden satisfacer solos al líder.;1,25;1000;false;1generador;mejoras21-25
+122;1;Batería de cocina;Es hora de comprar mejor material para tus chefs.;1,5;5000;false;1generador;mejoras21-25
+123;2;Ratatouille;Resulta que tener ratas en el gorro aumenta la coordinación de los chefs.;1,75;50000;false;1generador;mejoras21-25
+124;3;Alberto Chicote;Has probado a obligar a los chefs a ver pesadilla en la cocina en bucle en sus descansos.;2;5000000;false;1generador;mejoras21-25
+125;4;Masterchef;Alimentar al líder se ha convertido en un concurso televisado.;3;500000000;false;1generador;mejoras21-25
+126;0;Valoraciones falsas;Has contratado bots en google maps para que den 5 estrellas a tus cafeterías.;1,25;11000;false;2generador;mejoras26-30
+127;1;A tiempo parcial;Aumentas tu plantilla con estudiantes y personas en situación precaria, es lo más rentable.;1,5;55000;false;2generador;mejoras26-30
+128;2;Ponme un mitad;Tus negocios introducen los cafés andaluces y los normaliza (ya era hora).;1,75;55000000;false;2generador;mejoras26-30
+129;3;Tips;Copias a los americanos y obligas a los clientes a dejar propina.;2;5,5E+11;false;2generador;mejoras26-30
+130;4;Starbucks;Has consumido a la mayor empresa de café del mundo. Tus cafeterías son ahora un monopolio.;3;5,5E+17;false;2generador;mejoras26-30
+131;0;Estrella michelín;La calidad de las cafeterías y los chefs es digna de pesadilla en la cocina, se necesita una renovación de plantilla.;2;500000;false;1+2generador;mejora31
+132;0;Cobro automático;Introduces en tus hipermercados estaciones de autocobro.;1,25;120000;false;3generador;mejoras32-36
+133;1;Más cajeras;Contratas muchas cajeras, los clientes les tiran muchos piropos.;1,5;600000;false;3generador;mejoras32-36
+134;2;MercaGuGu;En los altavoces de tus establecimientos resuena ahora una canción, MercaGuuuGu, MercaGuGu.;1,75;600000000;false;3generador;mejoras32-36
+135;3;Productos frescos;Empiezas a promocionar todos tus productos como frescos y locales… Porque lo son, ¿verdad?;2;6E+13;false;3generador;mejoras32-36
+136;4;CarreGuGu;Ahora te has convertido en un monopolio, hay un CarreGuGu en cada esquina.;3;6E+19;false;3generador;mejoras32-36
+137;0;GuGuAuto;Tus establecimientos ofrecen servicio para comida para llevar dirigida a los automóviles.;1,25;1300000;false;4generador;mejoras37-41
+138;1;A domicilio;Introduces motos de reparto, además son eco-friendly.;1,5;6500000;false;4generador;mejoras37-41
+139;2;Marketing;Ahora en la tele sale Messi comiéndose una BigGuGu.;1,75;6500000000;false;4generador;mejoras37-41
+140;3;Vegan-friendly;Introduces productos veganos. Poca gente los compra pero te da mejor fama.;2;6,5E+13;false;4generador;mejoras37-41
+141;4;Burguer-GuGu;Tus productos están en la dieta de todos. El sobrepeso ha aumentado pero los beneficios también.;3;6,5E+19;false;4generador;mejoras37-41
+142;0;Stardew Valley;Por algún motivo no paran de aparecer abuelos que dejaron tierras a sus nietos. Podemos aprovecharlo.;1,25;14000000;false;5generador;mejoras42-46
+143;1;Sistemas de autorriego;Los granjeros están hartos de pasear mangueras. Podemos mejorar eso.;1,5;70000000;false;5generador;mejoras42-46
+144;2;Pesticidas mejorados;Una nueva fórmula ha demostrado ser más eficaz y barata contra las plagas, no se ha demostrado que perjudique a la salud (por ahora).;1,75;70000000000;false;5generador;mejoras42-46
+145;3;No llevan zarcillos;Recolectas la sabiduría de todos los veteranos del campo. Sus ideales te conmueven.;2;7E+14;false;5generador;mejoras42-46
+146;4;Rellenar el campo;Has conseguido ocupar todo el terreno fértil, te has tomado en serio lo de «El campo está vacío».;3;7E+19;false;5generador;mejoras42-46
+147;0;El lugar donde morirán;Ocupas un montón de naves vacías destinadas a llenarlas de animales.;1,25;200000000;false;6generador;mejoras47-51
+148;1;Más nutrientes;Mejoras el pienso de tus animales. Se hacen más grandes más rápido.;1,5;1000000000;false;6generador;mejoras47-51
+149;2;Planta de procesado;No mucha gente quiere trabajar asesinando a pobres seres. Automatizas el proceso.;1,75;1E+12;false;6generador;mejoras47-51
+150;3;Incubadoras;¿Qué mejor que una madre para cuidar de un hijo? Pero nuestras incubadoras son mejores.;2;;false;6generador;mejoras47-51
+151;4;Mutaciones;Inyectas sueros que hacen mutar a tus animales. Ahora son la comida perfecta para el líder y no consumen prácticamente recursos.;3;1E+16;false;6generador;mejoras47-51
+152;0;Países de Oriente;Empiezan a surgir tus fábricas en Oriente. Hay algunos rumores sobre la edad o calidad laboral de tus empleados.;1,25;1E+23;false;7generador;mejoras52-56
+153;1;Telares;Compras las telas más baratas para hacer tus productos. Al final cumplen la misma función.;1,5;330000000;false;7generador;mejoras52-56
+154;2;AliGuGu;Tiendas de Oriente venden tus productos a precios ridículos. Esto atrae al resto del mundo.;1,75;1600000000;false;7generador;mejoras52-56
+155;3;Certificado de calidad;Los inspectores de calidad casualmente tienen una estrecha relación con los peces gordos de tus fábricas. Dicen que está todo bien.;2;1,6E+12;false;7generador;mejoras52-56
+156;4;Más fábricas;Poco a poco te has hecho con todo el mercado. Los polígonos llevan el nombre de tu marca.;3;1,6E+16;false;7generador;mejoras52-56
+157;0;Curso online;Para atraer más fieles a tu séquito creas un curso online. Al parecer llamarlos «panzas» y «mileuristas» los anima a unirse.;1,25;5100000000;false;8generador;mejoras57-61
+158;1;Secta;Poco a poco se va corriendo la voz. Algunos lo llaman secta, otros lo ven como una forma de vida.;1,5;26000000000;false;8generador;mejoras57-61
+159;2;Culto;Los fieles empiezan a despertar y ven al líder como una deidad.;1,75;2,6E+13;false;8generador;mejoras57-61
+160;3;Religión;Poco a poco vas opacando a otras religiones. Ya es cultura general que la única manera digna de morir sea «ser entregado a nuestro líder»;2;2,6E+17;false;8generador;mejoras57-61
+161;4;Dictadura;Toda la autoridad que has ganado permite que tu religión se imponga sobre el resto de poderes. El líder es el único camino. Oda al líder.;3;2,6E+21;false;8generador;mejoras57-61
+162;0;Morgue;La policía se pregunta por qué no pueden investigar los cadáveres, desaparecen antes extrañamente.;1,25;75000000000;false;9generador;mejoras62-66
+163;1;Post mortem;Creas una cultura para que la gente voluntariamente done sus cuerpos al líder.;1,5;4E+11;false;9generador;mejoras62-66
+164;2;Profanar;No todos quieren donarse al líder. Tendremos que sacarlos de sus tumbas.;1,75;7,5E+13;false;9generador;mejoras62-66
+165;3;Accidentes;Empiezan a desaparecer personas. Nunca se encuentran sus cadáveres.;2;7,5E+22;false;9generador;mejoras62-66
+166;4;Veneno;Tu franquicia crea sustancias que selectivamente acaban con personas que son alimento potencial para el líder.;3;-1;false;9generador;mejoras62-66
+167;0;Ginecólogos;Contratas ginecólogos que mejoran la salud íntima de las mujeres.;1,25;1E+12;false;10generador;mejoras67-71
+168;1;Fertilidad;Expertos en fertilidad consiguen que la producción de niños aumente.;1,5;1E+13;false;10generador;mejoras67-71
+169;2;Pienso;Consigues crear un pienso que contiene todos los nutrientes necesarios para los seres humanos.;1,75;1,53E+15;false;10generador;mejoras67-71
+170;3;Autosuficiencia;Tus granjas se vuelven autosuficientes. Descubres que puedes enseñar a los humanos a cumplir la mayoría de funciones.;2;1,53E+19;false;10generador;mejoras67-71
+171;4;Superproducción;Como animales, los humanos son sacrificados para el líder de forma masiva.;3;1,53E+23;false;10generador;mejoras67-71
+172;0;Después de la muerte;Esparces el rumor de que es posible revivir, pero no indicas el motivo…;1,25;1,4E+13;false;11generador;mejoras72-76
+173;1;Revivir x2;La tecnología anterior solo te permitía revivir una vez.;1,5;1,4E+14;false;11generador;mejoras72-76
+174;2;Centro Pokémon;Puedes revivir a varias personas simultáneamente y usarlos como comida para el líder.;1,75;1,4E+17;false;11generador;mejoras72-76
+175;3;Revivir infinito;Ya no es suficiente con dos veces, ahora puedes generar un bucle infinito de alimento.;2;1,4E+21;false;11generador;mejoras72-76
+176;4;Traerlos a la vida;Ahora puedes decididir quién, cuándo, cuántos y cómo. Traes a grandes figuras del pasado para que el líder las consuma.;3;1,4E+25;false;11generador;mejoras72-76
+177;0;Eurotruck;Empiezas a negociar con empresas de camiones la compra de sus fábricas.;1,25;1,7E+14;false;12generador;mejoras77-81
+178;1;Combustible;El líder prefiere los camiones con el tanque lleno. Compras petroleras.;1,5;1,7E+15;false;12generador;mejoras77-81
+179;2;Trailer;No es suficiente con camiones. Empiezas a introducir vehículos articulados.;1,75;1,7E+18;false;12generador;mejoras77-81
+180;3;Autobús;El líder quiere más (si los autobuses están llenos de gente, mejor).;2;1,7E+22;false;12generador;mejoras77-81
+181;4;Desguace;Compras todos los desguaces y talleres. Los coches no tienen una segunda vida, acaban todos en la boca del líder.;3;1,7E+26;false;12generador;mejoras77-81
+182;0;Negociaciones;Los políticos empiezan a discutir la posibilidad de esta medida del líder para acabar con la pobreza.;1,25;2,1E+15;false;13generador;mejoras82-86
+183;1;Tradeo;Los padres de niños pobres nos venden sus hijos por dinero. Nadie sabe adonde van.;1,5;2,1E+16;false;13generador;mejoras82-86
+184;2;Secuestros;Empieza a desaparecer gente. Como son pobres no se hace mucho eco.;1,75;2,1E+18;false;13generador;mejoras82-86
+185;3;Limpieza;Empiezan a limpiarse barrios pobres del mapa. La criminalidad disminuye.;2;2,1E+22;false;13generador;mejoras82-86
+186;4;Purga;De repente todo el mundo es de clase media o superior: si te vuelves pobre mueres mágicamente.;3;2,1E+26;false;13generador;mejoras82-86
+187;0;Uranio-235;Inviertes en minas para recolectar elementos radiactivos.;1,25;2,6E+16;false;14generador;mejoras87-91
+188;1;¡Mosquis!;Más centrales nucleares, más operarios… No tienen por qué ser muy competentes.;1,5;2,6E+17;false;14generador;mejoras87-91
+189;2;Esfera de Dyson;El poder del sol en la palma de tu mano. Eventualmente la humanidad daría este paso. Bien por nuestro líder.;1,75;2,6E+20;false;14generador;mejoras87-91
+190;3;La energía más limpia;El mundo por fin entiende que las centrales nucleares rentan (y mucho). Se vuelve la única fuente de energía.;2;2,6E+24;false;14generador;mejoras87-91
+191;4;Desastre nuclear;Tus centrales nucleares generan las reacciones en cadena directamente dentro del líder.;3;2,6E+28;false;14generador;mejoras87-91
+192;0;Sistema solar;Empiezas a seleccionar qué planetas de nuestro sistema podrían ser adecuados para el líder.;1,25;3,1E+17;false;16generador;mejoras92-96
+193;1;Planetas enanos;Para ir haciendo el estómago del líder empiezas por planetas enanos. Plutón tiene los días contados.;1,5;3,1E+18;false;16generador;mejoras92-96
+194;2;Planetas habitables;La ciencia no llegará a conocer si seremos seres interplanetarios, porque el líder se comerá todas las opciones.;1,75;3,1E+20;false;16generador;mejoras92-96
+195;3;Gigantes gaseosos;El estómago del líder ha evolucionado para consumir planetas más grandes, aunque le cueste tener pedos galácticos.;2;3,1E+22;false;16generador;mejoras92-96
+196;4;Galactus;Conquistas y consumes planeta tras planeta sin cuestionar. Se te empieza a conocer en el universo.;3;3,1E+25;false;16generador;mejoras92-96
+197;0;Take me to the Sun;Consigues dominar el Sol y estrellas de tamaño similar.;1,25;7,1E+17;false;17generador;mejoras97-101
+198;1;Gigante roja;Avanzas a estrellas más grandes en tamaño (varias veces el del Sol).;1,5;7,1E+18;false;17generador;mejoras97-101
+199;2;Enana blanca;Pueden parecer más pequeñas por su nombre, pero su tremenda densidad satisface al líder.;1,75;7,1E+20;false;17generador;mejoras97-101
+200;3;Supergigantes;Consumes supergigantes amarillas y rojas. Son inestables pero sabrosas.;2;7,1E+22;false;17generador;mejoras97-101
+201;4;Supernovas;El líder prefiere que las estrellas exploten en su boca como polvos picapica.;3;7,1E+25;false;17generador;mejoras97-101
+202;0;Now I have become death…;Canalizas agujeros negros dentro del líder. Es díficil entender cómo no lo consumen a él.;1,5;1,2E+21;false;18generador;mejoras102-104
+203;2;Singularidades;Cada vez consumes agujeros negros más masivos.;2;1,2E+22;false;18generador;mejoras102-104
+204;4;Agujeros de gusano;Al final resulta que eran reales. Los usas para traer más materia al líder y seguir buscando agujeros negros.;3;1,2E+24;false;18generador;mejoras102-104
+205;0;Vía Láctea;Tiene un sabor como a leche… Empiezas a consumir galaxias de tamaño similar.;1,5;1,2E+27;false;19generador;mejoras105-107
+206;2;Andrómeda;Saludas a nuestras galaxias vecinas para acabar consumiéndolas.;2;1,2E+29;false;19generador;mejoras105-107
+207;4;Guantelete del Infinito;No eres tan benevolente como Thanos. Vas consumiendo galaxia tras galaxia.;3;1,7E+23;false;19generador;mejoras105-107
+208;0;Teoría de cuerdas;Diez dimensiones que el líder puede consumir, una tras otra.;1,5;1,70E+24;false;20generador;mejoras108-109
+209;4;Mecánica cuántica;El líder se comió al gato de Schrödinger, en sus tripas está el secreto de los distintos universos.;3;2,20E+23;false;20generador;mejoras108-109
+210;0;Si te dijera que hay distintas realidades;El líder es capaz de ingerir líneas temporales como si fueran simples fideos. ;1,5;2,20E+24;false;21generador;mejoras110-111
+211;4;Kang el Conquistador;No hay una realidad en la que no exista el líder, porque te las has comido.;3;2,70E+33;false;21generador;mejoras110-111
+212;0;La realización;Con el poder del líder creas una simulación que iguala perfectamente a la nuestra, espera, esto significa…;1,5;2,70E+24;false;22generador;mejoras112-114
+213;4;El despertar;Como en un bucle de realidades, vas despertando de las simulaciones y consumiéndolas.;3;3,20E+23;false;22generador;mejoras112-114
+214;0;Ser supremo;Tu consciencia evoluciona al estado definitivo. Tú creas y tú consumes con total autosuficiencia.;1,5;3,70E+23;false;23generador;mejoras114-115
+215;4;EL LÍDER;La mejora final. Te has aburrido de este universo, de esta realidad, de este todo. Solo te queda usar tu poder para volver a empezar.;3;5,00E+30;false;23generador;mejoras114-115
+216;0;Doyouknowdawae;Empiezas por los países que en su mayoría tienen población indígena. Están indefensos ante el poder del líder.;1,25;-1;false;15generador;mejoras116-120
+217;1;Parte de Asia;El líder poco a poco acaba con los países más empobrecidos de Asia. No son muchos pero están deliciosos.;1,5;-1;false;15generador;mejoras116-120
+218;2;América Latina;Tanto territorio sumido en la pobreza… Qué desperdicio… Creo que el líder puede solucionarlo.;1,75;-1;false;15generador;mejoras116-120
+219;3;África;Quizá no sea el continente más grande, pero en cuanto a número de países no desarrollados no tiene rival. Nos sirve.;2;-1;false;15generador;mejoras116-120
+220;4;Clasismo;Empiezas a considerar como pobres a países que quizá no lo eran tanto… ¡Ups!;3;-1;false;15generador;mejoras116-120
