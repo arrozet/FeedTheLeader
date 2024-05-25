@@ -17,7 +17,10 @@ public class SatietyManager : MonoBehaviour
     private double ScoreUp;
     private bool waitingToResetScoreUp = false;
 
-    private void Awake()
+    public UnityEngine.UI.Slider Slider { get => slider; set => slider = value; }
+    public int Clics { get => clics; set => clics = value; }
+
+    public void Awake()
     {
         boton.onClick.AddListener(RegistrarClic);
         slider = GetComponent<UnityEngine.UI.Slider>();
@@ -25,7 +28,7 @@ public class SatietyManager : MonoBehaviour
         InvokeRepeating("Resta", 0.2f, 0.2f);
     }
 
-    private void Resta()
+    public void Resta()
     {
         if (clics > 0)
         {
@@ -33,7 +36,7 @@ public class SatietyManager : MonoBehaviour
         }
     }
 
-    private void RegistrarClic()
+    public void RegistrarClic()
     {
         clics++;
     }
@@ -56,13 +59,13 @@ public class SatietyManager : MonoBehaviour
         }
     }
 
-    private void ResetScoreUp()
+    public void ResetScoreUp()
     {
         PointsManager.Instance.setScoreUp(ScoreUp);
         waitingToResetScoreUp = false;
     }
 
-    void ActualizarValor(float max, float act)
+    public void ActualizarValor(float max, float act)
     {
         float porcentaje = act / max;
         slider.value = porcentaje;

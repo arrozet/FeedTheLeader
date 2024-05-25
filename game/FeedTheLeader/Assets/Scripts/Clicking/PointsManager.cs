@@ -161,7 +161,12 @@ public class PointsManager : MonoBehaviour, IDataPersistence
             Destroy(gameObject);
         }
     }
-    
+
+    public void Initialize()
+    {
+        PointsManager.Instance = this;
+    }
+
     public void comienzo()
     {
         if(scoreUp == 0)
