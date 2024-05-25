@@ -22,7 +22,7 @@ public class SatietyManager : MonoBehaviour
         boton.onClick.AddListener(RegistrarClic);
         slider = GetComponent<UnityEngine.UI.Slider>();
         // Llama a la función 'MiFuncion' cada 0.5 segundo, comenzando después de 0.5 segundos.
-        InvokeRepeating("Resta", 0.5f, 0.5f);
+        InvokeRepeating("Resta", 0.2f, 0.2f);
     }
 
     private void Resta()

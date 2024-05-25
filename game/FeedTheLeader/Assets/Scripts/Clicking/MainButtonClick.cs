@@ -50,7 +50,7 @@ public class ClickingScript : MonoBehaviour
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(clickPosition); // Convierte la posición del clic a coordenadas del mundo
 
         // Instancia el objeto en la posición calculada
-        plusObject.transform.position = new Vector3(worldPosition.x, worldPosition.y, 100);
+        plusObject.transform.position = new Vector3(worldPosition.x, worldPosition.y+(float)0.5, 100);
         plusObject.SetActive(true);
 
         StopAllCoroutines();
