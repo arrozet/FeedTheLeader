@@ -28,10 +28,10 @@ public class WriteStats : MonoBehaviour
     private double eventosClicados;
     private double tiempoJugado;
 
-    private int dias;
-    private int horas;
-    private int minutos;
-    private int segundosRestantes;
+    public int dias;
+    public int horas;
+    public int minutos;
+    public int segundosRestantes;
 
     /*Pasos:
      -Creas un  public TMP_Text con el nombre que le quieras dar
@@ -64,24 +64,24 @@ public class WriteStats : MonoBehaviour
             puntosActuales = PointsManager.Instance.getPuntos();
             TuplaPuntosActuales = formatScore(puntosActuales);
 
-            puntosAcumulados = PointsManager.Instance.getAccumulatedScore();
-            TuplaPuntosAcumulados = formatScore(puntosAcumulados);
+            PuntosAcumulados = PointsManager.Instance.getAccumulatedScore();
+            TuplaPuntosAcumulados = formatScore(PuntosAcumulados);
 
-            puntosPorSegundo = PointsManager.Instance.getPointsPerSecond();
-            TuplaPuntosPorSegundos = formatScore(puntosPorSegundo);
+            PuntosPorSegundo = PointsManager.Instance.getPointsPerSecond();
+            TuplaPuntosPorSegundos = formatScore(PuntosPorSegundo);
 
-            puntosPorClick = PointsManager.Instance.getScoreUp();
-            TuplaPuntosPorClick = formatScore(puntosPorClick);
+            PuntosPorClick = PointsManager.Instance.getScoreUp();
+            TuplaPuntosPorClick = formatScore(PuntosPorClick);
 
-            eventosClicados = PointsManager.Instance.getEventsClicked();
-            tiempoJugado = Time.time - (PointsManager.Instance.getStartTime());
-            ConvertirTiempo(tiempoJugado);
+            EventosClicados = PointsManager.Instance.getEventsClicked();
+            TiempoJugado = Time.time - (PointsManager.Instance.getStartTime());
+            ConvertirTiempo(TiempoJugado);
 
             CurrentPoints.text = "Puntos actuales: " + TuplaPuntosActuales.Item1 + " " + TuplaPuntosActuales.Item2;
             AccumulatedPoints.text = "Puntos acumulados: " + TuplaPuntosAcumulados.Item1 + " " + TuplaPuntosAcumulados.Item2;
             PointsPerSecond.text = "Puntos por segundo: " + TuplaPuntosPorSegundos.Item1 + " " + TuplaPuntosPorSegundos.Item2;
             PointsPerClick.text = "Puntos por click: " + TuplaPuntosPorClick.Item1 + " " + TuplaPuntosPorClick.Item2;
-            EventsClicked.text = "Eventos aleatorios clicados: " + eventosClicados;
+            EventsClicked.text = "Eventos aleatorios clicados: " + EventosClicados;
             PlayedTime.text = "Tiempo jugado: " + dias + " días " + horas + " horas " + minutos + " minutos " + segundosRestantes + " segundos";
         }
 
@@ -103,6 +103,13 @@ public class WriteStats : MonoBehaviour
     private static readonly string[] Unidades = { "", "millon", "billon", "trillon", "cuatrillon", "quintillon", "sextillon", "septillon", "octillon", "nonillon", "decillon", "undecillon",
         "duodecillon", "tredecillon", "cuatrodecillon", "quindecillon", "sexdecillon", "septendecillon", "octodecillon", "novendecillon", "vigintillon", "unvigintillon", "duovigintillon",
         "trevigintillon", "quattuorvigintillon", "quinvigintillon", "sexvigintillon", "septenvigintillon", "octovigintillon", "novemvigintillon", "trigintillon" };
+
+    public double PuntosActuales { get => puntosActuales; set => puntosActuales = value; }
+    public double PuntosAcumulados { get => puntosAcumulados; set => puntosAcumulados = value; }
+    public double PuntosPorSegundo { get => puntosPorSegundo; set => puntosPorSegundo = value; }
+    public double PuntosPorClick { get => puntosPorClick; set => puntosPorClick = value; }
+    public double EventosClicados { get => eventosClicados; set => eventosClicados = value; }
+    public double TiempoJugado { get => tiempoJugado; set => tiempoJugado = value; }
 
     public static Tuple<string, string> formatScore(double numero)
     {

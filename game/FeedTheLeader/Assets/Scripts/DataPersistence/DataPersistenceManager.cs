@@ -25,6 +25,9 @@ public class DataPersistenceManager : MonoBehaviour
     private float timePast;
     //se pueden obtener los datos publicamente, solo se podrán modificar dentro de la clase
     public static DataPersistenceManager instance { get; private set; }
+    public FileDataHandler DataHandler { get => dataHandler; set => dataHandler = value; }
+    public List<IDataPersistence> DataPersistenceObjects { get => dataPersistenceObjects; set => dataPersistenceObjects = value; }
+    public GameData GameData { get => gameData; set => gameData = value; }
 
     private void Awake()
     {
