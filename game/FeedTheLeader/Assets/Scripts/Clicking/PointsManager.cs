@@ -70,10 +70,11 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     }
     void Update()
     {
+        /*
         achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Click", clics);
         achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", (float)currentScore);
         achievementCounter += AchievementManager.Instance.CheckShopAchievements(gameData);
-
+        */
 
 
         // GUARRERIA GUARRERIA PERO NO SE BUGEA MAS 
