@@ -2312,6 +2312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationPanel: {fileID: 1204644909}
+  ultimoElementoTienda: {fileID: 2118671199}
+  cadenaPrestigePanel: {fileID: 797046084}
+  ConfirmButton: {fileID: 1638537282}
 --- !u!4 &162506607
 Transform:
   m_ObjectHideFlags: 0

@@ -2,22 +2,33 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LogicClicking : MonoBehaviour
 {
     public GameObject confirmationPanel;
+    public GameObject ultimoElementoTienda;
+
+    // boton de prestigiar
+    public GameObject cadenaPrestigePanel;
+
+    // Referencia al componente TextMeshProUGUI 
+    private TextMeshProUGUI textMeshPro;
+
+    //botón de confirmar del panel
+    public GameObject ConfirmButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        // Asegúrate de que textMeshProGameObject no sea null
+        if (cadenaPrestigePanel != null)
+        {
+            // Obtén el componente TextMeshProUGUI del GameObject
+            textMeshPro = cadenaPrestigePanel.GetComponent<TextMeshProUGUI>();
+        }
     }
 
     public void Back()
@@ -27,29 +38,34 @@ public class LogicClicking : MonoBehaviour
 
     public void ResetPoints()
     {
-        // Llama a la funci�n para resetear los puntos en el GameManager
         PointsManager.Instance.ResetPoints();
     }
 
     //Prestigio
     public void ActivePrestigePanel()
     {
-        confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta función
+        if (ultimoElementoTienda.activeInHierarchy){
+            textMeshPro.text = "Estas seguro de que quieres prestigiar?";
+            ConfirmButton.SetActive(true);
+            confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta función
+        }
+        else
+        {
+            textMeshPro.text = "NO PUEDES PRESTIGIAR TODAVIA... AVANZA, MUCHACHO";
+            ConfirmButton.SetActive(false);
+            confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta función
+        }
+
     }
 
     public void ConfirmPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
-        PointsManager.Instance.Prestige(CalculateMultiplier());
+        PointsManager.Instance.Prestige(2); //el parametro es el multiplicador 
     }
 
     public void CancelPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
-    }
-
-    public double CalculateMultiplier() //aqúi debería calcularse el multiplicador de prestigio
-    {
-        return 2;
     }
 }

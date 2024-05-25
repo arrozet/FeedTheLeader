@@ -213,7 +213,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         debug = 1;
         regPerSecond = 0;
         currentScore = 0; // Restablece los puntos a cero
-        scoreUp = 1*prestigeMultiplier; // Restablece multiplicador a uno (por el multiplicador de prestigio)
+        scoreUp = 1; // Restablece multiplicador a uno
         accumulatedScoreStat = 0;
         PointsPerSecond = 0;
     }
@@ -280,11 +280,11 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         accumulatedScoreStat *= 100;
     }
 
-    public void Prestige(double num)
+    public void Prestige(double mult)
     {
-        prestigeMultiplier *= num;
-
+        prestigeMultiplier *= mult;
         ResetPoints();
+        multiplicarMultiplicador(prestigeMultiplier);
     }
 
     public void ResetPrestigeMultiplier()
