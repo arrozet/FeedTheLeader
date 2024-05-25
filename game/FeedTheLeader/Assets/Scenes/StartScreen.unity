@@ -796,55 +796,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345481551}
   m_CullTransparentMesh: 1
---- !u!1 &509182036
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 509182037}
-  - component: {fileID: 509182038}
-  m_Layer: 0
-  m_Name: AchievementManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &509182037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509182036}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 988705753}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &509182038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509182036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 122d6631c0be2e349a826754934fb084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievements: []
-  achievementLoader: {fileID: 1249510916}
-  AchievementSO: []
-  AchievementPanelSO: []
-  AchievementPanel: []
 --- !u!1 &582857767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,7 +1910,158 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1249510915}
-  - {fileID: 509182037}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1028723232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1028723234}
+  - component: {fileID: 1028723233}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1028723233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028723232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122d6631c0be2e349a826754934fb084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievements:
+  - {fileID: 11400000, guid: f8e2b19c3f60d3e44b4c226b46c27a0a, type: 2}
+  - {fileID: 11400000, guid: 5bb6311e957dc8441ba3496ceaf50b63, type: 2}
+  - {fileID: 11400000, guid: 8e3d1063dc1d88d46b6fbdb32788677e, type: 2}
+  - {fileID: 11400000, guid: 73812919ebc16cd4eae5bdf4e2bc90c2, type: 2}
+  - {fileID: 11400000, guid: 6e0f485b798723341853b1cf09c89c7d, type: 2}
+  - {fileID: 11400000, guid: 7ceff9930e10fbb439e76a7db096510f, type: 2}
+  - {fileID: 11400000, guid: 41149a357bbfb714fb67eeb03e93de32, type: 2}
+  - {fileID: 11400000, guid: f080eb3829dffd24ea1b4aa49a85b369, type: 2}
+  - {fileID: 11400000, guid: 8d320082aa85de74692308fd1c5c397e, type: 2}
+  - {fileID: 11400000, guid: c7b79ab759443c0429ab92efe8f304aa, type: 2}
+  - {fileID: 11400000, guid: 2eeb0dbf0915f3e47a877e71ce2e67d8, type: 2}
+  - {fileID: 11400000, guid: 0729904f43108d54e81b1e05a398b725, type: 2}
+  - {fileID: 11400000, guid: de8d81ed010f37e42bef875499644d9e, type: 2}
+  - {fileID: 11400000, guid: 212327feccaa214418d64523731a0dee, type: 2}
+  - {fileID: 11400000, guid: 7d23990ec29b22540baa9664b7d51390, type: 2}
+  - {fileID: 11400000, guid: 2502b17678fdba743b5c5b6b00183425, type: 2}
+  - {fileID: 11400000, guid: 8942bc177d9c84b40be94c5bd4900206, type: 2}
+  - {fileID: 11400000, guid: 051f6d4a9d100394d8ca6205dfe04523, type: 2}
+  - {fileID: 11400000, guid: 81b148d9893d0ee4f8cd02d4d5f69dd0, type: 2}
+  - {fileID: 11400000, guid: fa140a48e38b5394a8124a88a54cd645, type: 2}
+  - {fileID: 11400000, guid: 5081788747d22324c8b287c3875d0bfe, type: 2}
+  - {fileID: 11400000, guid: 5d6cccde34f27414eb7b03f19acc75da, type: 2}
+  - {fileID: 11400000, guid: 878f13a94d85ea94aaaf18f2d1141446, type: 2}
+  - {fileID: 11400000, guid: 6a5fcc303a262a348ae6ce1b0249162b, type: 2}
+  - {fileID: 11400000, guid: 157d4dafa0419a94f977efd09eb87ec0, type: 2}
+  - {fileID: 11400000, guid: 0190e1e6f29af564aa07b412ae8ee122, type: 2}
+  AchievementSO:
+  - {fileID: 11400000, guid: f8e2b19c3f60d3e44b4c226b46c27a0a, type: 2}
+  - {fileID: 11400000, guid: 5bb6311e957dc8441ba3496ceaf50b63, type: 2}
+  - {fileID: 11400000, guid: 8e3d1063dc1d88d46b6fbdb32788677e, type: 2}
+  - {fileID: 11400000, guid: 73812919ebc16cd4eae5bdf4e2bc90c2, type: 2}
+  - {fileID: 11400000, guid: 6e0f485b798723341853b1cf09c89c7d, type: 2}
+  - {fileID: 11400000, guid: 7ceff9930e10fbb439e76a7db096510f, type: 2}
+  - {fileID: 11400000, guid: 41149a357bbfb714fb67eeb03e93de32, type: 2}
+  - {fileID: 11400000, guid: f080eb3829dffd24ea1b4aa49a85b369, type: 2}
+  - {fileID: 11400000, guid: 8d320082aa85de74692308fd1c5c397e, type: 2}
+  - {fileID: 11400000, guid: c7b79ab759443c0429ab92efe8f304aa, type: 2}
+  - {fileID: 11400000, guid: 2eeb0dbf0915f3e47a877e71ce2e67d8, type: 2}
+  - {fileID: 11400000, guid: 0729904f43108d54e81b1e05a398b725, type: 2}
+  - {fileID: 11400000, guid: de8d81ed010f37e42bef875499644d9e, type: 2}
+  - {fileID: 11400000, guid: 212327feccaa214418d64523731a0dee, type: 2}
+  - {fileID: 11400000, guid: 7d23990ec29b22540baa9664b7d51390, type: 2}
+  - {fileID: 11400000, guid: 2502b17678fdba743b5c5b6b00183425, type: 2}
+  - {fileID: 11400000, guid: 8942bc177d9c84b40be94c5bd4900206, type: 2}
+  - {fileID: 11400000, guid: 051f6d4a9d100394d8ca6205dfe04523, type: 2}
+  - {fileID: 11400000, guid: 81b148d9893d0ee4f8cd02d4d5f69dd0, type: 2}
+  - {fileID: 11400000, guid: fa140a48e38b5394a8124a88a54cd645, type: 2}
+  - {fileID: 11400000, guid: 5081788747d22324c8b287c3875d0bfe, type: 2}
+  - {fileID: 11400000, guid: 5d6cccde34f27414eb7b03f19acc75da, type: 2}
+  - {fileID: 11400000, guid: 878f13a94d85ea94aaaf18f2d1141446, type: 2}
+  - {fileID: 11400000, guid: 6a5fcc303a262a348ae6ce1b0249162b, type: 2}
+  - {fileID: 11400000, guid: 157d4dafa0419a94f977efd09eb87ec0, type: 2}
+  - {fileID: 11400000, guid: 0190e1e6f29af564aa07b412ae8ee122, type: 2}
+  AchievementPanelSO:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  AchievementPanel:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!4 &1028723234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028723232}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1001.2576, y: 220.9165, z: -1.6304888}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1070600111
@@ -3803,3 +3905,4 @@ SceneRoots:
   - {fileID: 1378570104}
   - {fileID: 988705753}
   - {fileID: 1070600113}
+  - {fileID: 1028723234}

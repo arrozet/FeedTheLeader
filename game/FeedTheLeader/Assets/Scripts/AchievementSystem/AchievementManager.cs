@@ -5,22 +5,26 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 public class AchievementManager : MonoBehaviour, IDataPersistence
 {
+    public static AchievementManager Instance;
+
     public List<Achievement> achievements;
     //public AchievementLoaderScript achievementLoader;
 
-    public PointsManager pointsManager;
     // no voy a tocar lo tuyo eduardo
 
     public Achievement[] AchievementSO;
     public GameObject[] AchievementPanelSO;
     public AchievementTemplate[] AchievementPanel;
 
+    private Text unlockMessage;
+
     void Start()
     {
-        achievements = findAllAchievements(); //Hasta que se añadan los logros a AchievementSO se usa esto
+        
         // esto es de juanminator
         for (int i = 0; i < AchievementSO.Length; i++)
         {
@@ -50,11 +54,19 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (AchievementManager.Instance == null)
+        {
+            AchievementManager.Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
 
-    public int CheckAchievementsByType(string type, int condition)
+    public int CheckAchievementsByType(string type, float condition)
     {
         int n = 0;
         foreach (Achievement achievement in achievements)
@@ -91,7 +103,26 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         Debug.Log("Achievement unlocked: " + achievement.name);
         loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
         // Falta por agregar mensaje de desbloqueo
+        MostrarMensaje("¡Logro desbloqueado!: " +  achievement.name + ".");
+
     }
+
+
+    public void MostrarMensaje(string mensaje)
+    {
+        StartCoroutine(MostrarYOcultarMensaje(mensaje));
+    }
+
+    // Corrutina para mostrar y ocultar el mensaje
+    private IEnumerator MostrarYOcultarMensaje(string mensaje)
+    {
+        unlockMessage.text = mensaje;
+        unlockMessage.enabled = true; // Asegurarse de que el texto esté visible
+        yield return new WaitForSeconds(3); // Esperar 1 segundo
+        unlockMessage.enabled = false; // Ocultar el texto
+    }
+
+
 
     void CheckAchievementById(int id, int condition)
     {

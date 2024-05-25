@@ -13,7 +13,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 {
     public static PointsManager Instance;
 
-    public AchievementManager achievementManager;
+    //public AchievementManager achievementManager;
     private GameData gameData; //guarrada para que se puedan desbloquear logros de la tienda
 
     // esto es una locura, voy a hacer que por cada vez que sume 1000 puntos por segundo, lo que sume sea en vez de 1 por segundo que sume 2 y asi hasta el infinito
@@ -66,13 +66,13 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.clics = this.clics;
         data.EventsClicked = this.EventsClicked;
         data.pointsAdded = this.pointsAdded;
-      //  data.achievementCounter = this.achievementCounter;
+        data.achievementCounter = this.achievementCounter;
     }
     void Update()
     {
-        achievementCounter += achievementManager.CheckAchievementsByType("Click", clics);
-        achievementCounter += achievementManager.CheckAchievementsByType("Puntos", (int)currentScore);
-        achievementCounter += achievementManager.CheckShopAchievements(gameData);
+        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Click", clics);
+        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", (float)currentScore);
+        achievementCounter += AchievementManager.Instance.CheckShopAchievements(gameData);
 
 
 
