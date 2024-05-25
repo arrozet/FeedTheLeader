@@ -152,7 +152,7 @@ public class ObjectLoader : MonoBehaviour
                     achievementItem.title = parts[1];
                     achievementItem.description = parts[2];
                     achievementItem.type = parts[3];
-                    achievementItem.condition = float.Parse(parts[4]);
+                    achievementItem.condition = double.Parse(parts[4]);
                     achievementItem.unlocked = bool.Parse(parts[5]);
 
                     // Cojo el sprite de resources y lo cargo. No se debe poner la 
