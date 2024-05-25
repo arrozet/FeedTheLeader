@@ -10,7 +10,7 @@ public class Achievement : ScriptableObject, IDataPersistence
     public string title;
     public string description;
     public string type;         // Indica el tipo de logro que es
-    public float condition;     // Indica un parámetro clave para cumplimentar la condición del logro   //TODO: cambiar a float las dependencias - ROZ
+    public double condition;     // Indica un parámetro clave para cumplimentar la condición del logro   //TODO: cambiar a float las dependencias - ROZ
     public bool unlocked;
     public Sprite sprite;
     public Sprite NotUnlockedSprite;

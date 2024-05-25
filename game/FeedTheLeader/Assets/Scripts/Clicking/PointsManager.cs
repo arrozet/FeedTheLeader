@@ -72,7 +72,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     {
         /*
         achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Click", clics);
-        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", (float)currentScore);
+        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", currentScore);
         achievementCounter += AchievementManager.Instance.CheckShopAchievements(gameData);
         */
 

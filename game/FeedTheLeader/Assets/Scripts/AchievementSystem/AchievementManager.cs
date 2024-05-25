@@ -66,7 +66,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
     }
 
 
-    public int CheckAchievementsByType(string type, float condition)
+    public int CheckAchievementsByType(string type, double condition)
     {
         int n = 0;
         foreach (Achievement achievement in achievements)
