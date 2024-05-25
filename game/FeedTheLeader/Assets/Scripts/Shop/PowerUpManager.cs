@@ -31,7 +31,7 @@ public class PowerUpManager : MonoBehaviour
     {
         // esto es super poco eficiente porque lo ejecuta todo el rato, voy a buscar la manera de invocarla desde otro script
         CheckPurchaseable();
-        // a ver en verdad, la cosa esque si lo ponemos cada vez que sume o reste puntos, como va a llegar un punto en el que se cosigan muchisimos, diria que da igual dejarlo así
+        // a ver en verdad, la cosa esque si lo ponemos cada vez que sume o reste puntos, como va a llegar un punto en el que se cosigan muchisimos, diria que da igual dejarlo asï¿½
     }
 
     public void Awake()
@@ -76,7 +76,7 @@ public class PowerUpManager : MonoBehaviour
     }
     public void loadPanels() // esto carga los paneles:
                              // realmente lo que tengo es una lista de paneles ocultos (que se activan con el primer for del STart())
-                             // esta función asigna a cada panel, el nombre y el objeto de los Scripteable Objects que tenemos
+                             // esta funciï¿½n asigna a cada panel, el nombre y el objeto de los Scripteable Objects que tenemos
     {
         for (int i = 0; i < powerUpSO.Length; i++)
         {
@@ -101,7 +101,7 @@ public class PowerUpManager : MonoBehaviour
         }
         loadPanels();
         PointsManager.Instance.PointsPerSecond = 0;
-        PointsManager.Instance.scoreUp = 1;
+     //   PointsManager.Instance.scoreUp = 1;
     }
     public void efecto(int id)
     {

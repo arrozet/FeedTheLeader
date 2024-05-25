@@ -36,7 +36,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     private double startTime;
 
     //multiplicador de puntos despues de prestigiar
-    public double prestigeMultiplier = 1;
+    public double prestigeMultiplier;
 
     public void LoadData(GameData data)
     {
@@ -51,7 +51,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         this.EventsClicked = data.EventsClicked;
         this.pointsAdded = data.pointsAdded;
         this.achievementCounter = data.achievementCounter;
-        //this.prestigeMultiplier = data.prestigeMultiplier;
+        this.prestigeMultiplier = data.prestigeMultiplier;
     }
 
     public void SaveData(ref GameData data)
@@ -67,6 +67,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.EventsClicked = this.EventsClicked;
         data.pointsAdded = this.pointsAdded;
         data.achievementCounter = this.achievementCounter;
+        data.prestigeMultiplier = this.prestigeMultiplier;
     }
     void Update()
     {
@@ -194,7 +195,9 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     public void multiplicarMultiplicador(double num)
     {
+        //Debug.Log(num + " " + scoreUp);
         scoreUp *=num;
+        //Debug.Log(num + " " + scoreUp);
     }
     public bool RestarPuntos(double num)
     {
@@ -283,8 +286,11 @@ public class PointsManager : MonoBehaviour, IDataPersistence
     public void Prestige(double mult)
     {
         prestigeMultiplier *= mult;
+        //Debug.Log(prestigeMultiplier);
         ResetPoints();
+        
         multiplicarMultiplicador(prestigeMultiplier);
+        
     }
 
     public void ResetPrestigeMultiplier()

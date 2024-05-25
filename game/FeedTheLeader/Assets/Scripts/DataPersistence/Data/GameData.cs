@@ -20,7 +20,8 @@ public class GameData
 
     public double debug;
     public double regPerSecond;
-    internal double prestigeMultiplier;
+
+    public double prestigeMultiplier;
 
     //Se inicializan los valores que se van a guardar a default (Nuevos Datos)
     //Ser� necesario a�adir en un futuro algo que guarde las mejoras de la tienda
@@ -38,5 +39,6 @@ public class GameData
         this.EventsClicked = 0;
         this.pointsAdded = 0f;
         this.achievementCounter = 0;
+        this.prestigeMultiplier = 1;
 }
 }

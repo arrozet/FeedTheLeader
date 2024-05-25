@@ -61,7 +61,7 @@ public class LogicClicking : MonoBehaviour
     public void ConfirmPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
-        PointsManager.Instance.Prestige(2); //el parametro es el multiplicador 
+        PointsManager.Instance.Prestige(1.2); //el parametro es el multiplicador 
     }
 
     public void CancelPrestige()
