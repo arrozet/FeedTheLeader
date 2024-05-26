@@ -61,4 +61,8 @@ public class LogicStartScreen : MonoBehaviour
             Debug.LogError("No se encontró el AudioManager.");
         }
     }
+    public void Achievements()
+    {
+        SceneManager.LoadScene("Achievements");
+    }
 }

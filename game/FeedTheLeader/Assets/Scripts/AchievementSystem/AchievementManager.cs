@@ -17,14 +17,14 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
     // no voy a tocar lo tuyo eduardo
 
     public Achievement[] AchievementSO;
-    public GameObject[] AchievementPanelSO;
-    public AchievementTemplate[] AchievementPanel;
+   // public GameObject[] AchievementPanelSO;
+   // public AchievementTemplate[] AchievementPanel;
 
     private Text unlockMessage;
 
     void Start()
     {
-        
+        /*
         // esto es de juanminator
         for (int i = 0; i < AchievementSO.Length; i++)
         {
@@ -32,6 +32,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         }
 
         loadPanels();
+        */
     }
 
     public void LoadData(GameData gameData)
@@ -101,7 +102,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
     {
         achievement.unlocked = true;
         Debug.Log("Achievement unlocked: " + achievement.name);
-        loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
+        // loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
         // Falta por agregar mensaje de desbloqueo
         MostrarMensaje("¡Logro desbloqueado!: " +  achievement.name + ".");
 
@@ -142,7 +143,7 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
 
         return new List<Achievement>(achievementsEnum);
     }
-
+    /*
     //Aqui empieza a editar la cabra (juanma)
     public void loadPanels() // esto carga los paneles:
                              // realmente lo que tengo es una lista de paneles ocultos (que se activan con el primer for del STart())
@@ -159,4 +160,5 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
             }
         }
     }
+    */
 }
