@@ -22,4 +22,9 @@ public class LogicStatsScript : MonoBehaviour
     {
         SceneManager.LoadScene("StartScreen");
     }
+    public void VolverAClicking() // vuelve a la escena de menú inicio
+    {
+        SceneManager.LoadScene("ClickingScreen");
+    }
+
 }

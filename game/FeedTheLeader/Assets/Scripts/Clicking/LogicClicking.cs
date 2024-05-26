@@ -31,6 +31,21 @@ public class LogicClicking : MonoBehaviour
         }
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("OptionsScreen");
+    }
+
+    public void Stats()
+    {
+        SceneManager.LoadScene("StatsScreen");
+    }
+
+    public void Achievements()
+    {
+        SceneManager.LoadScene("Achievements");
+    }
+
     public void Back()
     {
         SceneManager.LoadScene("StartScreen");

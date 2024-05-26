@@ -18,6 +18,11 @@ public class LogicOptionsScript : MonoBehaviour
         
     }
 
+    public void VolverAClickingScreen() // vuelve a la escena de menú inicio
+    {
+        SceneManager.LoadScene("ClickingScreen");
+    }
+
     public void VolverAMenuInicio() // vuelve a la escena de menú inicio
     {
         SceneManager.LoadScene("StartScreen");
