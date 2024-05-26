@@ -33,22 +33,22 @@ public class LogicClicking : MonoBehaviour
 
     public void Options()
     {
-        SceneManager.LoadScene("OptionsScreen");
+        ScreenManagerScript.Instance.LoadScene("OptionsScreen");
     }
 
     public void Stats()
     {
-        SceneManager.LoadScene("StatsScreen");
+        ScreenManagerScript.Instance.LoadScene("StatsScreen");
     }
 
     public void Achievements()
     {
-        SceneManager.LoadScene("Achievements");
+        ScreenManagerScript.Instance.LoadScene("Achievements");
     }
 
     public void Back()
     {
-        SceneManager.LoadScene("StartScreen");
+        ScreenManagerScript.Instance.GoBack();
     }
 
     public void ResetPoints()

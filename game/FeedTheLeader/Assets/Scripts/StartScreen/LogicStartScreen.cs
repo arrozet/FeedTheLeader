@@ -15,31 +15,20 @@ public class LogicStartScreen : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void Jugar() // lleva desde la escena de título a la escena donde se clickea
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void Jugar() //lleva desde la escena de título a la escena donde se clickea
-    {
-        SceneManager.LoadScene("ClickingScreen");
+        ScreenManagerScript.Instance.ClearHistory(); // Limpiar el historial al empezar a jugar
+        ScreenManagerScript.Instance.LoadScene("ClickingScreen");
     }
 
     public void Opciones() //lleva desde la escena de título a la escena de opciones
     {
-        SceneManager.LoadScene("OptionsScreen");
+        ScreenManagerScript.Instance.LoadScene("OptionsScreen");
     }
 
     public void Estadisticas() //lleva desde la escena de título a la escena de opciones
     {
-        SceneManager.LoadScene("StatsScreen");
+        ScreenManagerScript.Instance.LoadScene("StatsScreen");
     }
 
     public void Salir() //cierra el juego
@@ -63,6 +52,6 @@ public class LogicStartScreen : MonoBehaviour
     }
     public void Achievements()
     {
-        SceneManager.LoadScene("Achievements");
+        ScreenManagerScript.Instance.LoadScene("Achievements");
     }
 }

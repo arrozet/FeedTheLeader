@@ -1,10 +1,9 @@
-//Author: Javi
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LogicOptionsScript : MonoBehaviour
+public class BackButtonScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,8 +17,7 @@ public class LogicOptionsScript : MonoBehaviour
         
     }
 
-
-    public void Volver() // vuelve a la escena de menú inicio
+    public void Back()
     {
         ScreenManagerScript.Instance.GoBack();
     }
