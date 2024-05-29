@@ -6,6 +6,7 @@ public class DescriptionUpgradesManager : MonoBehaviour
 {
     public GameObject textPanel; // Asigna el panel de texto en el editor
     public bool hasEmerged;
+    public Canvas canvas;
 
     // Método que se llama cuando el ratón pasa por encima del objeto
 
@@ -14,6 +15,7 @@ public class DescriptionUpgradesManager : MonoBehaviour
 
         hasEmerged = false; // es imposible que salga si todavia no ha entrado asi que aqui lo inicializamos a false
         StartCoroutine(activar());
+        canvas.sortingOrder = 100;
 
     }
     private IEnumerator activar()
@@ -31,5 +33,6 @@ public class DescriptionUpgradesManager : MonoBehaviour
     { //si esta desactivado si lo desactivo no pasa nada
         hasEmerged = true;
         textPanel.SetActive(false);
+        canvas.sortingOrder = 0;
     }
 }
