@@ -18,6 +18,9 @@ public class ClickingScript : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text scoreText2;
 
+    //PPS
+    public TMP_Text pointsPerSecondText;
+
     private float currentScore;
     private float scoreUp;
 
@@ -37,7 +40,12 @@ public class ClickingScript : MonoBehaviour
         scoreText.text = formatScore(PointsManager.Instance.currentScore).Item1;
         scoreText2.text = formatScore(PointsManager.Instance.currentScore).Item2;
 
+
         plusText.text = "+ " + PointsManager.Instance.scoreUp;
+        if (pointsPerSecondText != null)
+        {
+            pointsPerSecondText.text = "Puntos de fe por segundo: " + PointsManager.Instance.getPointsPerSecond().ToString("F2");
+        }
     }
     
     public void click()

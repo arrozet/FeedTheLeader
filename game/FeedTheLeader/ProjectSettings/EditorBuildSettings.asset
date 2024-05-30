@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StatsScreen.unity
     guid: c777b4c4cbce92c4f800576d8c49a5b0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrestigeScreen.unity
     guid: 1188b13d061bc8c4caa449bc2e90e464
   - enabled: 1
