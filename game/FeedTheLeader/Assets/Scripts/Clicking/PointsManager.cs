@@ -4,9 +4,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class PointsManager : MonoBehaviour, IDataPersistence
@@ -37,6 +39,9 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     //multiplicador de puntos despues de prestigiar
     public double prestigeMultiplier;
+
+    // texto para Points Per Second
+    public TMP_Text pointsPerSecondText;
 
     public void LoadData(GameData data)
     {
@@ -69,6 +74,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         data.achievementCounter = this.achievementCounter;
         data.prestigeMultiplier = this.prestigeMultiplier;
     }
+
     void Update()
     {
         /*
@@ -149,17 +155,29 @@ public class PointsManager : MonoBehaviour, IDataPersistence
             accumulatedScoreStat+= debug;
         }
 
+        // Asegurarse de que el componente de texto no es nulo antes de usarlo
+        if (pointsPerSecondText != null)
+        {
+            pointsPerSecondText.text = "Puntos de fe por segundo: " + PointsPerSecond.ToString("F2");
+        }
     }
+
     public void Awake()
-    { 
+    {
         // esto es de un tutorial, es para que no destruya el objeto entre escenas
-        if(PointsManager.Instance == null)
+        if (PointsManager.Instance == null)
         {
             PointsManager.Instance = this;
             DontDestroyOnLoad(this.gameObject);
-        } else
+        }
+        else
         {
             Destroy(gameObject);
+        }
+
+        if (pointsPerSecondText == null)
+        {
+            pointsPerSecondText = GameObject.Find("PointsPerSecondText")?.GetComponent<TMP_Text>();
         }
     }
 
