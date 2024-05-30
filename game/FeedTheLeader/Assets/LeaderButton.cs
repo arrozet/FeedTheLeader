@@ -10,7 +10,7 @@ public class LeaderButton : MonoBehaviour
 
     public Sprite[] leaderSprites;
     public PointsManager pointsManager;
-    private Image botonImage;  // Referencia al componente Image del botón
+    private Image botonImage;  // Referencia al componente Image del botï¿½n
     private float salto = 2;
 
     // Start is called before the first frame update
