@@ -14762,6 +14762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1721630432}
   scoreText2: {fileID: 888571237}
+  pointsPerSecondText: {fileID: 1819078955}
   plusObject: {fileID: 2004236391}
   plusText: {fileID: 2004236393}
 --- !u!4 &1005114111

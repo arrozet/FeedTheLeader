@@ -156,10 +156,10 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         }
 
         // Asegurarse de que el componente de texto no es nulo antes de usarlo
-        if (pointsPerSecondText != null)
+        /*if (pointsPerSecondText != null)
         {
             pointsPerSecondText.text = "Puntos de fe por segundo: " + PointsPerSecond.ToString("F2");
-        }
+        }*/
     }
 
     public void Awake()
