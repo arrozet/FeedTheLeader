@@ -28,10 +28,10 @@ public class LeaderButton : MonoBehaviour
             botonImage.sprite = leaderSprites[0];
         } else if (pointsManager.accumulatedScoreStat < Mathf.Pow(10, 2 * salto))
         {
-            botonImage.sprite = leaderSprites[2];
+            botonImage.sprite = leaderSprites[1];
         } else if (pointsManager.accumulatedScoreStat < Mathf.Pow(10, 3 * salto))
         {
-            botonImage.sprite= leaderSprites[1];
+            botonImage.sprite= leaderSprites[2];
         }
         else if (pointsManager.accumulatedScoreStat < Mathf.Pow(10, 4 * salto))
         {
