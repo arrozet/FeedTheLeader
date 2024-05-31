@@ -14,6 +14,7 @@ public class ShopItemScripteableObject : ScriptableObject, IDataPersistence {
     public double pointsPerSecond;
     public bool unlocked;
     public Sprite sprite;
+    public Sprite[] spriteList;
 
 
     public void LoadData(GameData data)

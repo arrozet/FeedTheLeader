@@ -1,3 +1,4 @@
+using Codice.Client.BaseCommands;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class VisualGeneratorManager : MonoBehaviour
     public Sprite transparente;
     public GameObject[] generatorPanelsSO;
     public VisualGeneratorTemplate[] generatorPanels;
+    public int[] amounts;
 
     void Start()
     {// muestra solamente los paneles que hay en función de los scripteble objects que hemos creado
@@ -18,6 +20,7 @@ public class VisualGeneratorManager : MonoBehaviour
                 generatorPanelsSO[i].SetActive(true);
             }
         }
+        amounts = new int[30];
         loadPanels();
     }
     public void Awake()
@@ -35,25 +38,16 @@ public class VisualGeneratorManager : MonoBehaviour
     }
     void activateImagesID(int id) // esta funcion activa las imagenes que haya y las demas las pone transparentes
     {
-        int max;
-        int max2 = 0;
-        if (generatorPanels[id].generadoresImages.Length <= ShopManagerScript.Instance.shopItemsSO[id].amount)
+       
+        if(amounts[id] != 0)
         {
-            max = generatorPanels[id].generadoresImages.Length;
-        } else
-        {
-            max = ShopManagerScript.Instance.shopItemsSO[id].amount;
-            max2 = generatorPanels[id].generadoresImages.Length- ShopManagerScript.Instance.shopItemsSO[id].amount;
-        }
-        if(max != 0)
-        {
-            for (int i = 0; i < max; i++)
+            for (int i = 0; i < amounts[id]; i++)
             {
-                generatorPanels[id].generadoresImages[i].sprite = ShopManagerScript.Instance.shopItemsSO[id].sprite; // asigna a la cantidad de objetos que haya el sprite del objeto
+                generatorPanels[id].generadoresImages[i].sprite = ShopManagerScript.Instance.shopItemsSO[id].spriteList[UnityEngine.Random.Range(0, 4)]; // asigna a la cantidad de objetos que haya el sprite del objeto
             }
-            if (max2 != 0)
+            if (amounts[id] < generatorPanels[id].generadoresImages.Length)
             {
-                for (int i = max + 1; i < max2; i++)
+                for (int i = amounts[id] + 1; i < generatorPanels[id].generadoresImages.Length; i++)
                 {
                     generatorPanels[id].generadoresImages[i].sprite = transparente;
                 }
@@ -69,6 +63,30 @@ public class VisualGeneratorManager : MonoBehaviour
 
         
     }
+    public void seHaComprado(int id, int cantidad)
+    {
+        for (int i = 0; i < generatorPanelsSO.Length; i++)
+        {
+            if (ShopManagerScript.Instance.shopItemsSO[i].unlocked == true && ShopManagerScript.Instance.shopItemsSO[i].amount > 0) // si no esta desbloqueado el objeto, no lo muestra
+            {
+                generatorPanelsSO[i].SetActive(true);
+            }
+        }
+        if (amounts[id] < generatorPanels[id].generadoresImages.Length) { 
+            if (cantidad == 1)
+            {
+                generatorPanels[id].generadoresImages[amounts[id]].sprite = ShopManagerScript.Instance.shopItemsSO[id].spriteList[UnityEngine.Random.Range(0, 4)];
+                amounts[id]++;
+            }
+            else if (cantidad == 10)
+            {
+                for (int i = 0; i < generatorPanels[id].generadoresImages.Length; i++)
+                {
+                    generatorPanels[id].generadoresImages[i].sprite = ShopManagerScript.Instance.shopItemsSO[id].spriteList[UnityEngine.Random.Range(0, 4)]; // asigna a la cantidad de objetos que haya el sprite del objeto
+               }
+            }
+        }
+    }
     public void loadPanels()
     {
         for (int i = 0; i < generatorPanelsSO.Length; i++)
@@ -77,6 +95,14 @@ public class VisualGeneratorManager : MonoBehaviour
             {
                 generatorPanelsSO[i].SetActive(true);
             }
+            if (ShopManagerScript.Instance.shopItemsSO[i].amount < generatorPanels[i].generadoresImages.Length)
+            {
+                amounts[i] = ShopManagerScript.Instance.shopItemsSO[i].amount; 
+            } else
+            {
+                amounts[i] = generatorPanels[i].generadoresImages.Length;
+            }
+            
         }
        
         for (int i =0 ; i < generatorPanelsSO.Length; i++)
@@ -92,6 +118,11 @@ public class VisualGeneratorManager : MonoBehaviour
         for (int i = 0; i < generatorPanels.Length; i++)
         { 
             generatorPanelsSO[i].SetActive(false);
+            amounts[i] = 0;
+            for (int j = 0; j < generatorPanels[i].generadoresImages.Length; j++)
+            {
+                generatorPanels[i].generadoresImages[j].sprite = transparente;
+            }
         }
         loadPanels();
     }

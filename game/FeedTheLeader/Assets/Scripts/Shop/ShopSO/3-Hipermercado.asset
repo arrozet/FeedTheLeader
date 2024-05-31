@@ -21,3 +21,8 @@ MonoBehaviour:
   pointsPerSecond: 47
   unlocked: 0
   sprite: {fileID: 21300000, guid: bf2698e423ba84448b5e0a242c41df5e, type: 3}
+  spriteList:
+  - {fileID: 21300000, guid: e57bd74f7e4bc4749aef72a4b8e067e3, type: 3}
+  - {fileID: 21300000, guid: 22a8be05b5599354596e0033e5b2ebeb, type: 3}
+  - {fileID: 21300000, guid: c74dd9e304fe97148a3aa207739b3a92, type: 3}
+  - {fileID: 21300000, guid: 3c1ba36be1305994387cd7dbbb05cb97, type: 3}

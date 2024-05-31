@@ -130,7 +130,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 }
             }
         }
-        VisualGeneratorManager.Instance.loadPanels();
+        VisualGeneratorManager.Instance.seHaComprado(btnNo, AmountObjects);
     }
 
 
