@@ -35,7 +35,7 @@ public class DescriptionUpgradesManager : MonoBehaviour
     { //si esta desactivado si lo desactivo no pasa nada
         hasEmerged = true;
         textPanel.SetActive(false);
-        canvas.overrideSorting = false;
         canvas.sortingOrder = 0;
+        canvas.overrideSorting = false;
     }
 }

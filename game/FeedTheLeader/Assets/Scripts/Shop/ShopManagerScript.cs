@@ -130,6 +130,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 }
             }
         }
+        VisualGeneratorManager.Instance.loadPanels();
     }
 
 
@@ -167,6 +168,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 shopPanelsSO[i].SetActive(false);
             } 
         }
+        VisualGeneratorManager.Instance.resetVisualGenerators();
         loadPanels();
     }
     public double calcularPrecio(int btnNo) // esta funcion calcula el precio en funcion de cuantos objetos quieras comprar (si 10 o 1) [metere 100 si esta gente quiere]

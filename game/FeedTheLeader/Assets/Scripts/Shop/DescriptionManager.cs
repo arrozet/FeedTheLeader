@@ -25,6 +25,7 @@ public class DescriptionManager : MonoBehaviour
         if (!hasEmerged)
         { // solo lo muestra si no ha salido
             textPanel.SetActive(true); // Muestra el panel de texto
+            canvas.overrideSorting = true;
             canvas.sortingOrder = 100;
         }
 
@@ -36,6 +37,7 @@ public class DescriptionManager : MonoBehaviour
         hasEmerged = true;
         textPanel.SetActive(false);
         canvas.sortingOrder = 0;
+        canvas.overrideSorting = false;
     }
 
 }
