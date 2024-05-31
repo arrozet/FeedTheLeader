@@ -24,7 +24,7 @@ public class DescriptionUpgradesManager : MonoBehaviour
         if (!hasEmerged)
         { // solo lo muestra si no ha salido
             textPanel.SetActive(true); // Muestra el panel de texto
-            canvas.overrideSorting = true;
+            canvas.overrideSorting = true; // ACTIVO EL ORDERRING DORTING, DEBE ESTAR DESACTIVADO ANTES PORQUE SINO SE ME MUERE LA MASCARA
             canvas.sortingOrder = 100;
         }
 
