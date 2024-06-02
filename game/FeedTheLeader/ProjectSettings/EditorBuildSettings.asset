@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PrestigeScreen.unity
     guid: 1188b13d061bc8c4caa449bc2e90e464
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/IntentoFallido.unity
     guid: 4771f8172cb15ff4288c3aad7e2c9a43
   m_configObjects: {}
