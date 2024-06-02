@@ -74,11 +74,12 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
         {
             if (!achievement.unlocked && type.Equals(achievement.type) && condition >= achievement.condition)
             {
+                Debug.Log("Logro " + achievement.name + " ha sido desbloqueado");
                 UnlockAchievement(achievement);
                 n++;
             }
         }
-        if (n > 0) Debug.Log("Desbloqueados " + n + " logros");
+        //if (n > 0) Debug.Log("Desbloqueados " + n + " logros");
         return n;
     }
 
@@ -100,11 +101,15 @@ public class AchievementManager : MonoBehaviour, IDataPersistence
 
     void UnlockAchievement(Achievement achievement)
     {
-        achievement.unlocked = true;
-        Debug.Log("Achievement unlocked: " + achievement.name);
-        // loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
-        // Falta por agregar mensaje de desbloqueo
-        MostrarMensaje("¡Logro desbloqueado!: " +  achievement.name + ".");
+        if (!achievement.unlocked)
+        {
+            achievement.unlocked = true;
+            Debug.Log("Achievement unlocked: " + achievement.name);
+            // loadPanels(); // vuelve a cargar los paneles para cambiar el que se ha desbloqueado
+            // Falta por agregar mensaje de desbloqueo
+            //MostrarMensaje("¡Logro desbloqueado!: " + achievement.name + ".");
+        }
+        
 
     }
 

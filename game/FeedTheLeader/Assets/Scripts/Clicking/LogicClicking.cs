@@ -20,9 +20,12 @@ public class LogicClicking : MonoBehaviour
     //botón de confirmar del panel
     public GameObject ConfirmButton;
 
+    public AchievementManager achievementManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        achievementManager = GameObject.Find("AchievementManager")?.GetComponent<AchievementManager>();
         // Asegúrate de que textMeshProGameObject no sea null
         if (cadenaPrestigePanel != null)
         {
@@ -60,13 +63,13 @@ public class LogicClicking : MonoBehaviour
     public void ActivePrestigePanel()
     {
         if (ultimoElementoTienda.activeInHierarchy){
-            textMeshPro.text = "Estas seguro de que quieres prestigiar?";
+            textMeshPro.text = "¿Estás seguro de que quieres prestigiar?";
             ConfirmButton.SetActive(true);
             confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta función
         }
         else
         {
-            textMeshPro.text = "NO PUEDES PRESTIGIAR TODAVIA... AVANZA, MUCHACHO";
+            textMeshPro.text = "Todavía no puedes prestigiar, sigue avanzando. Quizá el líder quiere que compres todas las propiedades...";
             ConfirmButton.SetActive(false);
             confirmationPanel.SetActive(true); // Muestra el panel de confirmar prestigio cuando se llame a esta función
         }
@@ -82,5 +85,13 @@ public class LogicClicking : MonoBehaviour
     public void CancelPrestige()
     {
         confirmationPanel.SetActive(false); // Oculta el panel de confirmar prestigio 
+    }
+
+    public void ResetAchievements()
+    {
+        foreach (Achievement ach in achievementManager.achievements)
+        {
+            ach.unlocked = false;
+        }
     }
 }
