@@ -19,6 +19,7 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer mainMixer;
 
     [Header("FPS")]
+    private FPSCounter fpsCounter;
     public UnityEngine.UI.Toggle fpsToggle;
     public UnityEngine.UI.Slider fpsSlider;
     private int[] fpsValues = { 30, 60, 120, -1 }; // -1 para 
@@ -42,6 +43,7 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         //myResolutionsWithCurrentRefresh.Clear();    // si no lo borro, genera bugs
+        fpsCounter = GameObject.Find("FpsCounter")?.GetComponent<FPSCounter>();
         getResolutions();
         
 
@@ -59,7 +61,7 @@ public class SettingsMenu : MonoBehaviour
         fpsSlider.value = PlayerPrefs.GetFloat("FpsSliderValue", fpsSlider.maxValue);
 
         // Cargar valor de fpsToggle. No se puede hacer setBool, asi que trabajo con enteros
-        int valorFpsToggle = PlayerPrefs.GetInt("FpsToggleValue", 1);
+        int valorFpsToggle = PlayerPrefs.GetInt("FpsToggleValue", 0);
         if(valorFpsToggle == 1)
         {
             fpsToggle.isOn = true;
@@ -224,14 +226,14 @@ public class SettingsMenu : MonoBehaviour
             Application.targetFrameRate = fpsLimit;
         }
     }
-    /*
     public void EnableFps(bool enabled)
     {
-        fpsCounter = GetComponent<FPSCounter>();
-
+        //fpsCounter = GetComponent<FPSCounter>();
+        
         fpsCounter.enabled = enabled;
+        fpsCounter.isOn = enabled;
+        Debug.Log("FPS counter disabled" + fpsCounter.enabled);
     }
-    */
     //Parte de guardado: Edu
     private void OnDestroy()
     {
