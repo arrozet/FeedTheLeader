@@ -82,9 +82,7 @@ public class PointsManager : MonoBehaviour, IDataPersistence
 
     void Update()
     {
-        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Click", clics);
-        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", currentScore);
-        //achievementCounter += AchievementManager.Instance.CheckShopAchievements(gameData);
+
         
 
 
@@ -164,6 +162,9 @@ public class PointsManager : MonoBehaviour, IDataPersistence
         {
             pointsPerSecondText.text = "Puntos de fe por segundo: " + PointsPerSecond.ToString("F2");
         }*/
+        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Click", clics);
+        achievementCounter += AchievementManager.Instance.CheckAchievementsByType("Puntos", currentScore);
+        //achievementCounter += AchievementManager.Instance.CheckShopAchievements(gameData);
     }
 
     public void Awake()
