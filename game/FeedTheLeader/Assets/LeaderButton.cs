@@ -16,8 +16,8 @@ public class LeaderButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pointsManager = GameObject.Find("PointsManager")?.GetComponent<PointsManager>();
         botonImage = GetComponent<Image>();
-
     }
 
     // Update is called once per frame
