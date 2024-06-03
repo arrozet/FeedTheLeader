@@ -1,5 +1,5 @@
 // CODIGO COMPLETAMENTE ILEGIBLE,NO TRATES DE LEERLO SIMPLEMENTE FUNCIONA ESTA HECHO A LA PRISA
-
+// Author: juanma, obviamente, como el 80% del código
 //using Codice.Client.BaseCommands;
 using System.Collections;
 using System.Collections.Generic;
