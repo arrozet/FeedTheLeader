@@ -8,7 +8,7 @@ Actualmente, _Feed The Leader_ solo puede ser ejecutado en un ordenador corriend
 
 Para descargarlo, pulsa el siguiente botón:
 
-[![Descarga ahora](/assets/download.png)](/assets/miniBuild.zip)
+[![Descarga ahora](/assets/download.png)](/assets/v0_1.zip)
 
 
 
