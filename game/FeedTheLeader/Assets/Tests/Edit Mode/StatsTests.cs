@@ -7,12 +7,18 @@ using UnityEngine.TestTools;
 public class StatsTests
 {
     private WriteStats writeStats;
+    private GameObject gameObject;
+
 
     [SetUp]
     public void SetUp()
     {
         // Inicializar la clase que será testeada
-        writeStats = new WriteStats();
+
+        // Warning eliminados por ROZ
+        // Para evitar warning de MonoBehaviour 
+        gameObject = new GameObject();
+        writeStats = gameObject.AddComponent<WriteStats>();
     }
 
     [Test]

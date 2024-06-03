@@ -1,0 +1,1 @@
+La versión compilada está en el zip. Había un archivo que pesaba 100MB y no se podía subir a GitHub.

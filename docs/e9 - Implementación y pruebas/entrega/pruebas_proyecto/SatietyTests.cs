@@ -13,11 +13,16 @@ public class SatietyManagerTests
     [SetUp]
     public void Setup()
     {
+        // Warning eliminados por ROZ
+        // Un GameObject solo puede contener un componente 'Selectable'. Por eso he puesto 2. Uno para slider y otro para botón
         GameObject gameObject = new GameObject();
+        GameObject gameObject2 = new GameObject();
+
+
         satietyManager = gameObject.AddComponent<SatietyManager>();
         slider = gameObject.AddComponent<Slider>();
-        textoPorcentaje = gameObject.AddComponent<TMP_Text>();
-        boton = gameObject.AddComponent<Button>();
+        textoPorcentaje = gameObject.AddComponent<TextMeshProUGUI>();   //TMP_Text era una clase abstracta, no una clase concreta. Así no sale warning
+        boton = gameObject2.AddComponent<Button>();
 
         satietyManager.Slider = slider;
         satietyManager.textoPorcentaje = textoPorcentaje;
