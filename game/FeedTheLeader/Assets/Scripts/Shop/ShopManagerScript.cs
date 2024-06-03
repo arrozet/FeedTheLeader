@@ -25,6 +25,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 shopPanelsSO[i].SetActive(true);
             }
         }
+        desbloquearPaneles();
         AmountObjects = 1;
         loadPanels();
         CheckPurchaseable();
@@ -56,6 +57,7 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
                 shopPanelsSO[i].SetActive(true);
             }
         }
+        desbloquearPaneles();
         AmountObjects = 1;
         loadPanels();
         CheckPurchaseable();
@@ -304,4 +306,21 @@ public class ShopManagerScript : MonoBehaviour, IDataPersistence
         }
 
     }
+    private void desbloquearPaneles()
+    {
+        int last = 0;
+        for(int i = 0; i < shopItemsSO.Length; i++) {
+            if (shopItemsSO[i].amount > 0)
+            {
+                shopPanelsSO[i].SetActive(true);
+                last = i;
+            }
+        }
+        if (last != shopItemsSO.Length) // si no es el último
+        {
+            shopPanelsSO[last+1].SetActive(true); // activas el siguiente
+        }
+    }
+
+
 }
