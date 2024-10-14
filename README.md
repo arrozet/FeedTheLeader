@@ -1,4 +1,4 @@
-# **Feed The Leader - jajerje studios**
+# **Feed The Leader - jajerje studios** (unfinished)
 An addictive clicker game about feeding the leader until he can't take it anymore.
 
 -------------------------------------------------------------------------------------------
