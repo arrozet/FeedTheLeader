@@ -1,6 +1,20 @@
 # Feed The Leader - JAJERJE Studios (unfinished)
 
+<p align="center">
+    <img src="https://github.com/arrozet/FeedTheLeader/blob/main/art/logo_FeedTheLeader/logo_sonriendo.png" alt="logo" height="200"/>
+</p>
+
 An addictive clicker game about feeding the leader until he can't take it anymore.
+
+## Table of Contents
+1. [Overview](#overview)
+2. [Motivation and Concept](#motivation-and-concept)
+3. [Key Features](#key-features)
+4. [Game Systems](#game-systems)
+5. [Development Process](#development-process)
+6. [Planned Features (Future Updates)](#planned-features-future-updates)
+7. [Installation, Website and More](#installation-website-and-more)
+8. [Team Members](#team-members)
 
 ## Overview
 *Feed The Leader* is an incremental clicker game inspired by popular titles like *Cookie Clicker*. Players repeatedly click to feed a supreme leader, earning "Faith Points" (FP) that can be used to purchase upgrades, improve food, and acquire power-ups. The game critiques societal power structures through its mechanics while maintaining engaging gameplay.
@@ -40,8 +54,7 @@ The game was developed using **Scrum methodology**, with team members collaborat
 
 The development of *Feed The Leader* provided valuable lessons in planning and teamwork as it was our first-ever software project. The project emphasized the importance of collaboration, careful design, and time management. The team learned to adapt their approach to ensure the quality of the game, understanding that even small features often take longer than expected to implement effectively.
 
-
-### Team Members
+## Team Members
 - **Jorge Repullo Serrano**: Analyst and tester
 - **Artur Vargas Carrión**: Analyst and coordinator
 - **Juan Manuel Valenzuela González**: Tester and programmer
